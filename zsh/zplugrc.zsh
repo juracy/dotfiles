@@ -32,14 +32,6 @@ zplug "plugins/python",         from:oh-my-zsh
 zplug "plugins/urltools",       from:oh-my-zsh
 zplug "plugins/yarn",           from:oh-my-zsh
 
-# Auto install plugins
-if ! zplug check; then
-    zplug install
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
 # History keybinds
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -64,3 +56,10 @@ bindkey '^x^e' anyframe-widget-insert-git-branch
 
 zstyle ":anyframe:selector:" use peco
 
+# Auto install plugins
+if ! zplug check; then
+    zplug install
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
