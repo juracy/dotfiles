@@ -14,4 +14,6 @@ link() {
 # link files
 
 link "peco/config.json" ".config/peco/config.json"
-# link "zsh/zshrc.zsh" ".zshrc"
+link "zsh/zshrc.zsh" ".zshrc"
+link "zsh/zplugrc.zsh" ".zplugrc.zsh"
+link "zsh/ng-completion.zsh" ".ng-completion.zsh"
