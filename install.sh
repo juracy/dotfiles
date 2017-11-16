@@ -13,6 +13,7 @@ link() {
 
 # link files
 
+link "ack/ackrc" ".ackrc"
 link "peco/config.json" ".config/peco/config.json"
 link "zsh/zshrc.zsh" ".zshrc"
 link "zsh/zplugrc.zsh" ".zplugrc.zsh"
