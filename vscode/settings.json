@@ -61,10 +61,10 @@
 	"workbench.iconTheme": "material-icon-theme",
     "extensions.autoUpdate": false,
 	"sync.gist": "ed2620223a2ed96d1ec927f7b304bc0e",
-	"sync.lastUpload": "2017-11-10T20:29:04.765Z",
+	"sync.lastUpload": "2017-10-16T02:53:06.114Z",
 	"sync.autoDownload": false,
 	"sync.autoUpload": false,
-	"sync.lastDownload": "2017-10-16T02:53:06.114Z",
+	"sync.lastDownload": "2017-11-10T20:29:04.765Z",
 	"sync.forceDownload": false,
 	"sync.anonymousGist": false,
 	"sync.host": "",
@@ -99,16 +99,8 @@
 	"editor.letterSpacing": 0.25,
 	"workbench.panel.location": "bottom",
 	"vscodeWorkspaceSwitcher.paths": [
-		"/home/juracy/workspace"
+		"/home/juracy/workspace/vscode-workspaces"
 	],
 	"explorer.confirmDragAndDrop": false,
-	"spellright.documentTypes": [
-		"markdown",
-		"asciidoc",
-		"adoc",
-		"latex",
-		"plaintext"
-	],
-	"spellright.language": "Portuguese (Brazilian)",
 	"material-icon-theme.activeIconPack": "angular_ngrx"
 }

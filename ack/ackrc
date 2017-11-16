@@ -1,3 +1,7 @@
+# Always color, even if piping to a another program
+--color
+
+# Ignore files and directories
 --ignore-ack-defaults
 --ignore-directory=is:.bzr
 --ignore-directory=is:.cdv
@@ -39,6 +43,8 @@
 --ignore-file=match:/[.]css[.]min$/
 --ignore-file=ext:pdf
 --ignore-file=ext:gif,jpg,jpeg,png
+
+# Types
 --type-add=perl:ext:pl,pm,pod,t,psgi
 --type-add=perl:firstlinematch:/^#!.*\bperl/
 --type-add=perltest:ext:t
