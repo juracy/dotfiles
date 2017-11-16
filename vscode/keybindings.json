@@ -1,0 +1,63 @@
+[
+    {
+        "key": "ctrl+alt+pagedown",
+        "command": "extension.companionFileSwitcher.switch",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+]",
+        "command": "editor.emmet.action.matchingPair",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "f2",
+        "command": "workbench.action.gotoSymbol",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+;",
+        "command": "editor.action.commentLine"
+    },
+    {
+        "key": "ctrl+shift+alt+p",
+        "command": "projectManager.listProjectsNewWindow"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+alt+i",
+        "command": "tsimporter.addImport"
+    },
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "gitlens.showQuickCommitFileDetails",
+        "when": "editorTextFocus && gitlens:enabled"
+    },
+    {
+        "key": "alt+c",
+        "command": "-gitlens.showQuickCommitFileDetails",
+        "when": "editorTextFocus && gitlens:enabled"
+    },
+    {
+        "key": "ctrl+shift+alt+t",
+        "command": "python.runCurrentTestFile"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "extension.switchWorkspace"
+    },
+    {
+        "key": "ctrl+k w",
+        "command": "-extension.switchWorkspace"
+    },
+    {
+        "key": "ctrl+shift+alt+p",
+        "command": "extension.switchWorkspaceNewWindow"
+    },
+    {
+        "key": "ctrl+k ctrl+w",
+        "command": "-extension.switchWorkspaceNewWindow"
+    }
+]
