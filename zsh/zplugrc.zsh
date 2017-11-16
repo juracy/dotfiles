@@ -3,6 +3,7 @@ BULLETTRAIN_PROMPT_ORDER=(status custom dir screen perl ruby virtualenv aws go e
 BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 BULLETTRAIN_PROMPT_CHAR=
+ENHANCD_FILTER=peco
 
 source ~/.zplug/init.zsh
 
