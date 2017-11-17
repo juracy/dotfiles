@@ -23,7 +23,6 @@ alias venv='source .venv/bin/activate'
 
 EDITOR=vim
 APPDATA=$HOME/.config
-WORKON_HOME=$HOME/.virtualenvs
 
 stty icrnl
 
@@ -33,6 +32,15 @@ zstyle :compinstall filename '/home/juracy/.zshrc'
 autoload -Uz compinit
 compinit
 
-source `which virtualenvwrapper.sh`
+# Virtualenv
+DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
+WORKON_HOME=$HOME/.virtualenvs
+
+if [[ "$DISTRO" -eq "ubuntu" ]]; then
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+else
+    source `which virtualenvwrapper.sh`
+fi
+
 source ~/.zplugrc.zsh
 source ~/.ng-completion.zsh
