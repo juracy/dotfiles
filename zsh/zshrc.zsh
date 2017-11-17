@@ -27,7 +27,7 @@ APPDATA=$HOME/.config
 stty icrnl
 
 bindkey -e
-zstyle :compinstall filename '/home/juracy/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
