@@ -36,7 +36,7 @@ compinit
 DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
 WORKON_HOME=$HOME/.virtualenvs
 
-if [[ "$DISTRO" -eq "ubuntu" ]]; then
+if [ "$DISTRO" = "ubuntu" ]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 else
     source `which virtualenvwrapper.sh`
