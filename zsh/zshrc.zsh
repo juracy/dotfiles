@@ -43,4 +43,3 @@ else
 fi
 
 source ~/.zplugrc.zsh
-source ~/.ng-completion.zsh
