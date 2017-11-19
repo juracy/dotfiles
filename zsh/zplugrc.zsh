@@ -32,7 +32,7 @@ zplug "plugins/python",         from:oh-my-zsh
 zplug "plugins/urltools",       from:oh-my-zsh
 zplug "plugins/yarn",           from:oh-my-zsh
 
-zplug "~/.local/bin/zsh", from:local, use:"*.{sh,zsh}"
+zplug "$HOME/.local/bin/zsh", from:local, use:"*.{sh,zsh}"
 
 # History keybinds
 bindkey '^[[A' history-substring-search-up
