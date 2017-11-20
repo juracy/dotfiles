@@ -37,6 +37,8 @@ zplug "$HOME/.local/bin/zsh", from:local, use:"*.{sh,zsh}"
 # History keybinds
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
 
 # Anyframe keybinds
 bindkey '^r' anyframe-widget-put-history
