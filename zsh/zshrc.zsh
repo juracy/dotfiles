@@ -19,7 +19,6 @@ SAVEHIST=10000000
 alias go=xdg-open
 alias cdroot='if [ -n "`git rev-parse --show-cdup`" ]; then cd `git rev-parse --show-cdup`; fi'
 alias ls='ls --color=yes'
-alias venv='source .venv/bin/activate'
 
 EDITOR=vim
 APPDATA=$HOME/.config
@@ -31,15 +30,5 @@ zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
-
-# Virtualenv
-DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
-WORKON_HOME=$HOME/.virtualenvs
-
-if [ "$DISTRO" = "ubuntu" ]; then
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-else
-    source `which virtualenvwrapper.sh`
-fi
 
 source ~/.zplugrc.zsh
