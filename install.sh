@@ -1,9 +1,9 @@
 #!/bin/sh
 
-dotfiles="$HOME/.dotfiles"
+DOTFILES="$HOME/.dotfiles"
 
 link() {
-  from="$dotfiles/$1"
+  from="$DOTFILES/$1"
   to="$HOME/$2"
   echo "Linking '$from' to '$to'"
   rm -f "$to"
