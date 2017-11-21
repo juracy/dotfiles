@@ -1,0 +1,47 @@
+[user]
+	name = Juracy Filho
+	email =
+[core]
+	autocrlf = input
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	slog = log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local
+	type = cat-file -t
+	dump = cat-file -p
+	mg = merge --no-ff --no-commit -X patience -X renormalize
+	mgauto = merge --no-ff -X patience -X renormalize
+	mg2 = merge --no-ff --no-commit -X ignore-all-space -X patience -X renormalize
+	mgauto2 = merge --no-ff -X ignore-all-space -X patience -X renormalize
+	tohead = reset --hard HEAD
+	idiff = diff -w
+	brlog = "!sh -c 'git log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short --first-parent `/usr/bin/git merge-base master HEAD`..'"
+	brfiles = "!sh -c 'git diff --stat `/usr/bin/git merge-base master HEAD`'"
+	brdiff = "!sh -c 'git diff -w `/usr/bin/git merge-base master HEAD`'"
+	brlist = "!sh -c 'git branch -r | grep svn'"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	fdiff = diff --name-only
+	unstage = reset HEAD
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[color "status"]
+	changed = yellow
+	added = green
+	untracked = red
+[push]
+	default = simple
+[merge]
+	tool = meld
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
