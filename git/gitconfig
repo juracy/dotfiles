@@ -1,30 +1,23 @@
-[user]
-	name = Juracy Filho
-	email =
+[include]
+	path = .gitconfig-personal
 [core]
 	autocrlf = input
 [alias]
-	co = checkout
 	ci = commit
-	st = status
-	br = branch
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	slog = log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local
-	type = cat-file -t
+	co = checkout
 	dump = cat-file -p
-	mg = merge --no-ff --no-commit -X patience -X renormalize
-	mgauto = merge --no-ff -X patience -X renormalize
-	mg2 = merge --no-ff --no-commit -X ignore-all-space -X patience -X renormalize
-	mgauto2 = merge --no-ff -X ignore-all-space -X patience -X renormalize
-	tohead = reset --hard HEAD
-	idiff = diff -w
-	brlog = "!sh -c 'git log --pretty=format:\"%h %ad | %s%d [%an]\" --date=short --first-parent `/usr/bin/git merge-base master HEAD`..'"
-	brfiles = "!sh -c 'git diff --stat `/usr/bin/git merge-base master HEAD`'"
-	brdiff = "!sh -c 'git diff -w `/usr/bin/git merge-base master HEAD`'"
-	brlist = "!sh -c 'git branch -r | grep svn'"
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	fdiff = diff --name-only
-	unstage = reset HEAD
+	fetchall = fetch --all
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	idiff = diff -w
+	last = log -1 HEAD
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	sdiff = diff --staged
+	slog = log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local
+	st = status
+	tohead = reset --hard HEAD
+	type = cat-file -t
+	unstage = reset HEAD --
 [color]
 	diff = auto
 	status = auto
