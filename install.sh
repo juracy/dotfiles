@@ -8,7 +8,7 @@ link() {
   from="$DOTFILES/$1"
   to="$HOME/$2"
   echo "Linking '$from' to '$to'"
-  rm -f "$to"
+  mv "$to" "$to-before-dotfiles"
   mkdir -p "$(dirname "$to")"
   ln -s "$from" "$to"
 }
