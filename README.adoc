@@ -1,0 +1,31 @@
+Juracy Filho's Dot Files
+========================
+
+== Installation
+
+=== Requirements
+
+* git
+* zsh
+* zplug
+
+=== Optionals
+
+* @angular/cli
+* ack
+* diff-so-fancy
+* virtualenv
+* vscode
+
+== Customization
+
+=== Git
+
+Personal data like `user.name` and `user.email` must be in `$HOME/.gitconfig-personal`.
+You can set them through `git config` like this:
+
+[source, bash]
+--
+git config -f $HOME/.gitconfig-personal user.name "John Doe"
+git config -f $HOME/.gitconfig-personal user.email "john.doe@"
+--
