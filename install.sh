@@ -33,3 +33,6 @@ link "vscode/settings.json" ".config/Code/User/settings.json"
 link "vscode/keybindings.json" ".config/Code/User/keybindings.json"
 link "vscode/snippets" ".config/Code/User/snippets"
 link "git/gitconfig" ".gitconfig"
+
+# TODO: optional configs
+link "dunst/config" ".config/dunst/config"
