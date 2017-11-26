@@ -29,3 +29,9 @@ You can set them through `git config` like this:
 git config -f $HOME/.gitconfig-personal user.name "John Doe"
 git config -f $HOME/.gitconfig-personal user.email "john.doe@"
 --
+
+== Resources
+
+* https://github.com/zplug/zplug
+* https://github.com/unixorn/awesome-zsh-plugins
+* https://github.com/robbyrussell/oh-my-zsh
