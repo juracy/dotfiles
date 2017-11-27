@@ -91,5 +91,6 @@
 		"/home/juracy/workspace/vscode-workspaces"
 	],
 	"explorer.confirmDragAndDrop": false,
-	"material-icon-theme.activeIconPack": "angular_ngrx"
+	"material-icon-theme.activeIconPack": "angular_ngrx",
+	"javascript.implicitProjectConfig.experimentalDecorators": true
 }
