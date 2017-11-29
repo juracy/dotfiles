@@ -29,6 +29,7 @@ if [ "$DISTRO" = "archlinux" ]; then
 fi
 
 zplug "plugins/common-aliases", from:oh-my-zsh
+zplug "plugins/docker-compose", from:oh-my-zsh
 zplug "plugins/django",         from:oh-my-zsh
 zplug "plugins/git-extras",     from:oh-my-zsh
 zplug "plugins/heroku",         from:oh-my-zsh
