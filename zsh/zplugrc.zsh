@@ -4,6 +4,7 @@ BULLETTRAIN_PROMPT_ADD_NEWLINE=false
 BULLETTRAIN_PROMPT_SEPARATE_LINE=false
 BULLETTRAIN_PROMPT_CHAR=
 ENHANCD_FILTER=peco
+DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
 
 setopt prompt_subst
 
@@ -23,7 +24,10 @@ zplug "docker/cli", use:contrib/completion/zsh
 zplug "docker/compose", use:contrib/completion/zsh
 
 # "Legacy" do oh-my-zsh
-zplug "plugins/archlinux",      from:oh-my-zsh
+if [ "$DISTRO" = "archlinux" ]; then
+    zplug "plugins/archlinux",  from:oh-my-zsh
+fi
+
 zplug "plugins/django",         from:oh-my-zsh
 zplug "plugins/git-extras",     from:oh-my-zsh
 zplug "plugins/heroku",         from:oh-my-zsh
