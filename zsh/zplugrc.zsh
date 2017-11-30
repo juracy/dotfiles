@@ -24,7 +24,7 @@ zplug "docker/cli", use:contrib/completion/zsh
 zplug "docker/compose", use:contrib/completion/zsh
 
 # "Legacy" do oh-my-zsh
-if [ "$DISTRO" = "archlinux" ]; then
+if [ "$DISTRO" = "arch" ]; then
     zplug "plugins/archlinux",  from:oh-my-zsh
 fi
 
