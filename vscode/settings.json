@@ -4,6 +4,8 @@
 	"editor.fontSize": 16,
 	"search.exclude": {
 		"**/node_modules": true,
+		"**/yarn-error.log": true,
+		"**/yarn.lock": true,
 		"**/coverage/**/*.html": true,
 		"**/bower_components": true,
 		"**/typings": true,
