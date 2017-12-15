@@ -58,7 +58,7 @@
     "http.proxyStrictSSL": false,
     "git.confirmSync": false,
 	"window.zoomLevel": 1,
-    "typescript.referencesCodeLens.enabled": true,
+	"typescript.referencesCodeLens.enabled": true,
 	"workbench.colorTheme": "Dracula",
 	"workbench.iconTheme": "material-icon-theme",
     "extensions.autoUpdate": false,
@@ -94,5 +94,6 @@
 	],
 	"explorer.confirmDragAndDrop": false,
 	"material-icon-theme.activeIconPack": "angular_ngrx",
-	"javascript.implicitProjectConfig.experimentalDecorators": true
+	"javascript.implicitProjectConfig.experimentalDecorators": true,
+	"git.autofetch": true
 }
