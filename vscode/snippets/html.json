@@ -1,0 +1,9 @@
+{
+	"fxLayoutWrap": {
+		"prefix": "fxw",
+		"body": [
+			"fxLayoutWrap$0"
+		],
+		"description": "fxFlexLayout: Wrap directive"
+	}
+}
