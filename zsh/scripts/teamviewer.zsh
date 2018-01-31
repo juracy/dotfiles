@@ -1,4 +1,4 @@
-teamviewer-service() {
+teamviewer-start() {
     X_DOCKER_AUTH=/tmp/.docker.xauth
     touch ${X_DOCKER_AUTH}
     xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f ${X_DOCKER_AUTH} nmerge -
@@ -8,4 +8,9 @@ teamviewer-service() {
 teamviewer() {
     CONTAINER=$(docker container list -q --filter "ancestor=hurricane/teamviewer")
     docker exec $CONTAINER teamviewer
+}
+
+teamviewer-stop() {
+    CONTAINER=$(docker container list -q --filter "ancestor=hurricane/teamviewer")
+    docker stop $CONTAINER
 }
