@@ -62,22 +62,6 @@
 	"workbench.colorTheme": "Dracula",
 	"workbench.iconTheme": "material-icon-theme",
     "extensions.autoUpdate": false,
-	"auto-close-tag.activationOnLanguage": [
-		"html",
-		"xml",
-		"php",
-		"blade",
-		"ejs",
-		"handlebars",
-		"jinja",
-		"javascriptreact",
-		"typescriptreact",
-		"plaintext",
-		"markdown",
-		"razor",
-		"vue",
-		"liquid"
-	],
 	"TodoParser": {
 		"exclude": ["cpp", "c"],
 		"folderExclude": ["node_modules", ".vscode", "bower_components", "dist", "CVS", ".git", "coverage"],
@@ -86,14 +70,15 @@
 	},
 	"python.linting.pep8Path": "pycodestyle",
 	"extensions.ignoreRecommendations": false,
-	"typescriptHero.resolver.insertSemicolons": false,
+	"typescriptHero.imports.insertSemicolons": false,
 	"editor.letterSpacing": 0.25,
-	"workbench.panel.location": "bottom",
 	"vscodeWorkspaceSwitcher.paths": [
 		"/home/juracy/workspace/vscode-workspaces"
 	],
 	"explorer.confirmDragAndDrop": false,
 	"material-icon-theme.activeIconPack": "angular_ngrx",
 	"javascript.implicitProjectConfig.experimentalDecorators": true,
-	"git.autofetch": true
+	"git.autofetch": true,
+	"diffEditor.ignoreTrimWhitespace": true,
+	"terminal.integrated.fontSize": 16,
 }
