@@ -81,4 +81,10 @@
 	"git.autofetch": true,
 	"diffEditor.ignoreTrimWhitespace": true,
 	"terminal.integrated.fontSize": 16,
+	"todohighlight.keywords": [
+		{
+			"text": "TODO:",
+			"color": "red",
+		}
+	],
 }
