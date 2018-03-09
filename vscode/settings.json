@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
-	"editor.fontFamily": "Fira Code",
-	"editor.fontSize": 16,
+	"editor.fontFamily": "Operator Mono Light",
+	"editor.fontSize": 18,
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/yarn-error.log": true,
@@ -54,14 +54,14 @@
 	"python.linting.pylintEnabled": false,
 	"python.linting.flake8Enabled": true,
 	"terminal.integrated.shell.linux": "/bin/zsh",
-    "editor.snippetSuggestions": "top",
-    "http.proxyStrictSSL": false,
-    "git.confirmSync": false,
+	"editor.snippetSuggestions": "top",
+	"http.proxyStrictSSL": false,
+	"git.confirmSync": false,
 	"window.zoomLevel": 1,
 	"typescript.referencesCodeLens.enabled": true,
 	"workbench.colorTheme": "Dracula",
 	"workbench.iconTheme": "material-icon-theme",
-    "extensions.autoUpdate": false,
+	"extensions.autoUpdate": false,
 	"TodoParser": {
 		"exclude": ["cpp", "c"],
 		"folderExclude": ["node_modules", ".vscode", "bower_components", "dist", "CVS", ".git", "coverage"],
@@ -87,4 +87,7 @@
 			"color": "red",
 		}
 	],
+	"explorer.confirmDelete": false,
+	"gitlens.keymap": "alternate",
+	"search.location": "panel",
 }
