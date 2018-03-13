@@ -1,8 +1,3 @@
-BULLETTRAIN_DIR_FG=black
-BULLETTRAIN_PROMPT_ORDER=(status custom dir screen perl ruby virtualenv aws go elixir git hg cmd_exec_time)
-BULLETTRAIN_PROMPT_ADD_NEWLINE=false
-BULLETTRAIN_PROMPT_SEPARATE_LINE=false
-BULLETTRAIN_PROMPT_CHAR=
 ENHANCD_FILTER=peco
 DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
 
