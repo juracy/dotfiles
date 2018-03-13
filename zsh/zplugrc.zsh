@@ -20,7 +20,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2  # Syntax Highlight (fish lik
 zplug "erikced/zsh-pyenv-lazy-load", use:zsh-pyenv-lazy-load.zsh
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zuxfoucault/colored-man-pages_mod", use:colored-man-pages_mod.plugin.zsh
-
+zplug "Tarrasch/zsh-autoenv"
 
 # Docker
 zplug "docker/cli", use:contrib/completion/zsh
