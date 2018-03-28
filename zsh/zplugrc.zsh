@@ -1,4 +1,5 @@
 ENHANCD_FILTER=peco
+SPACESHIP_EXIT_CODE_SHOW=true
 DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
 
 setopt prompt_subst
@@ -13,7 +14,7 @@ zplug "zsh-users/zsh-completions"               # Vários auto-completes
 zplug "zsh-users/zsh-autosuggestions"           # Auto suggestions (fish like)
 zplug "zsh-users/zsh-syntax-highlighting", defer:2  # Syntax Highlight (fish like)
 zplug "erikced/zsh-pyenv-lazy-load", use:zsh-pyenv-lazy-load.zsh
-zplug "juracy/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "juracy/spaceship-prompt", use:spaceship.zsh, from:github, at:feature/project-name, as:theme
 zplug "zuxfoucault/colored-man-pages_mod", use:colored-man-pages_mod.plugin.zsh
 zplug "Tarrasch/zsh-autoenv"
 
