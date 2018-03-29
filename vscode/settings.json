@@ -80,11 +80,12 @@
 	"javascript.implicitProjectConfig.experimentalDecorators": true,
 	"git.autofetch": true,
 	"diffEditor.ignoreTrimWhitespace": true,
-	"terminal.integrated.fontSize": 16,
+	"terminal.integrated.fontSize": 14,
 	"explorer.confirmDelete": false,
 	"gitlens.keymap": "alternate",
 	"search.location": "panel",
 	"[asciidoc]": {
-        "editor.wordWrap": "on"
-    },
+		"editor.wordWrap": "on"
+	},
+	"AsciiDoc.html_generator": "docker run -v $(pwd):$(pwd) juracy/asciidoctor:latest asciidoctor -o-",
 }
