@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-	"editor.fontFamily": "Operator Mono XLight",
+	"editor.fontFamily": "Operator Mono XLight, Noto Color Emoji",
 	"editor.fontSize": 18,
 	"search.exclude": {
 		"**/node_modules": true,
@@ -84,9 +84,6 @@
 	"explorer.confirmDelete": false,
 	"gitlens.keymap": "chorded",
 	"search.location": "panel",
-	"[asciidoc]": {
-		"editor.wordWrap": "on"
-	},
 	"AsciiDoc.html_generator": "docker run -v $(pwd):$(pwd) juracy/asciidoctor:latest asciidoctor -o-",
 	"gitlens.advanced.messages": {
 		"suppressCommitHasNoPreviousCommitWarning": false,
@@ -99,4 +96,20 @@
 		"suppressShowKeyBindingsNotice": true
 	},
 	"typescript.format.insertSpaceAfterSemicolonInForStatements": false,
+	"emojisense.languages": {
+		"markdown": true,
+		"html": true,
+		"plaintext": {
+			"markupCompletionsEnabled": false,
+			"emojiDecoratorsEnabled": false
+		},
+		"git-commit": true
+	},
+	// Enable per-language
+	"[asciidoc]": {
+		"editor.wordWrap": "on"
+	},
+	"[typescript]": {
+		"editor.formatOnSave": true
+	}
 }
