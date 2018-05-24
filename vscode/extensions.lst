@@ -2,10 +2,11 @@
 Angular.ng-template
 Borke.puppet
 EditorConfig.EditorConfig
+Equinusocio.vsc-material-theme
+IBM.output-colorizer
 JaimeOlivares.yuml
 Mikael.Angular-BeastCode
 Orta.vscode-jest
-PKief.material-icon-theme
 PeterJausovec.vscode-docker
 abusaidm.html-snippets
 alefragnani.Bookmarks
@@ -13,7 +14,6 @@ alefragnani.pascal
 bibhasdn.django-snippets
 bierner.emojisense
 codezombiech.gitignore
-dracula-theme.theme-dracula
 eamodio.gitlens
 eg2.tslint
 esbenp.prettier-vscode
@@ -31,6 +31,8 @@ rbbit.typescript-hero
 sadesyllas.vscode-workspace-switcher
 silverlakesoftware.searchdocsets-vscode
 sleistner.vscode-fileutils
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-portuguese-brazilian
 traBpUkciP.wolf
 vismalietuva.vscode-angular-support
 ziyasal.vscode-open-in-github

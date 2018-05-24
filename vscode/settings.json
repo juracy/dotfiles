@@ -59,8 +59,8 @@
 	"git.confirmSync": false,
 	"window.zoomLevel": 1,
 	"typescript.referencesCodeLens.enabled": true,
-	"workbench.colorTheme": "Dracula",
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "Material Theme Darker High Contrast",
+	"workbench.iconTheme": "eq-material-theme-icons",
 	"extensions.autoUpdate": false,
 	"TodoParser": {
 		"exclude": ["cpp", "c"],
