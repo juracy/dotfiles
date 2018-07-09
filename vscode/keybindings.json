@@ -59,5 +59,21 @@
     {
         "key": "ctrl+k ctrl+w",
         "command": "-extension.switchWorkspaceNewWindow"
+    },
+    {
+        "key": "ctrl+alt+.",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "-workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "ctrl+alt+,",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "-workbench.action.moveEditorToPreviousGroup"
     }
 ]
