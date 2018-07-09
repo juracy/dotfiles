@@ -114,6 +114,22 @@
 	},
 	"gitlens.historyExplorer.enabled": true,
 	"cSpell.language": "pt-BR,en,pt",
+	"cSpell.userWords": [
+		"Deserialize",
+		"Indentação",
+		"Injectable",
+		"Juracy",
+		"Truthy",
+		"backend",
+		"chmod",
+		"confirmacao",
+		"consts",
+		"devtools",
+		"exclusao",
+		"gmail",
+		"pytest",
+		"saas"
+	],
 	"materialTheme.fixIconsRunning": false,
 	"materialTheme.accentPrevious": "Breaking Bad",
 	"materialTheme.accent": "Orange",
@@ -132,4 +148,7 @@
 		"editor.findWidgetResizeBorder": "#FF7042",
 		"editorWidget.border": "#FF7042"
 	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.tsserver.log": "verbose",
+	"terminal.integrated.rendererType": "dom",
 }
