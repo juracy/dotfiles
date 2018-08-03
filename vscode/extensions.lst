@@ -3,7 +3,6 @@ Angular.ng-template
 Borke.puppet
 EditorConfig.EditorConfig
 IBM.output-colorizer
-PeterJausovec.vscode-docker
 abusaidm.html-snippets
 alefragnani.Bookmarks
 alefragnani.pascal
@@ -15,6 +14,7 @@ eamodio.gitlens
 eg2.tslint
 Equinusocio.vsc-material-theme
 esbenp.prettier-vscode
+formulahendry.code-runner
 infinity1207.angular2-switcher
 JaimeOlivares.yuml
 joaompinto.asciidoctor-vscode
@@ -26,6 +26,7 @@ minhthai.vscode-todo-parser
 ms-python.python
 ms-vscode.typescript-javascript-grammar
 msjsdiag.debugger-for-chrome
+PeterJausovec.vscode-docker
 rbbit.typescript-hero
 sadesyllas.vscode-workspace-switcher
 silverlakesoftware.searchdocsets-vscode
