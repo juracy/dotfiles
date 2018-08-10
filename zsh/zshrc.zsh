@@ -1,3 +1,8 @@
+# Tilix and VTE Support
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 setopt extendedglob
 setopt no_check_jobs
 setopt no_hup
