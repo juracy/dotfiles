@@ -1,6 +1,5 @@
 2gua.rainbow-brackets
 Angular.ng-template
-Borke.puppet
 EditorConfig.EditorConfig
 IBM.output-colorizer
 abusaidm.html-snippets
@@ -9,11 +8,13 @@ alefragnani.pascal
 AngularDoc.angulardoc-vscode
 bibhasdn.django-snippets
 bierner.emojisense
+christian-kohler.path-intellisense
 codezombiech.gitignore
 eamodio.gitlens
 eg2.tslint
 Equinusocio.vsc-material-theme
 esbenp.prettier-vscode
+fatihacet.gitlab-workflow
 formulahendry.code-runner
 infinity1207.angular2-switcher
 JaimeOlivares.yuml
@@ -26,6 +27,7 @@ minhthai.vscode-todo-parser
 ms-python.python
 ms-vscode.typescript-javascript-grammar
 msjsdiag.debugger-for-chrome
+natewallace.angular2-inline
 PeterJausovec.vscode-docker
 rbbit.typescript-hero
 sadesyllas.vscode-workspace-switcher
@@ -35,4 +37,5 @@ streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-portuguese-brazilian
 traBpUkciP.wolf
 vismalietuva.vscode-angular-support
+VisualStudioExptTeam.vscodeintellicode
 ziyasal.vscode-open-in-github

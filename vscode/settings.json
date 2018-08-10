@@ -57,7 +57,7 @@
 	"editor.snippetSuggestions": "top",
 	"http.proxyStrictSSL": false,
 	"git.confirmSync": false,
-	"window.zoomLevel": 1,
+	"window.zoomLevel": 2,
 	"typescript.referencesCodeLens.enabled": true,
 	"workbench.colorTheme": "Material Theme Darker High Contrast",
 	"workbench.iconTheme": "eq-material-theme-icons-darker",
@@ -128,7 +128,9 @@
 		"exclusao",
 		"gmail",
 		"pytest",
-		"saas"
+		"saas",
+		"readonly",
+		"stdlib"
 	],
 	"materialTheme.fixIconsRunning": false,
 	"materialTheme.accentPrevious": "Breaking Bad",
