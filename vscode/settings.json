@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
 	"editor.fontFamily": "Operator Mono XLight, Noto Color Emoji",
-	"editor.fontSize": 18,
+	"editor.fontSize": 20,
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/yarn-error.log": true,
@@ -57,7 +57,7 @@
 	"editor.snippetSuggestions": "top",
 	"http.proxyStrictSSL": false,
 	"git.confirmSync": false,
-	"window.zoomLevel": 2,
+	"window.zoomLevel": 0,
 	"typescript.referencesCodeLens.enabled": true,
 	"workbench.colorTheme": "Material Theme Darker High Contrast",
 	"workbench.iconTheme": "eq-material-theme-icons-darker",
@@ -103,7 +103,9 @@
 			"markupCompletionsEnabled": false,
 			"emojiDecoratorsEnabled": false
 		},
-		"git-commit": true
+		"git-commit": true,
+		"asciidoc": true,
+		"python": true
 	},
 	// Enable per-language
 	"[asciidoc]": {
@@ -195,4 +197,7 @@
 		"haskell": "runhaskell",
 		"nim": "nim compile --verbosity:0 --hints:off --run"
 	},
+	"python.jediEnabled": true,
+	"breadcrumbs.enabled": true,
+	"wolf.pythonPath": "/usr/bin/python3"
 }
