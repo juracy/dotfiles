@@ -60,7 +60,7 @@
 	"window.zoomLevel": 0,
 	"typescript.referencesCodeLens.enabled": true,
 	"workbench.colorTheme": "Material Theme Darker High Contrast",
-	"workbench.iconTheme": "eq-material-theme-icons-darker",
+	"workbench.iconTheme": "material-icon-theme",
 	"extensions.autoUpdate": false,
 	"TodoParser": {
 		"exclude": ["cpp", "c"],
@@ -80,7 +80,6 @@
 	"javascript.implicitProjectConfig.experimentalDecorators": true,
 	"git.autofetch": true,
 	"diffEditor.ignoreTrimWhitespace": true,
-	"terminal.integrated.fontSize": 14,
 	"explorer.confirmDelete": false,
 	"gitlens.keymap": "chorded",
 	"search.location": "panel",
@@ -130,8 +129,9 @@
 		"exclusao",
 		"gmail",
 		"pytest",
-		"saas",
+		"pythonic",
 		"readonly",
+		"saas",
 		"stdlib"
 	],
 	"materialTheme.fixIconsRunning": false,
@@ -197,7 +197,18 @@
 		"haskell": "runhaskell",
 		"nim": "nim compile --verbosity:0 --hints:off --run"
 	},
-	"python.jediEnabled": true,
 	"breadcrumbs.enabled": true,
-	"wolf.pythonPath": "/usr/bin/python3"
+	"wolf.pythonPath": "/usr/bin/python3",
+	"github.hosts": [
+		{
+			"host": "https://github.com"
+		}
+	],
+	"python.jediEnabled": false,
+	"typescriptHero.codeOutline.enabled": false,
+	"python.pythonPath": "/usr/bin/python3",
+	"editor.tabCompletion": "on",
+	"python.coverageView.highlight": "rgba(255,0,255,.05)",
+	"terminal.integrated.fontFamily": "Operator Mono XLight, Noto Color Emoji",
+	"window.titleBarStyle": "custom"
 }
