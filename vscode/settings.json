@@ -98,6 +98,8 @@
 	"emojisense.languages": {
 		"markdown": true,
 		"html": true,
+		"asciidoc": true,
+		"python": true,
 		"plaintext": {
 			"markupCompletionsEnabled": false,
 			"emojiDecoratorsEnabled": false
@@ -210,5 +212,7 @@
 	"editor.tabCompletion": "on",
 	"python.coverageView.highlight": "rgba(255,0,255,.05)",
 	"terminal.integrated.fontFamily": "Operator Mono XLight, Noto Color Emoji",
-	"window.titleBarStyle": "custom"
+	"window.titleBarStyle": "custom",
+	"gitlens.views.fileHistory.enabled": true,
+	"gitlens.views.lineHistory.enabled": true
 }

@@ -75,5 +75,9 @@
     {
         "key": "ctrl+alt+left",
         "command": "-workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "alt+a",
+        "command": "git.openFile"
     }
 ]
