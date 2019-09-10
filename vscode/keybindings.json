@@ -46,19 +46,11 @@
     },
     {
         "key": "ctrl+alt+p",
-        "command": "extension.switchWorkspace"
-    },
-    {
-        "key": "ctrl+k w",
-        "command": "-extension.switchWorkspace"
+        "command": "vscodeWorkspaceSwitcher.switchWorkspace"
     },
     {
         "key": "ctrl+shift+alt+p",
-        "command": "extension.switchWorkspaceNewWindow"
-    },
-    {
-        "key": "ctrl+k ctrl+w",
-        "command": "-extension.switchWorkspaceNewWindow"
+        "command": "vscodeWorkspaceSwitcher.switchWorkspaceNewWindow"
     },
     {
         "key": "ctrl+alt+.",
@@ -79,5 +71,18 @@
     {
         "key": "alt+a",
         "command": "git.openFile"
+    },
+    {
+        "key": "meta+x",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+r",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
     }
 ]
