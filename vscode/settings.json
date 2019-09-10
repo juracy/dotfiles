@@ -45,11 +45,12 @@
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": true,
 	"files.associations": {
-		"*.jinja": "html"
+		"*.jinja": "html",
+		"*.html": "html"
 	},
 	"editor.fontLigatures": true,
 	"editor.tabSize": 4,
-	"editor.renderWhitespace": "all",
+	"editor.renderWhitespace": "selection",
 	"editor.mouseWheelZoom": true,
 	"python.linting.pylintEnabled": false,
 	"python.linting.flake8Enabled": true,
@@ -221,5 +222,7 @@
 	"python.coverageView.highlight": "rgba(255,0,255,.05)",
 	"window.titleBarStyle": "custom",
 	"gitlens.views.fileHistory.enabled": true,
+	"editor.renderControlCharacters": false,
+	"editor.suggestSelection": "first",
 	"gitlens.views.lineHistory.enabled": true
 }
