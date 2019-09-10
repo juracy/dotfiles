@@ -73,7 +73,7 @@
 	"terminal.integrated.shell.linux": "/bin/sh",
 	"terminal.integrated.shellArgs.linux": ["-c", "[ -e /bin/zsh ] && /bin/zsh || ([ -e /bin/bash ] && /bin/bash || /bin/sh)"],
 	"window.titleBarStyle": "custom",
-	"window.zoomLevel": 0,
+	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Material Theme Ocean High Contrast",
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorCustomizations": {
