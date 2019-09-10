@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-	"editor.fontFamily": "Operator Mono XLight, Noto Color Emoji",
+	"editor.fontFamily": "Victor Mono ExtraLight, Operator Mono XLight, Noto Color Emoji",
 	"editor.fontSize": 20,
 	"search.exclude": {
 		"**/node_modules": true,
@@ -211,7 +211,6 @@
 	"python.pythonPath": "/usr/bin/python3",
 	"editor.tabCompletion": "on",
 	"python.coverageView.highlight": "rgba(255,0,255,.05)",
-	"terminal.integrated.fontFamily": "Operator Mono XLight, Noto Color Emoji",
 	"window.titleBarStyle": "custom",
 	"gitlens.views.fileHistory.enabled": true,
 	"gitlens.views.lineHistory.enabled": true
