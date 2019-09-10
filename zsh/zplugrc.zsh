@@ -1,4 +1,6 @@
 ENHANCD_FILTER=peco
+EMOJI_CLI_KEYBIND=^j
+EMOJI_CLI_USE_EMOJI=1
 SPACESHIP_EXIT_CODE_SHOW=true
 DISTRO=`cat /etc/os-release | grep '^ID=' | cut -d= -f2`
 
@@ -14,13 +16,23 @@ zplug "zsh-users/zsh-completions"               # Vários auto-completes
 zplug "zsh-users/zsh-autosuggestions"           # Auto suggestions (fish like)
 zplug "zsh-users/zsh-syntax-highlighting", defer:2  # Syntax Highlight (fish like)
 zplug "erikced/zsh-pyenv-lazy-load", use:zsh-pyenv-lazy-load.zsh
-zplug "juracy/spaceship-prompt", use:spaceship.zsh, from:github, at:feature/project-name, as:theme
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "zuxfoucault/colored-man-pages_mod", use:colored-man-pages_mod.plugin.zsh
 zplug "Tarrasch/zsh-autoenv"
+
+# Group dependencies
+# Load "emoji-cli" if "jq" is installed in this example
+zplug "stedolan/jq", \
+    from:gh-r, \
+    as:command, \
+    rename-to:jq
+zplug "b4b4r07/emoji-cli", \
+    on:"stedolan/jq"
 
 # Docker
 zplug "docker/cli", use:contrib/completion/zsh
 zplug "docker/compose", use:contrib/completion/zsh
+zplug "Dbz/kube-aliases"
 
 # "Legacy" do oh-my-zsh
 if [ "$DISTRO" = "arch" ]; then
