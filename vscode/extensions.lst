@@ -23,6 +23,7 @@ kiteco.kite
 marcostazi.VS-code-vagrantfile
 Mikael.Angular-BeastCode
 minhthai.vscode-todo-parser
+mrorz.language-gettext
 ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode-remote.remote-containers
@@ -34,11 +35,13 @@ ms-vscode.vscode-typescript-tslint-plugin
 msjsdiag.debugger-for-chrome
 natewallace.angular2-inline
 PKief.material-icon-theme
+redhat.vscode-yaml
 sadesyllas.vscode-workspace-switcher
 silverlakesoftware.searchdocsets-vscode
 sleistner.vscode-fileutils
 streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-portuguese-brazilian
+Togusa09.tmlanguage
 traBpUkciP.wolf
 vismalietuva.vscode-angular-support
 VisualStudioExptTeam.vscodeintellicode
