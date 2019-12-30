@@ -71,9 +71,9 @@
 		"**/*.js": { "when": "$(basename).ts"},
 		"**/*.js.map": true
 	},
-	"terminal.integrated.rendererType": "dom",
 	"terminal.integrated.shell.linux": "/bin/sh",
 	"terminal.integrated.shellArgs.linux": ["-c", "[ -e /bin/zsh ] && /bin/zsh || ([ -e /bin/bash ] && /bin/bash || /bin/sh)"],
+	"terminal.integrated.automationShell.linux": "/bin/bash",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 1,
 	"workbench.colorTheme": "Material Theme Ocean High Contrast",
@@ -235,5 +235,7 @@
 		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"git.untrackedChanges": "separate"
+	"git.untrackedChanges": "separate",
+	"plantuml.server": "http://localhost:8080",
+	"plantuml.render": "PlantUMLServer"
 }
