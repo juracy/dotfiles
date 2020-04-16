@@ -34,6 +34,7 @@ link "vscode/keybindings.json" ".config/Code/User/keybindings.json"
 link "vscode/snippets" ".config/Code/User/snippets"
 link "git/gitconfig" ".gitconfig"
 link "htop/htoprc" ".config/htop/htoprc"
+link "starship.toml" ".config/starship.toml"
 
 # TODO: optional configs
 link "dunst/config" ".config/dunst/config"
