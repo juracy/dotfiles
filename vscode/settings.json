@@ -3,13 +3,16 @@
 	// Core
 	"breadcrumbs.enabled": true,
 	"diffEditor.ignoreTrimWhitespace": true,
-	"editor.fontFamily": "Victor Mono ExtraLight, Operator Mono XLight, Noto Color Emoji",
+	"editor.fontFamily": "Iosevka, Victor Mono, Operator Mono, Noto Color Emoji, JetBrains Mono",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 20,
+	"editor.fontWeight": "200",
 	"editor.letterSpacing": 0.25,
+	"editor.lineHeight": 24,
 	"editor.mouseWheelZoom": true,
 	"editor.renderControlCharacters": false,
 	"editor.renderWhitespace": "selection",
+	"editor.semanticHighlighting.enabled": true,
 	"editor.snippetSuggestions": "top",
 	"editor.suggestSelection": "first",
 	"editor.tabCompletion": "on",
@@ -48,7 +51,6 @@
 	"git.confirmSync": false,
 	"http.proxyStrictSSL": false,
 	"javascript.implicitProjectConfig.experimentalDecorators": true,
-	"search.location": "panel",
 	"search.exclude": {
 		"**/node_modules": true,
 		"**/yarn-error.log": true,
@@ -76,7 +78,7 @@
 	"terminal.integrated.automationShell.linux": "/bin/bash",
 	"window.titleBarStyle": "custom",
 	"window.zoomLevel": 1,
-	"workbench.colorTheme": "Material Theme Ocean High Contrast",
+	"workbench.colorTheme": "Community Material Theme Darker High Contrast",
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorCustomizations": {
 		"activityBarBadge.background": "#FF4081",
@@ -159,6 +161,7 @@
 		"paginator",
 		"pytest",
 		"pythonic",
+		"pythônica",
 		"readonly",
 		"saas",
 		"stdlib"
@@ -236,6 +239,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"git.untrackedChanges": "separate",
+	"gitlens.hovers.currentLine.over": "line",
 	"plantuml.server": "http://localhost:8080",
 	"plantuml.render": "PlantUMLServer"
 }

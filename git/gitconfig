@@ -47,3 +47,6 @@
 	prune = true
 [rebase]
 	autosquash = true
+	autoStash = true
+[diff]
+	tool = meld

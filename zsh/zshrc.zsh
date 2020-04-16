@@ -22,4 +22,6 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
+# Necessário instalar o starship
+eval "$(starship init zsh)"
 source ~/.zplugrc.zsh
