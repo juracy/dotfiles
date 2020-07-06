@@ -1,4 +1,4 @@
-ENHANCD_FILTER=peco
+ENHANCD_FILTER=fzf
 EMOJI_CLI_KEYBIND=^j
 EMOJI_CLI_USE_EMOJI=1
 SPACESHIP_EXIT_CODE_SHOW=true
@@ -10,7 +10,6 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 zplug "b4b4r07/enhancd", use:init.sh            # EnhanCD
-zplug "mollifier/anyframe"                      # widgets
 zplug "zsh-users/zsh-history-substring-search"  # History search
 zplug "zsh-users/zsh-completions"               # Vários auto-completes
 zplug "zsh-users/zsh-autosuggestions"           # Auto suggestions (fish like)

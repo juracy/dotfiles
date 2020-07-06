@@ -25,3 +25,5 @@ compinit
 # Necessário instalar o starship
 eval "$(starship init zsh)"
 source ~/.zplugrc.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
