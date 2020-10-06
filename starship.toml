@@ -1,8 +1,29 @@
 [kubernetes]
 symbol = "⛵ "
-style = "dimmed green"
+style = "dimmed red"
 disabled = false
+
+[kubernetes.context_aliases]
+"kind-kind" = "kind"
 
 [docker_context]
 symbol = "🐋 "
 disabled = false
+
+[php]
+disabled = true
+
+[status]
+disabled = false
+
+[git_status]
+# format = "[‹$all_status$ahead_behind›] ($style) "
+format = "[(⟨$all_status$ahead_behind〉)]($style) "
+ahead = " ⬆️  ${count}"
+diverged = " ⬆️  ${ahead_count} × ⬇️  ${behind_count}"
+behind = " ⬇️  ${count}"
+untracked = "👽"
+stashed = "📌"
+modified = "⚡️"
+staged = " ✔ "
+deleted = "🔥"
