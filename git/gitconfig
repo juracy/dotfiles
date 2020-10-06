@@ -50,3 +50,5 @@
 	autoStash = true
 [diff]
 	tool = meld
+[pull]
+	rebase = false
