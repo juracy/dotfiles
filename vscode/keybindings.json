@@ -19,10 +19,6 @@
         "command": "editor.action.commentLine"
     },
     {
-        "key": "ctrl+shift+alt+p",
-        "command": "projectManager.listProjectsNewWindow"
-    },
-    {
         "key": "alt+left",
         "command": "workbench.action.navigateBack"
     },
@@ -43,14 +39,6 @@
     {
         "key": "ctrl+shift+alt+t",
         "command": "python.runCurrentTestFile"
-    },
-    {
-        "key": "ctrl+alt+p",
-        "command": "vscodeWorkspaceSwitcher.switchWorkspace"
-    },
-    {
-        "key": "ctrl+shift+alt+p",
-        "command": "vscodeWorkspaceSwitcher.switchWorkspaceNewWindow"
     },
     {
         "key": "ctrl+alt+.",

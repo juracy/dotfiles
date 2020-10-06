@@ -1,5 +1,6 @@
 2gua.rainbow-brackets
 IBM.output-colorizer
+aaron-bond.better-comments
 abusaidm.html-snippets
 alefragnani.Bookmarks
 alefragnani.pascal
@@ -8,6 +9,7 @@ Angular.ng-template
 asciidoctor.asciidoctor-vscode
 bibhasdn.django-snippets
 bierner.emojisense
+bpmn-io.vs-code-bpmn-io
 brunnerh.insert-unicode
 bungcip.better-toml
 christian-kohler.path-intellisense
@@ -20,10 +22,11 @@ Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
 formulahendry.code-runner
+humao.rest-client
 infinity1207.angular2-switcher
+ivory-lab.jenkinsfile-support
 jebbs.plantuml
 johnpapa.Angular2
-kiteco.kite
 marcostazi.VS-code-vagrantfile
 Mikael.Angular-BeastCode
 minhthai.vscode-todo-parser
@@ -37,6 +40,7 @@ ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 ms-vscode.typescript-javascript-grammar
 ms-vscode.vscode-typescript-tslint-plugin
+ms-vsliveshare.vsliveshare
 msjsdiag.debugger-for-chrome
 natewallace.angular2-inline
 PKief.material-icon-theme
@@ -48,4 +52,5 @@ streetsidesoftware.code-spell-checker
 streetsidesoftware.code-spell-checker-portuguese-brazilian
 Togusa09.tmlanguage
 traBpUkciP.wolf
+usernamehw.errorlens
 VisualStudioExptTeam.vscodeintellicode
