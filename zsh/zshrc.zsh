@@ -4,11 +4,6 @@ setopt extendedglob
 setopt no_check_jobs
 setopt no_hup
 
-alias go=xdg-open
-alias cdroot='if [ -n "`git rev-parse --show-cdup`" ]; then cd `git rev-parse --show-cdup`; fi'
-alias ls='ls --color=yes'
-alias please='sudo $(fc -ln -1)'
-
 stty icrnl
 
 bindkey -e
