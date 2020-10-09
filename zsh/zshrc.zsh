@@ -27,7 +27,13 @@ fi
 autoload -Uz compinit
 compinit
 
-# Necessário instalar o starship
+# Uncomment for debugging
+# DOTFILES_VERBOSE=1
+function zsh_log() {
+  # TODO: Print with columns (pads)
+  [ ! -z $DOTFILES_VERBOSE ] && print -c "$(basename $1)" "$2..."
+}
+
 eval "$(starship init zsh)"
 source ~/.zplugrc.zsh
 

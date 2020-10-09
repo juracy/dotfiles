@@ -1,3 +1,5 @@
+zsh_log $0 "Configuring keyboard shortcuts"
+
 # http://zshwiki.org/home/zle/bindkeys#reading_terminfo
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
