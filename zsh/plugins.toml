@@ -1,0 +1,88 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+[plugins]
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+
+[plugins.zsh-autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+use = ["{{ name }}.zsh"]
+
+[plugins.enhancd]
+github = 'b4b4r07/enhancd'
+use = ["init.sh"]
+
+[plugins.emoji-cli]
+github = 'b4b4r07/emoji-cli'
+
+[plugins.zsh-pyenv-lazy-load]
+github = 'erikced/zsh-pyenv-lazy-load'
+use = ["zsh-pyenv-lazy-load.zsh"]
+
+[plugins.colored-man-pages_mod]
+github = 'zuxfoucault/colored-man-pages_mod'
+use = ["colored-man-pages_mod.plugin.zsh"]
+
+[plugins.zsh-history-substring-search]
+github = 'zsh-users/zsh-history-substring-search'
+
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+
+[plugins.zsh-autoenv]
+github = "Tarrasch/zsh-autoenv"
+
+[plugins.docker-cli]
+github = "docker/cli"
+use = ["contrib/completion/zsh"]
+
+[plugins.docker-compose]
+github = "docker/compose"
+use = ["contrib/completion/zsh"]
+
+[plugins.kube]
+github = "Dbz/kube-aliases"
+
+[plugins.ohmyzsh]
+github = "ohmyzsh/ohmyzsh"
+use = [
+    "plugins/common-aliases/*.zsh",
+    "plugins/docker-compose/*.zsh",
+    "plugins/django/*.zsh",
+    "plugins/git-extras/*.zsh",
+    "plugins/heroku/*.zsh",
+    "plugins/pip/*.zsh",
+    "plugins/python/*.zsh",
+    "plugins/urltools/*.zsh",
+    "plugins/yarn/*.zsh",
+]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+apply = ["defer"]
+
+[plugins.auto-notify]
+github = 'MichaelAquilina/zsh-auto-notify'
+
+[plugins.fzf-tab]
+github = 'Aloxaf/fzf-tab'
+
+[plugins.local]
+local = "~/.local/bin/zsh"
+use = ['*.{sh,zsh}']
+
+[templates]
+defer = { value = 'zsh-defer source "{{ file }}"', each = true }

@@ -25,6 +25,4 @@ function zsh_log() {
 }
 
 eval "$(starship init zsh)"
-source ~/.zplugrc.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(sheldon source)"
