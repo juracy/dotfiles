@@ -1,8 +1,3 @@
-# Tilix and VTE Support
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
 SHELL=`which $0`
 
 setopt extendedglob
