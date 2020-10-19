@@ -74,9 +74,6 @@ use = [
 github = "zsh-users/zsh-syntax-highlighting"
 apply = ["defer"]
 
-[plugins.auto-notify]
-github = 'MichaelAquilina/zsh-auto-notify'
-
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
 
