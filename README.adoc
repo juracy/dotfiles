@@ -7,12 +7,14 @@ Juracy Filho's Dot Files
 
 * git
 * zsh
+* https://github.com/Homebrew/brew[Homebrew]
 * https://github.com/rossmacarthur/sheldon[sheldon]
+* https://starship.rs[Starship]
 
 === Optionals
 
 * @angular/cli
-* ack
+* https://github.com/BurntSushi/ripgrep[ripgrep]
 * diff-so-fancy
 * virtualenv
 * vscode

@@ -24,8 +24,6 @@ if [ ! -L ${GITCONFIG} -a -e ${GITCONFIG} ] ; then
 fi
 
 # link files
-link "ack/ackrc" ".ackrc"
-link "peco/config.json" ".config/peco/config.json"
 link "zsh/zshrc.zsh" ".zshrc"
 link "zsh/scripts" ".local/bin/zsh"
 link "vscode/settings.json" ".config/Code/User/settings.json"
