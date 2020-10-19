@@ -21,7 +21,7 @@ compinit
 # DOTFILES_VERBOSE=1
 function zsh_log() {
   # TODO: Print with columns (pads)
-  [ ! -z $DOTFILES_VERBOSE ] && print -c "$(basename $1)" "$2..."
+  [ ! -z $DOTFILES_VERBOSE ] && printf "%-30s %s\n" "$(basename $1):" "$2..."
 }
 
 eval "$(starship init zsh)"
