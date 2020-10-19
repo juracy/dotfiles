@@ -27,7 +27,6 @@ fi
 link "ack/ackrc" ".ackrc"
 link "peco/config.json" ".config/peco/config.json"
 link "zsh/zshrc.zsh" ".zshrc"
-link "zsh/zplugrc.zsh" ".zplugrc.zsh"
 link "zsh/scripts" ".local/bin/zsh"
 link "vscode/settings.json" ".config/Code/User/settings.json"
 link "vscode/keybindings.json" ".config/Code/User/keybindings.json"
@@ -35,6 +34,7 @@ link "vscode/snippets" ".config/Code/User/snippets"
 link "git/gitconfig" ".gitconfig"
 link "htop/htoprc" ".config/htop/htoprc"
 link "starship.toml" ".config/starship.toml"
+link "sheldon.toml" ".config/sheldon/plugins.toml"
 
 # TODO: optional configs
 link "dunst/config" ".config/dunst/config"
