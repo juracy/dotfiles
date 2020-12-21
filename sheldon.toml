@@ -77,6 +77,9 @@ apply = ["defer"]
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
 
+[plugins.hist]
+github = 'marlonrichert/zsh-hist'
+
 [plugins.local]
 local = "~/.local/bin/zsh"
 use = ['*.{sh,zsh}']
