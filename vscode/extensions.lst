@@ -21,6 +21,7 @@ Equinusocio.vsc-community-material-theme
 Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
 esbenp.prettier-vscode
+exiasr.hadolint
 formulahendry.code-runner
 humao.rest-client
 infinity1207.angular2-switcher
@@ -35,6 +36,7 @@ ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
 ms-python.vscode-pylance
+ms-toolsai.jupyter
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
