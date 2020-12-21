@@ -1,7 +1,8 @@
 [kubernetes]
 symbol = "⛵ "
-style = "dimmed red"
+style = "dimmed green"
 disabled = false
+format = '[$symbol](green)[$namespace]($style)[★ ](dimmed yellow)[$context]($style bold) '
 
 [kubernetes.context_aliases]
 "kind-kind" = "kind"
@@ -27,3 +28,6 @@ stashed = "📌"
 modified = "⚡️"
 staged = " ✔ "
 deleted = "🔥"
+
+[git_commit]
+tag_disabled = false
