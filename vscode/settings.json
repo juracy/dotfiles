@@ -2,8 +2,9 @@
 {
 	// Core
 	"breadcrumbs.enabled": true,
-	"diffEditor.ignoreTrimWhitespace": true,
+	"diffEditor.ignoreTrimWhitespace": false,
 	"diffEditor.renderSideBySide": true,
+	"editor.columnSelection": false,
 	"editor.fontFamily": "Iosevka, Victor Mono, Operator Mono, Noto Color Emoji, JetBrains Mono",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 20,
@@ -158,6 +159,7 @@
 		"Microservices",
 		"Microsserviços",
 		"Truthy",
+		"adoc",
 		"backend",
 		"beta",
 		"chmod",
@@ -175,6 +177,7 @@
 		"kustomization",
 		"kustomize",
 		"kustomize config k s io v beta",
+		"o",
 		"paginator",
 		"pytest",
 		"pythonic",
@@ -182,11 +185,14 @@
 		"readonly",
 		"s",
 		"saas",
+		"serializa",
+		"serialização",
 		"stdlib",
 		"v",
 		"vel",
 		"version",
-		"versionável"
+		"versionável",
+		"youtube"
 	],
 	"materialTheme.accent": "Pink",
 	"material-icon-theme.activeIconPack": "angular_ngrx",
@@ -290,5 +296,10 @@
 	"errorLens.fontWeight": "300",
 	"errorLens.exclude": [
 		"Unknown word."
-	]
+	],
+	"hadolint.hadolintPath": "/home/linuxbrew/.linuxbrew/bin/hadolint",
+	"plantuml.urlFormat": "svg",
+	"yaml.schemas": {
+		"none": "antora-playbook.yml"
+	}
 }
