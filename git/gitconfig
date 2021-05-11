@@ -18,6 +18,7 @@
 	sdiff = diff --staged
 	slog = log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local
 	st = status
+	sw = switch
 	tohead = reset --hard HEAD
 	type = cat-file -t
 	unstage = reset HEAD --
