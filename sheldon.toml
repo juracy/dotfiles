@@ -63,7 +63,6 @@ use = [
     "plugins/docker-compose/*.zsh",
     "plugins/django/*.zsh",
     "plugins/git-extras/*.zsh",
-    "plugins/heroku/*.zsh",
     "plugins/pip/*.zsh",
     "plugins/python/*.zsh",
     "plugins/urltools/*.zsh",
