@@ -4,7 +4,7 @@ APPDATA=$HOME/.config
 XDG_CURRENT_DESKTOP=GNOME
 
 LOCALBIN=$HOME/.local/bin
-PATH=$LOCALBIN:$PATH
+PATH=$LOCALBIN:$PATH:$HOME/.krew/bin
 
 if which yarn > /dev/null; then
     YARNBIN=$(yarn global bin)
