@@ -72,5 +72,9 @@
         "key": "ctrl+r",
         "command": "-workbench.action.reloadWindow",
         "when": "isDevelopment"
+    },
+    {
+        "key": "ctrl+k pageup",
+        "command": "workbench.action.toggleMaximizedPanel"
     }
 ]
