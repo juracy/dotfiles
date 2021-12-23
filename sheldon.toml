@@ -49,10 +49,6 @@ github = "Tarrasch/zsh-autoenv"
 github = "docker/cli"
 use = ["contrib/completion/zsh"]
 
-[plugins.docker-compose]
-github = "docker/compose"
-use = ["contrib/completion/zsh"]
-
 [plugins.kube]
 github = "Dbz/kube-aliases"
 
@@ -61,12 +57,12 @@ github = "ohmyzsh/ohmyzsh"
 use = [
     "plugins/common-aliases/*.zsh",
     "plugins/docker-compose/*.zsh",
-    "plugins/django/*.zsh",
     "plugins/git-extras/*.zsh",
     "plugins/pip/*.zsh",
     "plugins/python/*.zsh",
     "plugins/urltools/*.zsh",
     "plugins/yarn/*.zsh",
+    "plugins/wd/*.zsh",
 ]
 
 [plugins.zsh-syntax-highlighting]
@@ -78,6 +74,9 @@ github = 'Aloxaf/fzf-tab'
 
 [plugins.hist]
 github = 'marlonrichert/zsh-hist'
+
+[plugins.zsh-fuzzy-wd]
+github = 'spodin/zsh-fuzzy-wd'
 
 [plugins.local]
 local = "~/.local/bin/zsh"
