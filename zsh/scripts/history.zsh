@@ -10,5 +10,5 @@ setopt hist_find_no_dups         # Do not display a line previously found.
 setopt hist_ignore_space         # Don't record an entry starting with a space.
 
 HISTFILE=$HOME/.zsh_history
-HISTSIZE=10000000
+HISTSIZE=15000000
 SAVEHIST=10000000

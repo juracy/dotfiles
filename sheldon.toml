@@ -21,9 +21,9 @@ github = "romkatv/zsh-defer"
 github = 'zsh-users/zsh-autosuggestions'
 use = ["{{ name }}.zsh"]
 
-[plugins.enhancd]
-github = 'b4b4r07/enhancd'
-use = ["init.sh"]
+# [plugins.enhancd]
+# github = 'b4b4r07/enhancd'
+# use = ["init.sh"]
 
 [plugins.emoji-cli]
 github = 'b4b4r07/emoji-cli'
@@ -55,14 +55,15 @@ github = "Dbz/kube-aliases"
 [plugins.ohmyzsh]
 github = "ohmyzsh/ohmyzsh"
 use = [
-    "plugins/common-aliases/*.zsh",
-    "plugins/docker-compose/*.zsh",
-    "plugins/git-extras/*.zsh",
-    "plugins/pip/*.zsh",
-    "plugins/python/*.zsh",
-    "plugins/urltools/*.zsh",
-    "plugins/yarn/*.zsh",
-    "plugins/wd/*.zsh",
+  "plugins/common-aliases/*.zsh",
+  "plugins/docker-compose/*.zsh",
+  "plugins/git-extras/*.zsh",
+  "plugins/pip/*.zsh",
+  "plugins/python/*.zsh",
+  "plugins/pdm/*.zsh",
+  "plugins/urltools/*.zsh",
+  "plugins/yarn/*.zsh",
+  "plugins/wd/*.zsh",
 ]
 
 [plugins.zsh-syntax-highlighting]
@@ -78,9 +79,12 @@ github = 'marlonrichert/zsh-hist'
 [plugins.zsh-fuzzy-wd]
 github = 'spodin/zsh-fuzzy-wd'
 
+[plugins.zsh-cargo-completion]
+github = 'MenkeTechnologies/zsh-cargo-completion'
+
 [plugins.local]
 local = "~/.local/bin/zsh"
 use = ['*.{sh,zsh}']
 
 [templates]
-defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+defer = '{% for file in files %} zsh-defer source "{{ file }}" {% endfor %}'

@@ -8,8 +8,10 @@ zsh_log $0 'Configuring fzf'
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/usr/share/fzf/key-bindings.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+#source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

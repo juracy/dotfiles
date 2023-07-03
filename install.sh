@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES="$HOME/.dotfiles"
+DOTFILES="$HOME/workspace/dotfiles"
 GITCONFIG=$HOME/.gitconfig
 GITCONFIG_PERSONAL=$HOME/.gitconfig-personal
 
