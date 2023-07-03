@@ -2,23 +2,28 @@
 {
   // Core
   "breadcrumbs.enabled": true,
+  "CodeGPT.query.language": "Portuguese",
   "diffEditor.renderSideBySide": true,
-  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeLensFontFamily": "Ubuntu",
   "editor.codeLensFontSize": 12,
   "editor.columnSelection": false,
   "editor.fontFamily": "Iosevka, Victor Mono, Operator Mono, Noto Color Emoji, JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 20,
-  "editor.fontWeight": "300",
-  "editor.formatOnSave": true,
-  "editor.letterSpacing": 0.25,
-  "editor.lineHeight": 24,
+  "editor.fontWeight": "100",
+  "editor.formatOnSave": false,
+  "editor.guides.bracketPairs": false,
+  "editor.language.brackets": [],
+  "editor.letterSpacing": 0.5,
+  "editor.lineHeight": 1.35,
+  "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
   "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "selection",
   "editor.semanticHighlighting.enabled": true,
   "editor.snippetSuggestions": "top",
+  "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "on",
   "editor.tabSize": 4,
@@ -48,6 +53,7 @@
     "**/*.cache": true,
     "**/diag-????????????????????????????????.*": true,
     "**/.sass-cache": true,
+    "**/.angular/cache": true,
     "**/staticfiles": true,
     "**/CVS": true,
     "**/*.js": { "when": "$(basename).ts" },
@@ -80,9 +86,9 @@
     "**/*.js": { "when": "$(basename).ts" },
     "**/*.js.map": true
   },
-  "terminal.integrated.automationShell.linux": "/bin/bash",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.fontFamily": "Iosevka",
+  "terminal.integrated.fontSize": 20,
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.gpuAcceleration": "on",
   "terminal.integrated.profiles.linux": {
@@ -101,7 +107,8 @@
   "window.dialogStyle": "custom",
   "window.titleSeparator": " 🟄 ",
   "window.zoomLevel": 1,
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "activityBarBadge.background": "#FF4081",
@@ -176,21 +183,8 @@
   },
   "cSpell.language": "pt-BR,en,pt",
   "cSpell.userWords": [
-    "Antora",
-    "Deserialize",
-    "Eup",
-    "Eupólemo",
-    "Gitlab",
-    "Indentação",
-    "Injectable",
-    "Iosevka",
-    "Juracy",
-    "Kubernetes",
-    "Microservice",
-    "Microservices",
-    "Microsserviços",
-    "Truthy",
     "adoc",
+    "Antora",
     "automatiz",
     "automatizável",
     "backend",
@@ -201,16 +195,27 @@
     "consts",
     "conteinerizada",
     "conteinerizados",
+    "Deserialize",
     "devs",
     "devtools",
     "exclusao",
+    "Gitlab",
     "gmail",
+    "Indentação",
+    "Injectable",
     "io",
+    "Iosevka",
+    "Juracy",
     "k",
+    "Kg",
+    "Kubernetes",
     "kustomization",
     "kustomize",
-    "kustomize config k s io v beta",
     "lemo",
+    "Microservice",
+    "Microservices",
+    "Microsserviços",
+    "ngxs",
     "o",
     "paginator",
     "pytest",
@@ -226,10 +231,12 @@
     "stdlib",
     "techdocs",
     "trello",
+    "Truthy",
     "v",
     "vel",
     "version",
     "versionável",
+    "whatsapp",
     "youtube"
   ],
   "materialTheme.accent": "Pink",
@@ -299,6 +306,9 @@
   "[asciidoc]": {
     "editor.wordWrap": "on"
   },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -308,21 +318,22 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.formatOnType": true
   },
   "[typescript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "plantuml.server": "http://localhost/plantuml",
+  "plantuml.server": "https://kroki.io/plantuml",
   "plantuml.render": "PlantUMLServer",
   "plantuml.urlFormat": "svg",
   "asciidoc.use_kroki": true,
   "vscodeWorkspaceSwitcher.showTreeView": true,
   "vs-kubernetes": {
     "vs-kubernetes.namespace": "",
-    "vs-kubernetes.kubectl-path": "/home/linuxbrew/.linuxbrew/bin/kubectl",
-    "vs-kubernetes.helm-path": "/home/linuxbrew/.linuxbrew/bin/kubectl",
+    "vs-kubernetes.kubectl-path": "/usr/bin/kubectl",
+    "vs-kubernetes.helm-path": "/usr/bin/kubectl",
     "vs-kubernetes.draft-path": "",
     "vs-kubernetes.minikube-path": "",
     "vs-kubernetes.kubectlVersioning": "user-provided",
@@ -340,9 +351,12 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "errorLens.fontWeight": "300",
-  "errorLens.exclude": ["Unknown word."],
-  "hadolint.hadolintPath": "/home/linuxbrew/.linuxbrew/bin/hadolint",
+  "errorLens.fontWeight": "100",
+  "errorLens.exclude": [
+    "Unknown word.",
+    "\"Kg\": Forbidden word\\."
+  ],
+  "hadolint.hadolintPath": "/usr/bin/hadolint",
   "redhat.telemetry.enabled": true,
   "errorLens.enabledDiagnosticLevels": ["error", "warning", "info"],
   "notebook.cellToolbarLocation": {
@@ -354,5 +368,29 @@
     "bsv": "|",
     "adoc": "|"
   },
-  "pylance.insidersChannel": "daily"
+  "prettier.arrowParens": "avoid",
+  "remote.SSH.defaultExtensions": [
+    "gitpod.gitpod-remote-ssh"
+  ],
+  "git.enableSmartCommit": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.enabled": false,
+  "settingsSync.ignoredSettings": [
+    "configurationSync.store"
+  ],
+  "configurationSync.store": {
+    "url": "https://gitpod.io/code-sync",
+    "stableUrl": "https://gitpod.io/code-sync",
+    "insidersUrl": "https://gitpod.io/code-sync",
+    "canSwitch": false,
+    "authenticationProviders": {
+      "gitpod": {
+        "scopes": [
+          "function:accessCodeSyncStorage",
+          "function:getLoggedInUser",
+          "resource:default"
+        ]
+      }
+    }
+  }
 }
