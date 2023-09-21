@@ -106,7 +106,6 @@
   "terminal.integrated.tabs.enabled": true,
   "window.dialogStyle": "custom",
   "window.titleSeparator": " 🟄 ",
-  "window.zoomLevel": 1,
   "workbench.colorTheme": "Default Dark+",
   "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.iconTheme": "material-icon-theme",
@@ -392,5 +391,15 @@
         ]
       }
     }
-  }
+  },
+  "editor.inlineSuggest.enabled": true,
+  "window.zoomLevel": 2,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false
+  },
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 0.6
 }
