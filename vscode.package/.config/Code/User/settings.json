@@ -1,19 +1,21 @@
 // Place your settings in this file to overwrite the default settings
 {
   // Core
+  "accessibility.dimUnfocused.enabled": true,
+  "accessibility.dimUnfocused.opacity": 0.6,
   "breadcrumbs.enabled": true,
-  "CodeGPT.query.language": "Portuguese",
   "diffEditor.renderSideBySide": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "editor.codeLensFontFamily": "Ubuntu",
   "editor.codeLensFontSize": 12,
   "editor.columnSelection": false,
-  "editor.fontFamily": "Iosevka, Victor Mono, Operator Mono, Noto Color Emoji, JetBrains Mono",
+  "editor.fontFamily": "Iosevka, Victor Mono, Noto Color Emoji, JetBrains Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 20,
   "editor.fontWeight": "100",
   "editor.formatOnSave": false,
   "editor.guides.bracketPairs": false,
+  "editor.inlineSuggest.enabled": true,
   "editor.language.brackets": [],
   "editor.letterSpacing": 0.5,
   "editor.lineHeight": 1.35,
@@ -63,7 +65,7 @@
   "git.confirmSync": false,
   "git.untrackedChanges": "separate",
   "http.proxyStrictSSL": false,
-  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
   "search.exclude": {
     "**/node_modules": true,
     "**/yarn-error.log": true,
@@ -106,8 +108,9 @@
   "terminal.integrated.tabs.enabled": true,
   "window.dialogStyle": "custom",
   "window.titleSeparator": " 🟄 ",
-  "workbench.colorTheme": "Default Dark+",
+  "window.zoomLevel": 2,
   "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorCustomizations": {
     "activityBarBadge.background": "#FF4081",
@@ -133,7 +136,6 @@
     "editor.findMatchBorder": "#FF4081",
     "selection.background": "#FF408140"
   },
-  "workbench.editor.untitled.hint": "hidden",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
@@ -153,21 +155,6 @@
     "markers": ["TODO:"],
     "autoDefaultMarkers": true
   },
-  "vscodeWorkspaceSwitcher.paths": ["/home/juracy/workspace/vscode-workspaces"],
-  "gitlens.keymap": "chorded",
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true
-  },
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true,
-  "gitlens.hovers.currentLine.over": "line",
   "emojisense.languages": {
     "asciidoc": true,
     "markdown": true,
@@ -284,52 +271,20 @@
     "typescript": "ts-node",
     "vbscript": "cscript //Nologo"
   },
-  "kite.showWelcomeNotificationOnStartup": false,
-  "python.analysis.typeCheckingMode": "basic",
-  "python.coverageView.highlight": "rgba(255,0,255,.05)",
-  "python.defaultInterpreterPath": "/usr/bin/python3",
-  "python.linting.flake8Enabled": true,
-  "python.linting.pycodestylePath": "pycodestyle",
-  "python.linting.pylintArgs": ["--load-plugins pylint_django"],
-  "python.linting.pylintEnabled": true,
-  "python.pythonPath": "/usr/bin/python3",
-  "python.languageServer": "Pylance",
-  "pythonPreview.hideCode": true,
   "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.tsserver.log": "off",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "wolf.pythonPath": "/usr/bin/python3",
 
   // Enable per-language
   "[asciidoc]": {
     "editor.wordWrap": "on"
   },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.formatOnSave": false,
-    "editor.formatOnType": true
-  },
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "plantuml.server": "https://kroki.io/plantuml",
   "plantuml.render": "PlantUMLServer",
   "plantuml.urlFormat": "svg",
-  "asciidoc.use_kroki": true,
-  "vscodeWorkspaceSwitcher.showTreeView": true,
+  "asciidoc.extensions.enableKroki": true,
   "vs-kubernetes": {
     "vs-kubernetes.namespace": "",
     "vs-kubernetes.kubectl-path": "/usr/bin/kubectl",
@@ -363,44 +318,17 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "autoAlign.associations": {
-    "csv": ",",
-    "bsv": "|",
-    "adoc": "|"
-  },
-  "prettier.arrowParens": "avoid",
   "remote.SSH.defaultExtensions": [
     "gitpod.gitpod-remote-ssh"
   ],
   "git.enableSmartCommit": true,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.enabled": false,
   "settingsSync.ignoredSettings": [
     "configurationSync.store"
   ],
-  "configurationSync.store": {
-    "url": "https://gitpod.io/code-sync",
-    "stableUrl": "https://gitpod.io/code-sync",
-    "insidersUrl": "https://gitpod.io/code-sync",
-    "canSwitch": false,
-    "authenticationProviders": {
-      "gitpod": {
-        "scopes": [
-          "function:accessCodeSyncStorage",
-          "function:getLoggedInUser",
-          "resource:default"
-        ]
-      }
-    }
-  },
-  "editor.inlineSuggest.enabled": true,
-  "window.zoomLevel": 2,
   "github.copilot.enable": {
     "*": true,
     "plaintext": true,
     "markdown": false,
     "scminput": false
-  },
-  "accessibility.dimUnfocused.enabled": true,
-  "accessibility.dimUnfocused.opacity": 0.6
+  }
 }

@@ -77,3 +77,5 @@
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [http]
 	postBuffer = 52428800
+[user]
+	name = Juracy Filho
