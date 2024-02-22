@@ -1,0 +1,23 @@
+[Added Associations]
+application/vnd.comicbook+zip=mcomix.desktop;
+application/x-cdisplay=mcomix.desktop;
+application/xhtml+xml=google-chrome.desktop;
+video/mp4=mpv.desktop;
+video/quicktime=mpv.desktop;
+video/x-matroska=mpv.desktop;
+
+[Default Applications]
+application/pdf=org.gnome.Evince.desktop;
+image/jpeg=org.gnome.eog.desktop;
+image/png=org.gnome.eog.desktop;
+image/svg+xml=org.gnome.eog.desktop;
+inode/directory=org.gnome.Nautilus.desktop;
+text/plain=org.gnome.TextEditor.desktop;
+x-scheme-handler/whatsapp=io.github.mimbrero.WhatsAppDesktop.desktop;
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop;
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
