@@ -24,13 +24,58 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, qtile, widget
+from collections import defaultdict
+import os.path
+import subprocess
+
+from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+from libqtile.log_utils import logger
+# from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+# terminal = guess_terminal()
+terminal = 'kitty'
+home = os.path.expanduser('~')
+
+background = '/usr/share/backgrounds/archlinux/sunset.jpg'
+apps = {
+    'rofi': 'rofi -combi-modi window,drun -show combi -modi combi',
+    'lock': f'i3lock -n --image {background}',
+    'suspend': f'notify-send "suspending..." && i3lock --image {background} && sleep 2 && systemctl suspend -i',
+    'screenshot': 'flameshot gui',
+    'media_play': 'playerctl play-pause',
+    'media_next': 'playerctl next',
+    'media_prev': 'playerctl prev',
+    'volume_mute': 'pamixer -t',
+    'volume_up': 'pamixer -u -i 5',
+    'volume_down': 'pamixer -u -d 5',
+    'terminal': terminal,
+    'browser': 'google-chrome-stable',
+    'editor': 'code',
+    'teams': 'teams',
+    'whatsapp': 'whatsapp',
+    'files': 'nautilus',
+    'bga': '/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pogkokppkghfaeboimdkfifmcmlhngnl',
+}
+
+pref_apps = defaultdict(lambda: f'notify-send "Sem aplicativo associado ao grupo: {qtile.current_group.name}"', {
+    '1': apps['browser'],
+    '2': apps['terminal'],
+    '3': apps['editor'],
+    '4': apps['whatsapp'],
+    '5': apps['teams'],
+    '6': apps['bga'],
+})
+
+
+@lazy.function
+def run_preferred_app(qtile):
+    app = pref_apps[qtile.current_group.name]
+    logger.warning(f'Running: {app}')
+    qtile.spawn(app)
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -64,20 +109,33 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "x", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
         "f",
         lazy.window.toggle_fullscreen(),
         desc="Toggle fullscreen on the focused window",
     ),
-    Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    Key([mod], 't', run_preferred_app(), desc='run preferred app for window'),
+    Key([mod, 'control'], 'space', lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn(apps['rofi']), desc="Spawn a command using a prompt widget"),
+
+    # Personal
+    Key([mod, 'control'], 'l', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
+    Key([mod], 'l', lazy.spawn(apps['lock']), desc='Travar a tela'),
+    Key([], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot'),
+    Key([mod], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot (alt)'),
+
+    # Mídia e volume
+    Key([], 'XF86AudioRaiseVolume', lazy.spawn(apps['volume_up']), desc='Aumentar o volume'),
+    Key([], 'XF86AudioLowerVolume', lazy.spawn(apps['volume_down']), desc='Baixar o volume'),
+    Key([], 'XF86AudioMute', lazy.spawn(apps['volume_mute']), desc='Mutar o volume'),
+    Key([], 'XF86AudioPlay', lazy.spawn(apps['media_play']), desc='Play/Pause da mídia atual'),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -132,20 +190,22 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
+    layout.VerticalTile(),
     # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
+    font="Ubuntu",
+    fontsize=16,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        wallpaper=background,
+        wallpaper_mode='fill',
+        top=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
@@ -157,13 +217,19 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 widget.Systray(),
+                widget.Sep(),
+                widget.BatteryIcon(),
+                # widget.Net(),
+                widget.CPU(),
+                widget.Sep(),
+                widget.Memory(measure_mem='G'),
+                widget.Sep(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
+                widget.Sep(),
+                widget.QuickExit(default_text='Sair'),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
@@ -173,6 +239,18 @@ screens = [
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
+    ),
+    Screen(
+        wallpaper=background,
+        wallpaper_mode='fill',
+        top=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.Sep(),
+                widget.TextBox("Secondary Screen"),
+            ],
+            24,
+        )
     ),
 ]
 
@@ -221,3 +299,13 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+
+@hook.subscribe.startup_once
+def autostart_once():
+    subprocess.call(f'{home}/.config/qtile/autostart_once.sh')
+
+
+@hook.subscribe.startup
+def autostart():
+    subprocess.call(f'{home}/.config/qtile/autostart.sh')
