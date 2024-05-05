@@ -32,7 +32,7 @@
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?⟨⟩“”",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "onlySelectedExtensions",
   "extensions.ignoreRecommendations": false,
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
