@@ -32,12 +32,14 @@ from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
-# from libqtile.utils import guess_terminal
 
 mod = "mod4"
-# terminal = guess_terminal()
 terminal = 'kitty'
 home = os.path.expanduser('~')
+google_chrome_apps = {
+    'teams': 'cifhbcnohmdccbgoicgdjpfamggdegmo',
+    'bga': 'pogkokppkghfaeboimdkfifmcmlhngnl',
+}
 
 background = '/usr/share/backgrounds/archlinux/sunset.jpg'
 apps = {
@@ -45,19 +47,25 @@ apps = {
     'lock': f'i3lock -n --image {background}',
     'suspend': f'notify-send "suspending..." && i3lock --image {background} && sleep 2 && systemctl suspend -i',
     'screenshot': 'flameshot gui',
-    'media_play': 'playerctl play-pause',
+    'media_play': 'playerctl play-pause && notify-send "Play/pause" -t 1000',
     'media_next': 'playerctl next',
-    'media_prev': 'playerctl prev',
+    'media_prev': 'playerctl previous',
     'volume_mute': 'pamixer -t',
     'volume_up': 'pamixer -u -i 5',
     'volume_down': 'pamixer -u -d 5',
     'terminal': terminal,
     'browser': 'google-chrome-stable',
     'editor': 'code',
-    'teams': 'teams',
-    'whatsapp': 'whatsapp',
+    'teams': f'google-chrome-stable "--profile-directory=Profile 6" --app-id={google_chrome_apps["teams"]}',
+    'whatsapp': 'flatpak run io.github.mimbrero.WhatsAppDesktop',
     'files': 'nautilus',
-    'bga': '/opt/google/chrome/google-chrome --profile-directory=Default --app-id=pogkokppkghfaeboimdkfifmcmlhngnl',
+    'bga': f'google-chrome-stable --profile-directory=Default --app-id={google_chrome_apps["bga"]}',
+    'mixer': 'pavucontrol',
+    'kbcfg': 'setxkbmap -layout "br" -model pc105 -option "grp:menu_toggle,compose:sclk"',
+    'wifi_on': 'nmcli radio wifi on',
+    'wifi_off': 'nmcli radio wifi off',
+    'calc': 'gnome-calculator',
+    'logseq': 'logseq',
 }
 
 pref_apps = defaultdict(lambda: f'notify-send "Sem aplicativo associado ao grupo: {qtile.current_group.name}"', {
@@ -67,6 +75,7 @@ pref_apps = defaultdict(lambda: f'notify-send "Sem aplicativo associado ao grupo
     '4': apps['whatsapp'],
     '5': apps['teams'],
     '6': apps['bga'],
+    '7': apps['logseq']
 })
 
 
@@ -75,6 +84,26 @@ def run_preferred_app(qtile):
     app = pref_apps[qtile.current_group.name]
     logger.warning(f'Running: {app}')
     qtile.spawn(app)
+
+
+@lazy.function
+def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen:
+            qtile.cmd_to_screen(i - 1)
+
+
+@lazy.function
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen:
+            qtile.cmd_to_screen(i + 1)
 
 
 keys = [
@@ -124,18 +153,33 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawn(apps['rofi']), desc="Spawn a command using a prompt widget"),
+    Key([], 'XF86Search', lazy.spawn(apps['rofi']), desc='Spawn a command using a prompt widget'),
+    Key([mod, 'control'], 'z', lazy.spawn(apps['wifi_on']), desc='Liga o wifi'),
+    Key([mod, 'control'], 'x', lazy.spawn(apps['wifi_off']), desc='Desliga o wifi'),
 
     # Personal
+    # Fn keys: https://github.com/qtile/qtile/blob/master/libqtile/backend/x11/xkeysyms.py
     Key([mod, 'control'], 'l', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
+    Key([], 'XF86Suspend', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
     Key([mod], 'l', lazy.spawn(apps['lock']), desc='Travar a tela'),
+    Key([mod], 'o', window_to_next_screen(switch_screen=True), desc='Mover janela atual para outro monitor'),
     Key([], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot'),
     Key([mod], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot (alt)'),
 
     # Mídia e volume
     Key([], 'XF86AudioRaiseVolume', lazy.spawn(apps['volume_up']), desc='Aumentar o volume'),
-    Key([], 'XF86AudioLowerVolume', lazy.spawn(apps['volume_down']), desc='Baixar o volume'),
+    Key([], 'XF86AudioLowerVolume', lazy.widget["volume"].decrease_vol(), desc='Baixar o volume'),
+
+    # TODO: Implementar um find or run
+    Key([mod], 'XF86AudioMute', lazy.spawn(apps['mixer']), desc='Carregar o mixer de áudio'),
     Key([], 'XF86AudioMute', lazy.spawn(apps['volume_mute']), desc='Mutar o volume'),
-    Key([], 'XF86AudioPlay', lazy.spawn(apps['media_play']), desc='Play/Pause da mídia atual'),
+    Key([], 'XF86AudioPlay', lazy.spawn(apps['media_play'], shell=True), desc='Play/Pause da mídia atual'),
+    Key([], 'XF86AudioPrev', lazy.spawn(apps['media_prev']), desc='Anterior no player atual'),
+    Key([], 'XF86AudioNext', lazy.spawn(apps['media_next']), desc='Próximo no player atual'),
+
+    Key([mod], 'z', lazy.spawn(apps['kbcfg']), desc='Reconfiguração do teclado'),
+    Key([mod], 'e', lazy.spawn(apps['files']), desc='Navegador de arquivos'),
+    Key([], 'XF86Calculator', lazy.spawn(apps['calc']), desc='Calculadora'),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -180,6 +224,7 @@ for i in groups:
 
 layouts = [
     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.VerticalTile(),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -190,7 +235,6 @@ layouts = [
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
-    layout.VerticalTile(),
     # layout.Zoomy(),
 ]
 
@@ -221,12 +265,15 @@ screens = [
                 # widget.StatusNotifier(),
                 widget.Systray(),
                 widget.Sep(),
-                widget.BatteryIcon(),
+                widget.BatteryIcon(mouse_callbacks={
+                    'Button1': lambda: qtile.cmd_spawn('notify-send "Bateria" "$(acpi -b)"', shell=True),
+                }),
                 # widget.Net(),
                 widget.CPU(),
                 widget.Sep(),
                 widget.Memory(measure_mem='G'),
                 widget.Sep(),
+                widget.Notify(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.Sep(),
                 widget.QuickExit(default_text='Sair'),
@@ -246,6 +293,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(),
+                widget.GroupBox(),
                 widget.Sep(),
                 widget.TextBox("Secondary Screen"),
             ],
@@ -267,6 +315,16 @@ follow_mouse_focus = True
 bring_front_click = False
 floats_kept_above = True
 cursor_warp = False
+
+
+def popup_rules(window):
+    # info = window.info()
+    role = window.get_wm_role()
+    wm_class = window.get_wm_class()
+    is_google_chrome_app = [f'crx_{app}' in wm_class for app in google_chrome_apps.values()]
+    return role == 'pop-up' and not any(is_google_chrome_app)
+
+
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
@@ -277,6 +335,9 @@ floating_layout = layout.Floating(
         Match(wm_class="ssh-askpass"),  # ssh-askpass
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
+        Match(func=popup_rules),  # Bitwarden
+        Match(wm_class='Pavucontrol'),  # pavucontrol
+        Match(wm_class='gnome-calculator'),  # gnome-calculator
     ]
 )
 auto_fullscreen = True
@@ -309,3 +370,14 @@ def autostart_once():
 @hook.subscribe.startup
 def autostart():
     subprocess.call(f'{home}/.config/qtile/autostart.sh')
+
+
+@hook.subscribe.client_new
+def disable_floating(window):
+    rules = [
+        Match(wm_class="mpv")
+    ]
+
+    if any(window.match(rule) for rule in rules):
+        window.togroup(qtile.current_group.name)
+        window.cmd_disable_floating()
