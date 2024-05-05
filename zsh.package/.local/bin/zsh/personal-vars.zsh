@@ -1,11 +1,4 @@
-VISUAL=vim
-EDITOR=$VISUAL
-APPDATA=$HOME/.config
-XDG_CURRENT_DESKTOP=GNOME
-XDG_CONFIG_HOME=$HOME/.config
-
-LOCALBIN=$HOME/.local/bin
-PATH=$LOCALBIN:$PATH:$HOME/.krew/bin
+zsh_log $0 'Configuring vars'
 
 if which yarn > /dev/null; then
     YARNBIN=$(yarn global bin)
