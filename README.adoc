@@ -5,6 +5,7 @@ Juracy Filho's Dot Files
 
 === Requirements
 
+* GNU stow
 * git
 * zsh
 * https://github.com/Homebrew/brew[Homebrew]
