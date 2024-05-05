@@ -51,14 +51,17 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
 [fetch]
 	prune = true
+
 [rebase]
 	autosquash = true
 	autoStash = true
+
 [diff]
 	tool = meld
-    colorMoved = default
+  colorMoved = default
 
 [pull]
 	rebase = false
@@ -67,15 +70,17 @@
 	defaultBranch = main
 
 [interactive]
-    diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [add.interactive]
-    useBuiltin = false # required for git 2.37.0
+  useBuiltin = false # required for git 2.37.0
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
 [http]
 	postBuffer = 52428800
+
 [user]
 	name = Juracy Filho
