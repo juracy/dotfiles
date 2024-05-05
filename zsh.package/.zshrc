@@ -47,5 +47,3 @@ compinit
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-
-source /home/juracy/.config/broot/launcher/bash/br
