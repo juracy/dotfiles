@@ -48,7 +48,4 @@ compinit
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
 
-if [[ "$POETRY_ACTIVE" == "" ]]; then
-  fastfetch --kitty $HOME/.logo.png
-fi
 
