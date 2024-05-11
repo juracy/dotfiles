@@ -41,7 +41,7 @@ google_chrome_apps = {
     'bga': 'pogkokppkghfaeboimdkfifmcmlhngnl',
 }
 
-background = '/usr/share/backgrounds/archlinux/sunset.jpg'
+background = f'{home}/.assets/sunset.png'
 apps = {
     'rofi': 'rofi -combi-modi window,drun -show combi -modi combi',
     'lock': f'i3lock -n --image {background}',

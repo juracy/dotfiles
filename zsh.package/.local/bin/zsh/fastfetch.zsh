@@ -1,6 +1,6 @@
 zsh_log $0 "Configuring fastfetch"
 
-LOGO=$HOME/.logo.png
+LOGO=$HOME/.assets/logo.png
 if [[ $TERM_PROGRAM != *vscode* && $POETRY_ACTIVE == "" ]]; then
-    fastfetch --logo-width 40 --kitty $LOGO
+    fastfetch --key-width 20 --logo-width 40 --logo-padding-top 5 --kitty $LOGO
 fi
