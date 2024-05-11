@@ -73,7 +73,7 @@ function delete()
                   file_name = string.format("%s_%d", file_name, i)
                end
             end
-            
+
             local movedPath = utils.join_path(options.DeletedFilesPath, file_name)
             local fileInfo = utils.file_info(movedPath)
             if not fileInfo then
@@ -82,8 +82,14 @@ function delete()
             end
          end
       else
-         print("deleting: "..v)
-         os.remove(v)
+         local args = { 'gio', 'trash', v }
+         local response = utils.subprocess({ args = args, cancellable = false })
+         if response.error == nil and response.status == 0 then
+            print("deleting: "..v)
+         else
+            if response.error == nil then response.error = "" end
+            print("There was an error deleting the file: "..v)
+         end
       end
    end
 end
