@@ -14,4 +14,6 @@ zsh_log $0 'Configuring fzf'
 # ------------
 #source "$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh"
 
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -l $realpath'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
