@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dotfiles"
+version = "0.1.0"
+description = ""
+authors = ["Juracy Filho <juracy@gmail.com>"]
+readme = "README.adoc"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+qtile = "^0.26.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.format]
+quote-style = 'single'
