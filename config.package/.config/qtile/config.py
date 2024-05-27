@@ -66,6 +66,7 @@ apps = {
     'wifi_off': 'nmcli radio wifi off',
     'calc': 'gnome-calculator',
     'logseq': 'logseq',
+    'layout': f'{home}/.local/bin/layout_setup.sh auto',
 }
 
 pref_apps = defaultdict(lambda: f'notify-send "Sem aplicativo associado ao grupo: {qtile.current_group.name}"', {
@@ -159,7 +160,8 @@ keys = [
 
     # Personal
     # Fn keys: https://github.com/qtile/qtile/blob/master/libqtile/backend/x11/xkeysyms.py
-    Key([mod, 'control'], 'l', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
+    # Key([mod, 'control'], 'l', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
+    Key([mod, 'control'], 'm', lazy.spawn(apps['layout'], shell=True), desc='Layout Automático'),
     Key([], 'XF86Suspend', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
     Key([mod], 'l', lazy.spawn(apps['lock']), desc='Travar a tela'),
     Key([mod], 'o', window_to_next_screen(switch_screen=True), desc='Mover janela atual para outro monitor'),
