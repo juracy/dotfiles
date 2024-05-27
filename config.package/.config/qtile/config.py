@@ -70,7 +70,7 @@ apps = {
 }
 
 pref_apps = defaultdict(
-    lambda: f'notify-send "Sem aplicativo associado ao grupo: {qtile.current_group.name}"',
+    lambda: f'notify-send "There isn''t app for this group: {qtile.current_group.name}"',
     {
         '1': apps['browser'],
         '2': apps['terminal'],
@@ -182,8 +182,8 @@ keys = [
         lazy.spawn(apps['rofi']),
         desc='Spawn a command using a prompt widget',
     ),
-    Key([mod, 'control'], 'z', lazy.spawn(apps['wifi_on']), desc='Liga o wifi'),
-    Key([mod, 'control'], 'x', lazy.spawn(apps['wifi_off']), desc='Desliga o wifi'),
+    Key([mod, 'control'], 'z', lazy.spawn(apps['wifi_on']), desc='Power on wifi'),
+    Key([mod, 'control'], 'x', lazy.spawn(apps['wifi_off']), desc='Power off wifi'),
     # Personal
     # Fn keys: https://github.com/qtile/qtile/blob/master/libqtile/backend/x11/xkeysyms.py
     # Key([mod, 'control'], 'l', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
@@ -191,15 +191,15 @@ keys = [
         [mod, 'control'],
         'm',
         lazy.spawn(apps['layout'], shell=True),
-        desc='Layout Automático',
+        desc='Configure layout',
     ),
-    Key([], 'XF86Suspend', lazy.spawn(apps['suspend'], shell=True), desc='Suspender'),
-    Key([mod], 'l', lazy.spawn(apps['lock']), desc='Travar a tela'),
+    Key([], 'XF86Suspend', lazy.spawn(apps['suspend'], shell=True), desc='Suspend'),
+    Key([mod], 'l', lazy.spawn(apps['lock']), desc='Lock the screen'),
     Key(
         [mod],
         'o',
         window_to_next_screen(switch_screen=True),
-        desc='Mover janela atual para outro monitor',
+        desc='Move current window to another monitor',
     ),
     Key([], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot'),
     Key([mod], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot (alt)'),
@@ -208,43 +208,43 @@ keys = [
         [],
         'XF86AudioRaiseVolume',
         lazy.spawn(apps['volume_up']),
-        desc='Aumentar o volume',
+        desc='Raise up volume',
     ),
     Key(
         [],
         'XF86AudioLowerVolume',
         lazy.widget['volume'].decrease_vol(),
-        desc='Baixar o volume',
+        desc='Lower down volume',
     ),
     # TODO: Implementar um find or run
     Key(
         [mod],
         'XF86AudioMute',
         lazy.spawn(apps['mixer']),
-        desc='Carregar o mixer de áudio',
+        desc='Load mixer',
     ),
-    Key([], 'XF86AudioMute', lazy.spawn(apps['volume_mute']), desc='Mutar o volume'),
+    Key([], 'XF86AudioMute', lazy.spawn(apps['volume_mute']), desc='Mute volume'),
     Key(
         [],
         'XF86AudioPlay',
         lazy.spawn(apps['media_play'], shell=True),
-        desc='Play/Pause da mídia atual',
+        desc='Play/Pause the current player',
     ),
     Key(
         [],
         'XF86AudioPrev',
         lazy.spawn(apps['media_prev']),
-        desc='Anterior no player atual',
+        desc='Previous on the current player',
     ),
     Key(
         [],
         'XF86AudioNext',
         lazy.spawn(apps['media_next']),
-        desc='Próximo no player atual',
+        desc='Next on the current player',
     ),
-    Key([mod], 'z', lazy.spawn(apps['kbcfg']), desc='Reconfiguração do teclado'),
-    Key([mod], 'e', lazy.spawn(apps['files']), desc='Navegador de arquivos'),
-    Key([], 'XF86Calculator', lazy.spawn(apps['calc']), desc='Calculadora'),
+    Key([mod], 'z', lazy.spawn(apps['kbcfg']), desc='Reset keyboard layout'),
+    Key([mod], 'e', lazy.spawn(apps['files']), desc='File manager'),
+    Key([], 'XF86Calculator', lazy.spawn(apps['calc']), desc='Calculator'),
 ]
 
 # Add key bindings to switch VTs in Wayland.
