@@ -38,13 +38,10 @@ from settings.consts import apps, background, home, google_chrome_apps, preferre
 
 mod = 'mod4'
 
-pref_apps = defaultdict(
-    lambda: f'notify-send -u critical "There isn''t app for this group: {qtile.current_group.name}"',
-    preferred_apps,
-)
-
 @lazy.function
 def run_preferred_app(qtile):
+    fail = lambda: f'notify-send -t 1000 -u critical "There isn\'t app for this group: {qtile.current_group.name}"'
+    pref_apps = defaultdict(fail, preferred_apps)
     app = pref_apps[qtile.current_group.name]
     logger.warning(f'Running: {app}')
     qtile.spawn(app)
