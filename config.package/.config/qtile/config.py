@@ -70,6 +70,7 @@ apps = {
     'calc': 'gnome-calculator',
     'logseq': 'logseq',
     'layout': f'{home}/.local/bin/layout_setup.sh auto',
+    'layout-right-wide': f'{home}/.local/bin/layout_setup.sh right-wide',
 }
 
 pref_apps = defaultdict(
@@ -196,6 +197,12 @@ keys = [
         'm',
         lazy.spawn(apps['layout'], shell=True),
         desc='Configure layout',
+    ),
+    Key(
+        [mod, 'control'],
+        'n',
+        lazy.spawn(apps['layout-right-wide'], shell=True),
+        desc='Configure layout (right wide)',
     ),
     Key([], 'XF86Suspend', lazy.spawn(apps['suspend'], shell=True), desc='Suspend'),
     Key([mod], 'l', lazy.spawn(apps['lock']), desc='Lock the screen'),
