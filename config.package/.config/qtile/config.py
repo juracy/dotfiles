@@ -33,6 +33,9 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 
+from settings.mic_widget import MicWidget
+
+
 mod = 'mod4'
 terminal = 'kitty'
 home = os.path.expanduser('~')
@@ -182,6 +185,7 @@ keys = [
         lazy.spawn(apps['rofi']),
         desc='Spawn a command using a prompt widget',
     ),
+    Key([mod], 'm', lazy.widget['micwidget'].toggle(), desc='Mic toggle'),
     Key([mod, 'control'], 'z', lazy.spawn(apps['wifi_on']), desc='Power on wifi'),
     Key([mod, 'control'], 'x', lazy.spawn(apps['wifi_off']), desc='Power off wifi'),
     # Personal
@@ -345,6 +349,7 @@ screens = [
                 widget.Notify(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                 widget.Sep(),
+                MicWidget(),
                 widget.QuickExit(default_text='Sair'),
             ],
             24,
