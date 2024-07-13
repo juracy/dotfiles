@@ -7,6 +7,8 @@ from libqtile.command.base import expose_command
 home = os.path.expanduser('~')
 assets = os.path.join(home, '.assets')
 
+UPDATE_INTERVAL = 30
+NOTIFY_TIMEOUT = 1000
 
 class MicWidget(base.ThreadPoolText):
     """Widget that shows the microphone status."""
@@ -14,7 +16,7 @@ class MicWidget(base.ThreadPoolText):
     defaults = [
         (
             "update_interval",
-            30,
+            UPDATE_INTERVAL,
             "Update interval in seconds, if none, the widget updates only once.",
         ),
     ]
@@ -43,9 +45,9 @@ class MicWidget(base.ThreadPoolText):
         if on != self.last_status:
             self.last_status = on
             if on:
-                notify = f'notify-send --icon {assets}/mic-ready.svg -t 500 -u critical LIGADO!'
+                notify = f'notify-send --icon {assets}/mic-ready.svg -t {NOTIFY_TIMEOUT} -u critical LIGADO!'
             else:
-                notify = f'notify-send --icon {assets}/mic-off.svg -t 500 DESLIGADO!'
+                notify = f'notify-send --icon {assets}/mic-off.svg -t {NOTIFY_TIMEOUT} -u low DESLIGADO!'
             self.qtile.spawn(notify)
             self._change_color(self._get_color(on))
         return ' 󰍬 ' if on else ' 󰍮 '
