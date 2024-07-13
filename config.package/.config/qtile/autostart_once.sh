@@ -29,7 +29,7 @@ pulseaudio -k &
 # Parece que não só piorou com o zed mais novo, como também não é mais necessário
 
 # Notification
-notify-send 'Autostart (once)' &
+notify-send -u low 'Autostart (once)' &
 
 # Starting picom (compositor)
 picom &

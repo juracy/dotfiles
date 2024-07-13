@@ -10,9 +10,9 @@ background = f'{home}/.assets/sunset.png'
 apps = {
     'rofi': 'rofi -combi-modi window,drun -show combi -modi combi',
     'lock': f'i3lock -n --image {background}',
-    'suspend': f'notify-send "suspending..." && i3lock --image {background} && sleep 2 && systemctl suspend -i',
+    'suspend': f'notify-send -u low "suspending..." && i3lock --image {background} && sleep 2 && systemctl suspend -i',
     'screenshot': 'flameshot gui',
-    'media_play': 'playerctl play-pause && notify-send "Play/pause" -t 1000',
+    'media_play': 'playerctl play-pause && notify-send -u low "Play/pause" -t 1000',
     'media_next': 'playerctl next',
     'media_prev': 'playerctl previous',
     'volume_mute': 'pamixer -t',

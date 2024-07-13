@@ -39,7 +39,7 @@ from settings.consts import apps, background, home, google_chrome_apps, preferre
 mod = 'mod4'
 
 pref_apps = defaultdict(
-    lambda: f'notify-send "There isn''t app for this group: {qtile.current_group.name}"',
+    lambda: f'notify-send -u critical "There isn''t app for this group: {qtile.current_group.name}"',
     preferred_apps,
 )
 
@@ -300,7 +300,7 @@ screens = [
                 widget.BatteryIcon(
                     mouse_callbacks={
                         'Button1': lambda: qtile.cmd_spawn(
-                            'notify-send "Bateria" "$(acpi -b)"', shell=True
+                            'notify-send -u low "Bateria" "$(acpi -b)"', shell=True
                         ),
                     }
                 ),
