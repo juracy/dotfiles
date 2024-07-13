@@ -25,7 +25,11 @@ xss-lock -- i3lock -n -i $HOME/.assets/sunset.png &
 pulseaudio -k &
 
 # Starting IBus (input manager)
-ibus-daemon -drxR
+# ibus-daemon -drxR
+# Parece que não só piorou com o zed mais novo, como também não é mais necessário
 
 # Notification
 notify-send 'Autostart (once)' &
+
+# Starting picom (compositor)
+picom &
