@@ -1,0 +1,12 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "f1": "command_palette::Toggle",
+      "ctrl-f3": "editor::FindAllReferences",
+      "ctrl-r": "projects::OpenRecent",
+      "ctrl-alt-c": "editor::CopyRelativePath",
+      "ctrl-shift-j": "terminal_panel::ToggleFocus"
+    }
+  }
+]
