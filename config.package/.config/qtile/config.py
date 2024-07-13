@@ -34,56 +34,13 @@ from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 
 from settings.mic_widget import MicWidget
-
+from settings.consts import apps, background, home, google_chrome_apps, preferred_apps
 
 mod = 'mod4'
-terminal = 'kitty'
-home = os.path.expanduser('~')
-google_chrome_apps = {
-    'teams': 'cifhbcnohmdccbgoicgdjpfamggdegmo',
-    'bga': 'pogkokppkghfaeboimdkfifmcmlhngnl',
-}
-
-background = f'{home}/.assets/sunset.png'
-apps = {
-    'rofi': 'rofi -combi-modi window,drun -show combi -modi combi',
-    'lock': f'i3lock -n --image {background}',
-    'suspend': f'notify-send "suspending..." && i3lock --image {background} && sleep 2 && systemctl suspend -i',
-    'screenshot': 'flameshot gui',
-    'media_play': 'playerctl play-pause && notify-send "Play/pause" -t 1000',
-    'media_next': 'playerctl next',
-    'media_prev': 'playerctl previous',
-    'volume_mute': 'pamixer -t',
-    'volume_up': 'pamixer -u -i 5',
-    'volume_down': 'pamixer -u -d 5',
-    'terminal': terminal,
-    'browser': 'google-chrome-stable',
-    'editor': 'code',
-    'teams': f'google-chrome-stable "--profile-directory=Profile 6" --app-id={google_chrome_apps["teams"]}',
-    'whatsapp': 'flatpak run io.github.mimbrero.WhatsAppDesktop',
-    'files': 'nautilus',
-    'bga': f'google-chrome-stable --profile-directory=Default --app-id={google_chrome_apps["bga"]}',
-    'mixer': 'pavucontrol',
-    'kbcfg': 'setxkbmap -layout "br" -model pc105 -option "grp:menu_toggle,compose:sclk"',
-    'wifi_on': 'nmcli radio wifi on',
-    'wifi_off': 'nmcli radio wifi off',
-    'calc': 'gnome-calculator',
-    'logseq': 'logseq',
-    'layout': f'{home}/.local/bin/layout_setup.sh auto',
-    'layout-right-wide': f'{home}/.local/bin/layout_setup.sh right-wide',
-}
 
 pref_apps = defaultdict(
     lambda: f'notify-send "There isn''t app for this group: {qtile.current_group.name}"',
-    {
-        '1': apps['browser'],
-        '2': apps['terminal'],
-        '3': apps['editor'],
-        '4': apps['whatsapp'],
-        '5': apps['teams'],
-        '7': apps['logseq'],
-        '8': apps['bga'],
-    },
+    preferred_apps,
 )
 
 @lazy.function
@@ -154,7 +111,7 @@ keys = [
         lazy.layout.toggle_split(),
         desc='Toggle between split and unsplit sides of stack',
     ),
-    Key([mod], 'x', lazy.spawn(terminal), desc='Launch terminal'),
+    Key([mod], 'x', lazy.spawn(apps['terminal']), desc='Launch terminal'),
     # Toggle between different layouts as defined below
     Key([mod], 'Tab', lazy.next_layout(), desc='Toggle between layouts'),
     Key([mod], 'q', lazy.window.kill(), desc='Kill focused window'),
