@@ -48,7 +48,7 @@ class MicWidget(base.ThreadPoolText):
                 notify = f'notify-send --icon {assets}/mic-off.svg -t 500 DESLIGADO!'
             self.qtile.spawn(notify)
             self._change_color(self._get_color(on))
-        return '' if on else ''
+        return ' 󰍬 ' if on else ' 󰍮 '
 
     @expose_command()
     def toggle(self):
