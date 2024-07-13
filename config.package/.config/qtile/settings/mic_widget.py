@@ -52,8 +52,20 @@ class MicWidget(base.ThreadPoolText):
             self._change_color(self._get_color(on))
         return ' 󰍬 ' if on else ' 󰍮 '
 
-    @expose_command()
-    def toggle(self):
-        stdout = check_output(['amixer', '-D', 'pulse', 'set', 'Capture', 'toggle'])
+    def _action(self, action):
+        stdout = check_output(['amixer', '-D', 'pulse', 'set', 'Capture', action])
         str(stdout)  # Wait for the command to finish
         self.force_update()
+
+
+    @expose_command()
+    def toggle(self):
+        self._action('toggle')
+
+    @expose_command()
+    def power_on(self):
+        self._action('cap')
+
+    @expose_command()
+    def power_off(self):
+        self._action('nocap')

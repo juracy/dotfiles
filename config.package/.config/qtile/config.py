@@ -143,6 +143,8 @@ keys = [
         desc='Spawn a command using a prompt widget',
     ),
     Key([mod], 'm', lazy.widget['micwidget'].toggle(), desc='Mic toggle'),
+    Key([mod, 'shift'], 'b', lazy.widget['micwidget'].power_on(), desc='Mic on'),
+    Key([mod, 'control'], 'b', lazy.widget['micwidget'].power_off(), desc='Mic off'),
     Key([mod, 'control'], 'z', lazy.spawn(apps['wifi_on']), desc='Power on wifi'),
     Key([mod, 'control'], 'x', lazy.spawn(apps['wifi_off']), desc='Power off wifi'),
     # Personal
