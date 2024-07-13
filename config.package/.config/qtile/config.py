@@ -81,11 +81,10 @@ pref_apps = defaultdict(
         '3': apps['editor'],
         '4': apps['whatsapp'],
         '5': apps['teams'],
-        '6': apps['bga'],
         '7': apps['logseq'],
+        '8': apps['bga'],
     },
 )
-
 
 @lazy.function
 def run_preferred_app(qtile):
