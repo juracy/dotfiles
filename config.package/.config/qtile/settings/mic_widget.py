@@ -45,9 +45,9 @@ class MicWidget(base.ThreadPoolText):
         if on != self.last_status:
             self.last_status = on
             if on:
-                notify = f'notify-send --icon {assets}/mic-ready.svg -t {NOTIFY_TIMEOUT} -u critical LIGADO!'
+                notify = f'notify-send --icon {assets}/mic-ready.svg -t {NOTIFY_TIMEOUT} -u critical MIC ON!'
             else:
-                notify = f'notify-send --icon {assets}/mic-off.svg -t {NOTIFY_TIMEOUT} -u low DESLIGADO!'
+                notify = f'notify-send --icon {assets}/mic-off.svg -t {NOTIFY_TIMEOUT} -u low MIC OFF!'
             self.qtile.spawn(notify)
             self._change_color(self._get_color(on))
         return ' 󰍬 ' if on else ' 󰍮 '
