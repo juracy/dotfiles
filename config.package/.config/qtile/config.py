@@ -384,6 +384,7 @@ floating_layout = layout.Floating(
         Match(func=popup_rules),  # Bitwarden
         Match(wm_class='Pavucontrol'),  # pavucontrol
         Match(wm_class='gnome-calculator'),  # gnome-calculator
+        Match(wm_class='mpv'),  # mpv
     ]
 )
 auto_fullscreen = True
@@ -416,12 +417,3 @@ def autostart_once():
 @hook.subscribe.startup
 def autostart():
     subprocess.call(f'{home}/.config/qtile/autostart.sh')
-
-
-@hook.subscribe.client_new
-def disable_floating(window):
-    rules = [Match(wm_class='mpv')]
-
-    if any(window.match(rule) for rule in rules):
-        window.togroup(qtile.current_group.name)
-        window.cmd_disable_floating()
