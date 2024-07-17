@@ -189,7 +189,7 @@ keys = [
         lazy.spawn(apps['mixer']),
         desc='Load mixer',
     ),
-    Key([], 'XF86AudioMute', lazy.spawn(apps['volume_mute']), desc='Mute volume'),
+    Key([], 'XF86AudioMute', lazy.widget['micwidget'].toggle(), desc='Mute volume'),
     Key(
         [],
         'XF86AudioPlay',
