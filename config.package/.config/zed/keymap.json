@@ -6,7 +6,9 @@
       "ctrl-f3": "editor::FindAllReferences",
       "ctrl-r": "projects::OpenRecent",
       "ctrl-alt-c": "editor::CopyRelativePath",
-      "ctrl-shift-j": "terminal_panel::ToggleFocus"
+      "ctrl-shift-j": "terminal_panel::ToggleFocus",
+      "ctrl-shift-{": "editor::Fold",
+      "ctrl-shift-}": "editor::UnfoldLines"
     }
   }
 ]
