@@ -32,6 +32,7 @@ from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
+from libqtile.layout.columns import Columns
 
 from settings.mic_widget import MicWidget
 from settings.consts import apps, background, home, google_chrome_apps, preferred_apps
@@ -65,7 +66,6 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
         qtile.current_window.togroup(group, switch_group=switch_group)
         if switch_screen:
             qtile.cmd_to_screen(i + 1)
-
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -254,7 +254,12 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=4),
+    Columns(
+        border_focus_stack=['#d75f5f', '#8f3d3d'],
+        border_width=4,
+        margin=8,
+        margin_on_single=0,
+    ),
     layout.VerticalTile(),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
