@@ -22,8 +22,8 @@ class MicWidget(base.ThreadPoolText):
     ]
     last_status = None
 
-    def __init__(self):
-        base.ThreadPoolText.__init__(self, '')
+    def __init__(self, **kwargs):
+        base.ThreadPoolText.__init__(self, '', **kwargs)
         self.add_defaults(MicWidget.defaults)
 
     def _configure(self, qtile, bar):

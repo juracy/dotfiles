@@ -311,10 +311,10 @@ screens = [
                 # widget.Notify(),
                 widget.Clock(format='%d/%m/%Y %I:%M %p'),
                 widget.Sep(),
-                MicWidget(),
+                MicWidget(fontsize=24),
                 widget.QuickExit(default_text='Sair'),
             ],
-            24,
+            32,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
