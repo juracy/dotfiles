@@ -330,5 +330,8 @@
     "plaintext": true,
     "markdown": false,
     "scminput": false
+  },
+  "remote.SSH.remotePlatform": {
+    "*.gitpod.io": "linux"
   }
 }
