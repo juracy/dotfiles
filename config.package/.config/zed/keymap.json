@@ -6,9 +6,15 @@
       "ctrl-f3": "editor::FindAllReferences",
       "ctrl-r": "projects::OpenRecent",
       "ctrl-alt-c": "editor::CopyRelativePath",
-      "ctrl-shift-j": "terminal_panel::ToggleFocus",
+      "ctrl-d": ["editor::SelectNext", { "replace_newest": false }],
       "ctrl-shift-{": "editor::Fold",
       "ctrl-shift-}": "editor::UnfoldLines"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-d": ["editor::SelectNext", { "replace_newest": false }]
     }
   }
 ]
