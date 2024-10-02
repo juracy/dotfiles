@@ -35,7 +35,10 @@ staged = " ✔ "
 deleted = "🔥"
 
 [git_commit]
+format = '[$tag]($style) '
 tag_disabled = false
+disabled = false
+only_detached = false
 
 [python]
 style = "fg:purple italic"
