@@ -28,10 +28,6 @@ use = ["{{ name }}.zsh"]
 [plugins.emoji-cli]
 github = 'b4b4r07/emoji-cli'
 
-[plugins.zsh-pyenv-lazy-load]
-github = 'erikced/zsh-pyenv-lazy-load'
-use = ["zsh-pyenv-lazy-load.zsh"]
-
 [plugins.colored-man-pages_mod]
 github = 'zuxfoucault/colored-man-pages_mod'
 use = ["colored-man-pages_mod.plugin.zsh"]
