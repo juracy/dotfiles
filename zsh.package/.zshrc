@@ -29,11 +29,7 @@ function zsh_log() {
   [ ! -z $DOTFILES_VERBOSE ] && printf "%-30s %s\n" "$(basename $1):" "$2..."
 }
 
-source /opt/asdf-vm/asdf.sh
-# . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
-# export PATH=$HOME/.asdf/installs/rust/stable/bin:$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.asdf/installs/rust/1.67.1/bin:$HOME/.cargo/bin:$PATH
-# export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.asdf/shims:$PATH
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
 
