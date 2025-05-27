@@ -9,3 +9,5 @@ MINICONDAPATH=$HOME/miniconda3/bin
 if [ -d $MINICONDAPATH ]; then
     PATH=$MINICONDAPATH:$PATH
 fi
+
+PATH=$PATH:$HOME/.cargo/bin
