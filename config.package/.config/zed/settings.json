@@ -7,69 +7,96 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "language_models": {
-    "ollama": {
-      "low_speed_timeout_in_seconds": 30
-    }
+  "vim_mode": false,
+  "features": {
+    "edit_prediction_provider": "zed"
   },
+  "icon_theme": "Monospace Icon Theme - Dark",
+  "file_scan_exclusions": [
+    "**/*.min.css",
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ],
   "theme": {
     "mode": "dark",
-    "dark": "Yogi Amoled",
+    "dark": "Shades Of Purple (Super Dark)",
     "light": "Ayu Light"
   },
-  "experimental.theme_overrides_zed_space": {
-    "ghost_element.background": "#141414",
-    "ghost_element.hover": "#26262A",
-    "ghost_element.active": "#26262A80",
-    "ghost_element.selected": "#2F2F22",
-    "ghost_element.disabled": "#19191930",
-    "players": [
-      {
-        "cursor": "#B2B2B2",
-        "background": "#252529",
-        "selection": "#9f35401f"
-      }
-    ]
+  "experimental.theme_overrides": {
+    "ghost_element.selected": "#33324a"
   },
   "buffer_font_family": "Iosevka",
-  "buffer_font_size": 24,
+  "buffer_font_weight": 300,
+  "buffer_font_size": 22.0,
   "buffer_line_height": "comfortable",
   "buffer_font_features": { "calt": true, "dlig": true },
   "languages": {
     "Angular": {
       "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
+      "preferred_line_length": 100
     },
     "HTML": {
+      "indent_guides": {
+        "enabled": true
+      },
+      "language_servers": ["angular", "..."],
       "format_on_save": "on",
-      "formatter": {
-        "external": {
-          "command": "node_modules/.bin/prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
-        }
-      }
+      "preferred_line_length": 100
     },
     "Python": {
-      "format_on_save": { "language_server": { "name": "ruff" } },
-      "formatter": { "language_server": { "name": "ruff" } },
-      "language_servers": ["!pyright", "basedpyright", "!ruff"]
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            // Fix all auto-fixable lint violations
+            "source.fixAll.ruff": true,
+            // Organize imports
+            "source.organizeImports.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ],
+      "language_servers": [
+        "!pyright",
+        "basedpyright",
+        "ruff",
+        "!pylsp",
+        "cspell"
+      ]
     }
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "ollama",
-      "model": "llama3.1:8b"
-    },
-    "version": "2",
-    "provider": null
+      "model": "llama3.2:latest"
+    }
   },
-  "formatter": "prettier",
+  "lsp": {
+    "angular": {
+      "initialization_options": {
+        "angular_language_server_version": "19.2.4",
+        "typescript_version": "5.8.3"
+      }
+    }
+  },
   "tabs": { "file_icons": true },
   "ui_font_family": "Iosevka",
-  "ui_font_size": 20
+  "ui_font_weight": 400,
+  "ui_font_size": 20,
+  "formatter": "prettier",
+  "format_on_save": "on",
+  "prettier": {
+    "allowed": true,
+    "plugins": ["@prettier/plugin-oxc"]
+  }
 }

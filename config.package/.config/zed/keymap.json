@@ -5,16 +5,16 @@
       "f1": "command_palette::Toggle",
       "ctrl-f3": "editor::FindAllReferences",
       "ctrl-r": "projects::OpenRecent",
-      "ctrl-alt-c": "editor::CopyRelativePath",
-      "ctrl-d": ["editor::SelectNext", { "replace_newest": false }],
+      "ctrl-alt-c": "workspace::CopyRelativePath",
       "ctrl-shift-{": "editor::Fold",
+      "ctrl-'": "terminal_panel::ToggleFocus",
       "ctrl-shift-}": "editor::UnfoldLines"
     }
   },
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-d": ["editor::SelectNext", { "replace_newest": false }]
+      "ctrl-'": "terminal_panel::ToggleFocus"
     }
   }
 ]
