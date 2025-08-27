@@ -7,6 +7,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "vim_mode": false,
+  "icon_theme": "Icons modern material (Dark)",
   "language_models": {
     "ollama": {
       "low_speed_timeout_in_seconds": 30
@@ -14,7 +16,7 @@
   },
   "theme": {
     "mode": "dark",
-    "dark": "Yogi Amoled",
+    "dark": "Shades Of Purple (Super Dark)",
     "light": "Ayu Light"
   },
   "experimental.theme_overrides_zed_space": {
@@ -45,6 +47,9 @@
         }
       }
     },
+    "JSONC": {
+      "format_on_save": "off"
+    },
     "HTML": {
       "format_on_save": "on",
       "formatter": {
@@ -60,12 +65,11 @@
       "language_servers": ["!pyright", "basedpyright", "!ruff"]
     }
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "ollama",
       "model": "llama3.1:8b"
     },
-    "version": "2",
     "provider": null
   },
   "formatter": "prettier",
