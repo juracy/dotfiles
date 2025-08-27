@@ -1,13 +1,18 @@
 [
   {
     "label": "Lock",
-    "exec": "swaylock -f -c 000000",
+    "exec": "hyprlock",
     "icon": "/usr/share/nwg-bar/images/system-lock-screen.svg"
   },
   {
     "label": "Logout",
     "exec": "hyprctl dispatch exit",
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
+  },
+  {
+    "label": "Suspend",
+    "exec": "/home/juracy/.local/bin/suspend.sh",
+    "icon": "/usr/share/nwg-bar/images/system-suspend.svg"
   },
   {
     "label": "Reboot",
