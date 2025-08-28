@@ -41,6 +41,9 @@
       "format_on_save": "on",
       "preferred_line_length": 100
     },
+    "TypeScript": {
+      "format_on_save": "on"
+    },
     "HTML": {
       "indent_guides": {
         "enabled": true
@@ -48,6 +51,12 @@
       "language_servers": ["angular", "..."],
       "format_on_save": "on",
       "preferred_line_length": 100
+    },
+    "AsciiDoc": {
+      "soft_wrap": "editor_width"
+    },
+    "JSON": {
+      "format_on_save": "on"
     },
     "Python": {
       "format_on_save": "on",
@@ -66,13 +75,7 @@
           }
         }
       ],
-      "language_servers": [
-        "!pyright",
-        "basedpyright",
-        "ruff",
-        "!pylsp",
-        "cspell"
-      ]
+      "language_servers": ["pyrefly", "ty", "ruff", "cspell"]
     }
   },
   "agent": {
@@ -94,7 +97,8 @@
   "ui_font_weight": 400,
   "ui_font_size": 20,
   "formatter": "prettier",
-  "format_on_save": "on",
+  "format_on_save": "off",
+  // "disable_ai": true,
   "prettier": {
     "allowed": true,
     "plugins": ["@prettier/plugin-oxc"]
