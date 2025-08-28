@@ -5,7 +5,7 @@ WORKSPACE=$(hyprctl activeworkspace -j | jq '.id')
 
 case $WORKSPACE in
     1)
-        hyprctl dispatch exec "google-chrome-stable"
+        hyprctl dispatch exec 'google-chrome-stable --profile-directory="Default"'
         ;;
     2)
         hyprctl dispatch exec "kitty"
