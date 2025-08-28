@@ -5,4 +5,4 @@ configuration {
   icon-theme:         "Papirus";
   font:               "Iosevka ExtraLight 16";
 }
-@theme "/home/juracy/workspace/awesome/theme/sidebar.rasi"
+@theme "sidebar.rasi"
