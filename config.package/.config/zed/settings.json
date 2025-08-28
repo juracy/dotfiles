@@ -44,6 +44,9 @@
     "TypeScript": {
       "format_on_save": "on"
     },
+    "JSONC": {
+      "format_on_save": "off"
+    },
     "HTML": {
       "indent_guides": {
         "enabled": true
