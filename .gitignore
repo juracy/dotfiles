@@ -4,3 +4,5 @@ __pycache__
 config.package/.config/hypr/colors.conf
 config.package/.config/swaync/colors.css
 config.package/.config/waybar/colors.css
+config.package/.config/hypr/monitors.conf
+config.package/.config/hypr/workspaces.conf
