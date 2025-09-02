@@ -267,7 +267,7 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #97e1ad;
+    background: @on_primary_fixed_variant;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
