@@ -1,8 +1,11 @@
 /** Basic config file **/
 
 configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
   show-icons:         true;
   icon-theme:         "Papirus";
   font:               "Iosevka ExtraLight 16";
 }
-@theme "sidebar.rasi"
+
+@theme "theme-matugen.rasi"

@@ -1,0 +1,16 @@
+@import "colors.rasi"
+
+entry {
+  text-color: @on-primary;
+  background-color: @primary;
+}
+
+element {
+  text-color: @on-primary-container;
+  background-color: @primary-container;
+}
+
+element-text, element-icon {
+  text-color: @on-secondary;
+  background-color: @secondary;
+}
