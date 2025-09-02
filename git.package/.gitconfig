@@ -84,5 +84,6 @@
 
 [user]
 	name = Juracy Filho
+
 [credential]
 	helper = gopass

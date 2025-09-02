@@ -1,0 +1,9 @@
+# Personal vars
+# TODO: Evaluate usage of shell variables
+
+# For get_location.sh
+#env = SSID_HOME,HOME-WIFI
+#env = SSID_WORK,WORK-WIFI
+
+# For launch-by-workspace.sh
+#env = WORK_CHROME_PROFILE,Profile 1
