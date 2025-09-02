@@ -56,10 +56,8 @@ use = [
   "plugins/git-extras/*.zsh",
   "plugins/pip/*.zsh",
   "plugins/python/*.zsh",
-  "plugins/pdm/*.zsh",
   "plugins/urltools/*.zsh",
   "plugins/yarn/*.zsh",
-  "plugins/wd/*.zsh",
 ]
 
 [plugins.zsh-syntax-highlighting]
@@ -71,9 +69,6 @@ github = 'Aloxaf/fzf-tab'
 
 [plugins.hist]
 github = 'marlonrichert/zsh-hist'
-
-[plugins.zsh-fuzzy-wd]
-github = 'spodin/zsh-fuzzy-wd'
 
 [plugins.zsh-cargo-completion]
 github = 'MenkeTechnologies/zsh-cargo-completion'
