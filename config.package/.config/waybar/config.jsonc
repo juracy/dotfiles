@@ -204,7 +204,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol",
+        "on-click-right": "easyeffects"
     },
     "custom/media": {
         "format": "{icon} {text}",
