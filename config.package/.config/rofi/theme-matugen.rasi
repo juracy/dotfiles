@@ -1,16 +1,110 @@
 @import "colors.rasi"
 
+* {
+    bg0:    @primary;
+    bg1:    @secondary;
+    bg2:   @tertiary;
+    bg3:   @primary-fixed;
+    fg0:    @on-primary;
+    fg1:    @on-secondary;
+    fg2:    @on-tertiary;
+    fg3:    @inverse-surface;
+}
+
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+    font:   "Roboto 12";
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    location:       north;
+    y-offset:       25%;
+    width:          50%;
+    height:         50%;
+    border-radius:  24px;
+
+    background-color:   @bg0;
+}
+
+mainbox {
+    padding:    12px;
+}
+
+inputbar {
+    background-color:   @bg1;
+    border-color:       @bg3;
+
+    border:         2px;
+    border-radius:  16px;
+
+    padding:    8px 16px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg2;
+}
+
 entry {
-  text-color: @on-primary;
-  background-color: @primary;
+    placeholder:        "Search";
+    placeholder-color:  @outline;
+}
+
+message {
+    margin:             12px 0 0;
+    border-radius:      16px;
+    border-color:       @bg2;
+    background-color:   @bg2;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    background-color:   transparent;
+
+    margin:     12px 0 0;
+    lines:      8;
+    columns:    1;
+
+    fixed-height: false;
 }
 
 element {
-  text-color: @on-primary-container;
-  background-color: @primary-container;
+    padding:        8px 16px;
+    spacing:        8px;
+    border-radius:  16px;
 }
 
-element-text, element-icon {
-  text-color: @on-secondary;
-  background-color: @secondary;
+element normal active {
+    text-color: @on-error;
+}
+
+element alternate active {
+    text-color: @bg3;
+}
+
+element selected normal, element selected active {
+    background-color:   @bg3;
+}
+
+element-icon {
+    size:           3em;
+    vertical-align: 0;
+}
+
+element-text {
+    text-color: inherit;
+    vertical-align: 0.5;
 }
