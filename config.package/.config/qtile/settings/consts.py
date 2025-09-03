@@ -15,12 +15,12 @@ apps = {
     'media_play': 'playerctl play-pause && notify-send -u low -i ~/.assets/play-pause.svg "Play/pause" -t 1000',
     'media_next': 'playerctl next',
     'media_prev': 'playerctl previous',
-    'volume_mute': 'pamixer -t',
+    'volume_mute': 'pamixer -t && notify-send -u low -i ~/.assets/play-pause.svg "Audio output" "Toggle" -t 1000',
     'volume_up': 'pamixer -u -i 5',
     'volume_down': 'pamixer -u -d 5',
     'terminal': 'kitty',
     'browser': 'google-chrome-stable',
-    'editor': 'code',
+    'editor': 'zeditor',
     'teams': f'google-chrome-stable "--profile-directory=Profile 6" --app-id={google_chrome_apps["teams"]}',
     'whatsapp': 'flatpak run io.github.mimbrero.WhatsAppDesktop',
     'files': 'nautilus',
@@ -31,7 +31,7 @@ apps = {
     'wifi_off': 'nmcli radio wifi off',
     'calc': 'gnome-calculator',
     'logseq': 'logseq',
-    'layout': f'{home}/.local/bin/layout_setup.sh auto',
+    'layout': f'{home}/.local/bin/layout_setup.sh one',
     'layout-right-wide': f'{home}/.local/bin/layout_setup.sh right-wide',
 }
 

@@ -24,24 +24,29 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from collections import defaultdict
-import os.path
 import subprocess
+from collections import defaultdict
+from itertools import cycle, islice
 
-from libqtile import bar, layout, qtile, widget, hook
+from libqtile import bar, hook, layout, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.layout.columns import Columns
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
-from libqtile.layout.columns import Columns
-
+from qtile_extras import widget
+from qtile_extras.widget.decorations import PowerLineDecoration
+from settings import colors
+from settings.consts import apps, background, google_chrome_apps, home, preferred_apps
 from settings.mic_widget import MicWidget
-from settings.consts import apps, background, home, google_chrome_apps, preferred_apps
 
 mod = 'mod4'
 
+
 @lazy.function
 def run_preferred_app(qtile):
-    fail = lambda: f'notify-send -t 1000 -u critical "There isn\'t app for this group: {qtile.current_group.name}"'
+    fail = (
+        lambda: f'notify-send -t 1000 -u critical "There isn\'t app for this group: {qtile.current_group.name}"'
+    )
     pref_apps = defaultdict(fail, preferred_apps)
     app = pref_apps[qtile.current_group.name]
     logger.warning(f'Running: {app}')
@@ -66,6 +71,16 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
         qtile.current_window.togroup(group, switch_group=switch_group)
         if switch_screen:
             qtile.cmd_to_screen(i + 1)
+
+
+@lazy.function
+def switch_screens(qtile):
+    """Move current group to next screen, and focus that screen"""
+    screens = [screen.index for screen in qtile.screens]
+    target = next(islice(cycle(screens), qtile.current_screen.index + 1, None))
+    qtile.current_group.toscreen(target)
+    qtile.next_screen()
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -164,7 +179,7 @@ keys = [
     Key(
         [mod],
         'o',
-        window_to_next_screen(switch_screen=True),
+        switch_screens(),
         desc='Move current window to another monitor',
     ),
     Key([], 'print', lazy.spawn(apps['screenshot']), desc='Screenshot'),
@@ -262,6 +277,7 @@ layouts = [
     ),
     layout.VerticalTile(),
     layout.Max(),
+    layout.Floating(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -281,14 +297,21 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+powerline = {
+    'decorations': [
+        PowerLineDecoration(path='arrow_right', padding_y=5),
+    ]
+}
+
+
 screens = [
     Screen(
         wallpaper=background,
         wallpaper_mode='fill',
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
+                widget.CurrentLayout(**powerline),
+                widget.GroupBox(**powerline),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -309,14 +332,16 @@ screens = [
                     }
                 ),
                 # widget.Net(),
-                widget.CPU(),
-                widget.Sep(),
-                widget.Memory(measure_mem='G'),
-                widget.Sep(),
-                # widget.Notify(),
-                widget.Clock(format='%d/%m/%Y %I:%M %p'),
-                widget.Sep(),
-                MicWidget(fontsize=24),
+                widget.CPU(background='#004526', **powerline),
+                widget.Memory(
+                    measure_mem='G', background=colors.darkgreen, **powerline
+                ),
+                widget.Clock(
+                    format='%d/%m/%Y %I:%M %p',
+                    background=colors.forestgreen,
+                    **powerline,
+                ),
+                MicWidget(fontsize=24, background=colors.black, **powerline),
                 widget.QuickExit(default_text='Sair'),
             ],
             32,
@@ -362,7 +387,7 @@ dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 floats_kept_above = True
-cursor_warp = False
+cursor_warp = True
 
 
 def popup_rules(window):
@@ -386,8 +411,9 @@ floating_layout = layout.Floating(
         Match(wm_class='gtkperf'),  # GtkPerf
         Match(title='branchdialog'),  # gitk
         Match(title='pinentry'),  # GPG key password entry
+        Match(title='ContentDialogOverlayWindow'),  # Ryujinx
         Match(func=popup_rules),  # Bitwarden
-        Match(wm_class='Pavucontrol'),  # pavucontrol
+        Match(wm_class='pavucontrol'),  # pavucontrol
         Match(wm_class='gnome-calculator'),  # gnome-calculator
         Match(wm_class='mpv'),  # mpv
     ]
@@ -422,3 +448,27 @@ def autostart_once():
 @hook.subscribe.startup
 def autostart():
     subprocess.call(f'{home}/.config/qtile/autostart.sh')
+
+
+def normalize_layout_screen():
+    if (
+        qtile.current_group.layout.name == 'columns'
+        and qtile.current_group.screen.height > qtile.current_group.screen.width
+    ):
+        qtile.current_group.setlayout('verticaltile')
+
+    if (
+        qtile.current_group.layout.name == 'verticaltile'
+        and qtile.current_group.screen.height < qtile.current_group.screen.width
+    ):
+        qtile.current_group.setlayout('columns')
+
+
+@hook.subscribe.current_screen_change
+def current_screen_change():
+    normalize_layout_screen()
+
+
+@hook.subscribe.focus_change
+def focus_changed():
+    normalize_layout_screen()
