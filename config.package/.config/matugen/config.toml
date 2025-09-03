@@ -34,3 +34,8 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/dark-theme.auto.conf'
+post_hook = 'pkill -SIGUSR1 kitty'
