@@ -13,5 +13,4 @@ WALLPAPER=$(find /usr/share/backgrounds/ $HOME/.assets/wallpapers/ -type f -name
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 notify-send "New wallpaper" "$(basename $WALLPAPER)"
 echo $WALLPAPER > $CURRENT_WALLPAPER_FILE
-swww img "$WALLPAPER"
-matugen image "$WALLPAPER"
+matugen --show-colors image -v "$WALLPAPER" > /tmp/matugen.log
