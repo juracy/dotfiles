@@ -1,11 +1,11 @@
 @import "colors.rasi"
 
 * {
-    bg0:    @primary;
+    bg0:    @inverse-primary;
     bg1:    @secondary;
     bg2:   @tertiary;
     bg3:   @primary-fixed;
-    fg0:    @on-primary;
+    fg0:    @on-inverse-primary;
     fg1:    @on-secondary;
     fg2:    @on-tertiary;
     fg3:    @inverse-surface;
