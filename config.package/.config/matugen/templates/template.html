@@ -3,12 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Paleta de Cores do Matugen</title>
+        <title>Matugen Color Palette</title>
         <style>
-            :root {
-            <* for name, value in colors *>
-                --{{name}}: {{value.default.hex}};
-            <* endfor *>
+            :root {<* for name, value in colors *>
+                --{{name}}: {{value.default.hex}};<* endfor *>
             }
 
             body {
@@ -54,7 +52,6 @@
                 transform: translateY(-5px);
             }
             .color-name {
-                font-weight: bold;
                 padding: 5px;
                 border-radius: 4px;
                 width: 100%;
@@ -234,8 +231,6 @@
                     class="color-box"
                     style="background-color: var(--surface_container); color: var(--on_surface)"
                 >
-                    <div>Surface Alt Container</div>
-
                     <div
                         class="color-name"
                         style="background-color: var(--surface_container_highest)"

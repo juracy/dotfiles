@@ -5,10 +5,11 @@
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     background-color: @primary_container;
+    color: @on_primary_container;
 }
 
 window#waybar {
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    border-bottom: 3px solid @outline;
     transition-property: background-color;
     transition-duration: .5s;
 }
