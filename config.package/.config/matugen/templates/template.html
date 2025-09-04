@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Paleta de Cores do Matugen</title>
+        <style>
+            :root {
+            <* for name, value in colors *>
+                --{{name}}: {{value.default.hex}};
+            <* endfor *>
+            }
+
+            body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 20px;
+            }
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background-color: var(--background);
+                color: var(--on_background);
+            }
+            h1 {
+                text-align: center;
+            }
+            .color-palette {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+                padding: 2rem;
+            }
+            .color-box {
+                display: flex;
+                flex-direction: column;
+                border-radius: 8px;
+                width: 180px;
+                height: 220px;
+                box-shadow: 0 2px 4px var(--shadow);
+                justify-content: space-evenly;
+                align-items: center;
+                padding: 10px;
+                text-align: center;
+                border: 1px solid var(--outline);
+                transition: transform 0.2s ease-in-out;
+            }
+            .color-box:hover {
+                transform: translateY(-5px);
+            }
+            .color-name {
+                font-weight: bold;
+                padding: 5px;
+                border-radius: 4px;
+                width: 100%;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Matugen Color Palette</h1>
+            <div class="color-palette">
+                <div
+                    class="color-box"
+                    style="
+                        background-color: var(--primary_container);
+                        color: var(--on_primary_container);
+                    "
+                >
+                    <div>Primary Container</div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--primary); color: var(--on_primary)"
+                    >
+                        Default
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--primary_fixed);
+                            color: var(--on_primary_fixed);
+                        "
+                    >
+                        Fixed
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--primary_dim); color: var(--on_primary_dim)"
+                    >
+                        Fixed Variant
+                    </div>
+                    <div class="color-name" style="background-color: var(--inverse_primary)">
+                        Inverse
+                    </div>
+                </div>
+
+                <div
+                    class="color-box"
+                    style="
+                        background-color: var(--secondary_container);
+                        color: var(--on_secondary_container);
+                    "
+                >
+                    <div>Secondary Container</div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--secondary); color: var(--on_secondary)"
+                    >
+                        Default
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--secondary_fixed);
+                            color: var(--on_secondary_fixed);
+                        "
+                    >
+                        Fixed
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--secondary_dim);
+                            color: var(--on_secondary_dim);
+                        "
+                    >
+                        Fixed Variant
+                    </div>
+                </div>
+
+                <div
+                    class="color-box"
+                    style="
+                        background-color: var(--tertiary_container);
+                        color: var(--on_tertiary_container);
+                    "
+                >
+                    <div>Tertiary Container</div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--tertiary); color: var(--on_tertiary)"
+                    >
+                        Default
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--tertiary_fixed);
+                            color: var(--on_tertiary_fixed);
+                        "
+                    >
+                        Fixed
+                    </div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--tertiary_dim); color: var(--on_tertiary_dim)"
+                    >
+                        Fixed Variant
+                    </div>
+                </div>
+
+                <div
+                    class="color-box"
+                    style="
+                        background-color: var(--error_container);
+                        color: var(--on_error_container);
+                    "
+                >
+                    <div>Error Container</div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--error); color: var(--on_error)"
+                    >
+                        Default
+                    </div>
+                </div>
+
+                <div
+                    class="color-box"
+                    style="background-color: var(--surface_container); color: var(--on_surface)"
+                >
+                    <div>Surface Container</div>
+
+                    <div class="color-name" style="background-color: var(--surface)">Default</div>
+                    <div class="color-name" style="background-color: var(--surface_bright)">
+                        Bright
+                    </div>
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--surface_variant);
+                            color: var(--on_surface_variant);
+                        "
+                    >
+                        Variant
+                    </div>
+                    <div class="color-name" style="background-color: var(--surface_dim)">Dim</div>
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--surface_tint);
+                            color: var(--inverse_on_surface);
+                        "
+                    >
+                        Tint
+                    </div>
+                    <div
+                        class="color-name"
+                        style="
+                            background-color: var(--inverse_surface);
+                            color: var(--inverse_on_surface);
+                        "
+                    >
+                        Inverse
+                    </div>
+                </div>
+                <div
+                    class="color-box"
+                    style="background-color: var(--surface_container); color: var(--on_surface)"
+                >
+                    <div>Surface Alt Container</div>
+
+                    <div
+                        class="color-name"
+                        style="background-color: var(--surface_container_highest)"
+                    >
+                        Highest
+                    </div>
+                    <div class="color-name" style="background-color: var(--surface_container_high)">
+                        High
+                    </div>
+                    <div class="color-name" style="background-color: var(--surface_container_low)">
+                        Low
+                    </div>
+                    <div
+                        class="color-name"
+                        style="background-color: var(--surface_container_lowest)"
+                    >
+                        Lowest
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
