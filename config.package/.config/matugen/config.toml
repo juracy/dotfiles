@@ -37,5 +37,5 @@ output_path = '~/.config/rofi/colors.rasi'
 
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/dark-theme.auto.conf'
+output_path = '~/.config/kitty/matugen-theme.conf'
 post_hook = 'pkill -SIGUSR1 kitty'

@@ -7,3 +7,6 @@
 
 # For launch-by-workspace.sh
 #env = WORK_CHROME_PROFILE,Profile 1
+
+# Kitty theme
+#env = KITTY_THEME, matugen-theme.conf
