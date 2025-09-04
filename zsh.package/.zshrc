@@ -29,7 +29,8 @@ function zsh_log() {
   [ ! -z $DOTFILES_VERBOSE ] && printf "%-30s %s\n" "$(basename $1):" "$2..."
 }
 
-export PATH=$HOME/.asdf/shims:$PATH
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
 
@@ -43,5 +44,4 @@ compinit
 
 zstyle ':completion:*' menu select
 fpath+=~/.zfunc
-
 
