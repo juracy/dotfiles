@@ -14,13 +14,8 @@ zstyle :compinstall filename "$HOME/.zshrc"
 
 # eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  fpath+=$(brew --prefix)/share/zsh/site-functions
 fi
-
-FPATH=$HOME/.zfunc:$FPATH
-
-autoload -Uz compinit
-compinit
 
 # Uncomment for debugging
 # DOTFILES_VERBOSE=1
@@ -31,17 +26,19 @@ function zsh_log() {
 
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="$ASDF_DATA_DIR/shims:$PATH"
-eval "$(starship init zsh)"
-eval "$(sheldon source)"
-
-# Load Angular CLI autocompletion.
-[ -x ng ] && source <(ng completion script)
-
-# >>>> Vagrant command completion (start)
-fpath=(/tmp/.mount_vagranbywsUk/usr/gembundle/gems/vagrant-2.2.19/contrib/zsh $fpath)
-compinit
-# <<<<  Vagrant command completion (end)
 
 zstyle ':completion:*' menu select
+
 fpath+=~/.zfunc
 
+# last config fort zsh
+autoload -Uz compinit
+compinit
+
+# auto completes
+eval "$(starship init zsh)"
+eval "$(sheldon source)"
+command -v ng >/dev/null && source <(ng completion script)
+
+# last zsh thing
+compinit
