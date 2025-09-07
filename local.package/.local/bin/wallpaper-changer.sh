@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-CURRENT_WALLPAPER_FILE=$HOME/.cache/current-wallpaper
 #WALLPAPER_DIR="/usr/share/backgrounds/\n$HOME/.assets/wallpapers/"
-CURRENT_WALL=$(cat $CURRENT_WALLPAPER_FILE)
+CURRENT_WALL=$(swww query | cut -d: -f 5 | head -1 | sed -e 's/^ //')
 CURRENT_WALL_NAME=$(basename "$CURRENT_WALL")
 
 # Get a random wallpaper that is not the current one
@@ -12,5 +11,4 @@ WALLPAPER=$(find /usr/share/backgrounds/ $HOME/.assets/wallpapers/ -type f -name
 # Apply the selected wallpaper
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 notify-send "New wallpaper" "$(basename $WALLPAPER)"
-echo $WALLPAPER > $CURRENT_WALLPAPER_FILE
 matugen -t scheme-fidelity --contrast 0.2 --show-colors image -v "$WALLPAPER" > /tmp/matugen.log
