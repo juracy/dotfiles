@@ -12,3 +12,11 @@ WALLPAPER=$(find /usr/share/backgrounds/ $HOME/.assets/wallpapers/ -type f -name
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 notify-send "New wallpaper" "$(basename $WALLPAPER)"
 matugen -t scheme-fidelity --contrast 0.2 --show-colors image -v "$WALLPAPER" > /tmp/matugen.log
+
+
+cat << END > ~/.config/hypr/hyprlock-background.conf
+background {
+    path = $WALLPAPER
+    blur_passes = 0
+}
+END

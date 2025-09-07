@@ -9,3 +9,4 @@ config.package/.config/hypr/workspaces.conf
 config.package/.config/hypr/hypr.d/*personal.conf
 config.package/.config/rofi/colors.rasi
 config.package/.config/yazi/theme.toml*
+config.package/.config/hypr/hyprlock-background.conf
