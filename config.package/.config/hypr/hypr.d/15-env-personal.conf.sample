@@ -10,3 +10,8 @@
 
 # Kitty theme
 #env = KITTY_THEME, matugen-theme.conf
+
+# Hyprcursor theme
+#env = HYPRCURSOR_THEME,Bibata-Original-Classic
+#env = HYPRCURSOR_SIZE,36
+# pacman -S bibata-cursor-theme-bin
