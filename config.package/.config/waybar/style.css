@@ -2,7 +2,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica, 'JetBrainsMono Nerd Font Propo';
     font-size: 13px;
     background-color: @primary_container;
     color: @on_primary_container;
