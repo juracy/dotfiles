@@ -20,3 +20,6 @@ wl-paste --type image --watch cliphist store &
 systemctl --user start hyprpolkitagent
 # /usr/lib/polkit-gnome/polkit-kde-authentication-agent-1 &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# HyprCursor
+hyprctl setcursor $HYPRCURSOR_THEME $HYPRCURSOR_SIZE
