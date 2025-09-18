@@ -78,7 +78,7 @@
           }
         }
       ],
-      "language_servers": ["pyrefly", "ty", "ruff", "cspell"]
+      "language_servers": ["pyrefly", "ty", "ruff", "cspell", "basedpyright"]
     }
   },
   "agent": {
