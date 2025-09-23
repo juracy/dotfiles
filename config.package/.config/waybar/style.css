@@ -4,8 +4,8 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Roboto, Helvetica, 'JetBrainsMono Nerd Font Propo';
     font-size: 13px;
-    background-color: @primary_container;
-    color: @on_primary_container;
+    background-color: @secondary_container;
+    color: @on_secondary_container;
 }
 
 window#waybar {
@@ -88,15 +88,8 @@ button:hover {
     margin-right: 0;
 }
 
-@keyframes blink {
-    to {
-
-        }
-}
-
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -109,7 +102,6 @@ button:hover {
 }
 
 #custom-media {
-
     min-width: 100px;
 }
 
@@ -129,7 +121,8 @@ button:hover {
 }
 
 #keyboard-state {
-    background: @on_primary_fixed_variant;
+    background: @secondary_fixed_variant;
+    color: @on_secondary_fixed_variant;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;

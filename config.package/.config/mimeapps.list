@@ -5,9 +5,10 @@ application/xhtml+xml=google-chrome.desktop;
 video/mp4=mpv.desktop;
 video/quicktime=mpv.desktop;
 video/x-matroska=mpv.desktop;
+application/pdf=org.gnome.Papers.desktop;
 
 [Default Applications]
-application/pdf=org.gnome.Evince.desktop;
+application/pdf=org.gnome.Papers.desktop
 image/jpeg=org.gnome.eog.desktop;
 image/png=org.gnome.eog.desktop;
 image/svg+xml=org.gnome.eog.desktop;
