@@ -13,6 +13,11 @@ else
         -type f -name '*.jpg' -or -name '*.png' ! -name "$CURRENT_WALL_NAME" | shuf -n 1)
 fi
 
+if [ ! -f "$WALLPAPER" ]; then
+    notify-send "Wallpaper Error" "File not found: $WALLPAPER"
+    exit 1
+fi
+
 # Apply the selected wallpaper
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 BASENAME=$(basename "$WALLPAPER")
