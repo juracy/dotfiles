@@ -78,7 +78,7 @@
           }
         }
       ],
-      "language_servers": ["pyrefly", "ty", "ruff", "cspell", "basedpyright"]
+      "language_servers": ["zuban", "ruff", "ty", "cspell", "basedpyright"]
     }
   },
   "edit_predictions": {
