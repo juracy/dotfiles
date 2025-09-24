@@ -81,6 +81,9 @@
       "language_servers": ["pyrefly", "ty", "ruff", "cspell", "basedpyright"]
     }
   },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "agent": {
     "default_model": {
       "provider": "ollama",
