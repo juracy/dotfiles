@@ -25,7 +25,7 @@ notify-send "New wallpaper" "$BASENAME"
 matugen -t scheme-fidelity --contrast 0.2 --show-colors image -v "$WALLPAPER" > /tmp/matugen.log
 
 
-cat << END > ~/.config/hypr/hyprlock-background.conf
+cat << END > ~/.config/hypr/hyprlock.d/80-background-personal.conf
 background {
     path = $WALLPAPER
     blur_passes = 0
