@@ -16,5 +16,11 @@
     "bindings": {
       "ctrl-'": "terminal_panel::ToggleFocus"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-f3": "editor::FindNextMatch"
+    }
   }
 ]
