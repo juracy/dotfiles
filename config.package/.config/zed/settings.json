@@ -11,7 +11,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "icon_theme": "Monospace Icon Theme - Dark",
+  "icon_theme": "Catppuccin Mocha",
   "file_scan_exclusions": [
     "**/*.min.css",
     "**/.git",
@@ -34,7 +34,7 @@
   "buffer_font_family": "Iosevka",
   "buffer_font_weight": 300,
   "buffer_font_size": 22.0,
-  "buffer_line_height": "comfortable",
+  "buffer_line_height": {"custom": 1.5},
   "buffer_font_features": { "calt": true, "dlig": true },
   "languages": {
     "Angular": {
@@ -64,14 +64,7 @@
     "Python": {
       "format_on_save": "on",
       "formatter": [
-        {
-          "code_actions": {
-            // Fix all auto-fixable lint violations
-            "source.fixAll.ruff": true,
-            // Organize imports
-            "source.organizeImports.ruff": true
-          }
-        },
+        { "code_action": "source.fixAll.ruff" },
         {
           "language_server": {
             "name": "ruff"
@@ -99,9 +92,9 @@
     }
   },
   "tabs": { "file_icons": true },
-  "ui_font_family": "Iosevka",
+  "ui_font_family": ".SystemUIFont",
   "ui_font_weight": 400,
-  "ui_font_size": 20,
+  "ui_font_size": 16,
   "formatter": "prettier",
   "format_on_save": "off",
   // "disable_ai": true,
