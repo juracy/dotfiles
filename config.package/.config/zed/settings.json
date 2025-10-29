@@ -98,9 +98,9 @@
     }
   },
   "tabs": { "file_icons": true },
-  "ui_font_family": ".SystemUIFont",
-  "ui_font_weight": 400,
-  "ui_font_size": 16,
+  "ui_font_family": "Noto Sans",
+  "ui_font_weight": 300,
+  "ui_font_size": 18,
   "formatter": "prettier",
   "format_on_save": "off",
   // "disable_ai": true,
