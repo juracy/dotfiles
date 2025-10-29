@@ -7,6 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "double_click_in_multibuffer": "open",
   "vim_mode": false,
   "features": {
     "edit_prediction_provider": "zed"
@@ -34,7 +40,7 @@
   "buffer_font_family": "Iosevka",
   "buffer_font_weight": 300,
   "buffer_font_size": 22.0,
-  "buffer_line_height": {"custom": 1.5},
+  "buffer_line_height": { "custom": 1.5 },
   "buffer_font_features": { "calt": true, "dlig": true },
   "languages": {
     "Angular": {
