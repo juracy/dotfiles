@@ -161,3 +161,14 @@ window > menu > menuitem:hover > arrow
     background-color: @secondary;
     color: @on_secondary;
 }
+
+/* Hover in widgets except tray */
+widget > *:hover {
+    background-color: @secondary;
+    color: @on_secondary;
+}
+
+widget > #tray {
+    background-color: inherit;
+    color: inherit;
+}
