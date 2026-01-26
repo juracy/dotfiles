@@ -1,5 +1,6 @@
 backup
 __pycache__
+monitors-*.conf
 
 config.package/.config/hypr/colors.conf
 config.package/.config/swaync/colors.css
