@@ -8,13 +8,14 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media"
+        "custom/media",
+        "hyprland/window"
     ],
     "modules-center": [
-      "hyprland/window"
+        "mpd",
+        "mpris"
     ],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
         "wireplumber",
         "network",
@@ -22,7 +23,7 @@
         "cpu",
         "memory",
         "temperature",
-        "backlight",
+        // "backlight",
         "keyboard-state",
         "battery",
         "battery#bat2",
@@ -70,17 +71,15 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
             "5": "5",
             "6": "6",
             "7": "7",
             "8": "8",
             "9": "9",
-            "active": "",
-            "default": ""
        	},
     },
     "mpd": {
@@ -142,7 +141,7 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["❄️", "", "🌡️"]
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -157,7 +156,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -181,11 +180,11 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ipaddr}/{cidr} 모",
+        "tooltip-format": "{ifname} via {gwaddr} 모",
+        "format-linked": "{ifname} (No IP) 모",
         "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr} 모"
     },
     "wireplumber": {
         // "scroll-step": 1, // %, can be a float
