@@ -78,7 +78,7 @@
           }
         }
       ],
-      "language_servers": ["zuban", "ruff", "ty", "cspell"]
+      "language_servers": ["typos", "zuban", "ruff", "ty", "cspell"]
     }
   },
   "edit_predictions": {
