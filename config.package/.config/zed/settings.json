@@ -98,6 +98,9 @@
       }
     }
   },
+  "sticky_scroll": {
+    "enabled": true
+  },
   "tabs": { "file_icons": true },
   "ui_font_family": "Iosevka",
   "ui_font_weight": 200,
