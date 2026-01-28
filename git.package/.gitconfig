@@ -7,24 +7,25 @@
 	pager = delta
 
 [alias]
-	branches = for-each-ref --count=15 --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/heads
-	remote-branches = for-each-ref --count=15 --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes
-	ci = commit -v
-	co = checkout
-	dump = cat-file -p
-	fdiff = diff --name-only
-	fetchall = fetch --all
-	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	idiff = diff -w
-	last = log -1 HEAD
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	sdiff = diff --staged
-	slog = log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local
-	st = status
-	sw = switch
-	tohead = reset --hard HEAD
-	type = cat-file -t
-	unstage = reset HEAD --
+	branches = "for-each-ref --count=15 --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/heads"
+	remote-branches = "for-each-ref --count=15 --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(color:bold)%(refname:short)\" refs/remotes"
+	ci = "commit -v"
+	co = "checkout"
+	diff-svg = "difftool -t lukaj -y"
+	dump = "cat-file -p"
+	fdiff = "diff --name-only"
+	fetchall = "fetch --all"
+	hist = "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+	idiff = "diff -w"
+	last = "log -1 HEAD"
+	lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	sdiff = "diff --staged"
+	slog = "log --pretty=format:'%h %ad | %s%d [%an]' --first-parent --date=local"
+	st = "status"
+	sw = "switch"
+	tohead = "reset --hard HEAD"
+	type = "cat-file -t"
+	unstage = "reset HEAD --"
 
 [color]
 	diff = auto
@@ -41,7 +42,7 @@
 
 [merge]
 	tool = meld
-    conflictstyle = diff3
+	conflictstyle = diff3
 
 [lfs]
 	contenttype = false
@@ -61,7 +62,7 @@
 
 [diff]
 	tool = meld
-  colorMoved = default
+	colorMoved = default
 
 [pull]
 	rebase = false
@@ -70,14 +71,14 @@
 	defaultBranch = main
 
 [interactive]
-  diffFilter = delta --color-only
+	diffFilter = delta --color-only
 
 [add.interactive]
-  useBuiltin = false # required for git 2.37.0
+	useBuiltin = false # required for git 2.37.0
 
 [delta]
-  navigate = true    # use n and N to move between diff sections
-  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 [http]
 	postBuffer = 52428800
@@ -87,5 +88,9 @@
 
 [credential]
 	helper = gopass
+
 [diff "sqlite3"]
 	command = gitsqldiff
+
+[difftool "lukaj"]
+	cmd = ~/.cargo/bin/lukaj $LOCAL $REMOTE
