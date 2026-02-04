@@ -93,4 +93,4 @@
 	command = gitsqldiff
 
 [difftool "lukaj"]
-	cmd = ~/.cargo/bin/lukaj $LOCAL $REMOTE
+	cmd = lukaj $LOCAL $REMOTE
