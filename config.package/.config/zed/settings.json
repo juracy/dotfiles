@@ -15,9 +15,6 @@
   },
   "double_click_in_multibuffer": "open",
   "vim_mode": false,
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "icon_theme": "Catppuccin Mocha",
   "file_scan_exclusions": [
     "**/*.min.css",
@@ -40,7 +37,7 @@
   },
   "buffer_font_family": "Iosevka",
   "buffer_font_weight": 300,
-  "buffer_font_size": 22.0,
+  "buffer_font_size": 18.0,
   "buffer_line_height": { "custom": 1.5 },
   "buffer_font_features": { "calt": true, "dlig": true },
   "languages": {
@@ -82,6 +79,7 @@
     }
   },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle"
   },
   "agent": {
@@ -102,9 +100,9 @@
     "enabled": true
   },
   "tabs": { "file_icons": true },
-  "ui_font_family": "Iosevka",
-  "ui_font_weight": 200,
-  "ui_font_size": 18,
+  "ui_font_family": "SF Font",
+  "ui_font_weight": 100.0,
+  "ui_font_size": 20.0,
   "formatter": "prettier",
   "format_on_save": "off",
   // "disable_ai": true,
