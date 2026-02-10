@@ -12,7 +12,7 @@ case $WORKSPACE in
         hyprctl dispatch exec "kitty"
         ;;
     3)
-        hyprctl dispatch exec "gtk-launch dev.zed.Zed.desktop"
+        hyprctl dispatch exec "gtk-launch dev.zed.Zed"
         ;;
     4)
         hyprctl dispatch exec "flatpak run com.rtosta.zapzap"
@@ -24,7 +24,7 @@ case $WORKSPACE in
         hyprctl dispatch exec "$WORK_CHROME"
         ;;
     7)
-        hyprctl dispatch exec 'logseq'
+        hyprctl dispatch exec "gtk-launch logseq"
         ;;
     *)
         notify-send "Unknown workspace"
