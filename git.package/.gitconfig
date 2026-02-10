@@ -12,6 +12,7 @@
 	ci = "commit -v"
 	co = "checkout"
 	diff-svg = "difftool -t lukaj -y"
+	diff-pdf = "difftool -t diffpdf -y"
 	dump = "cat-file -p"
 	fdiff = "diff --name-only"
 	fetchall = "fetch --all"
@@ -94,3 +95,6 @@
 
 [difftool "lukaj"]
 	cmd = lukaj $LOCAL $REMOTE
+
+[difftool "diffpdf"]
+    cmd = diffpdf "$LOCAL" "$REMOTE"
