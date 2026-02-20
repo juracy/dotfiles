@@ -27,6 +27,7 @@
 	tohead = "reset --hard HEAD"
 	type = "cat-file -t"
 	unstage = "reset HEAD --"
+	untracked = "ls-files --others --exclude-standard"
 
 [color]
 	diff = auto
