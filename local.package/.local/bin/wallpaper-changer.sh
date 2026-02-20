@@ -22,7 +22,7 @@ fi
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 BASENAME=$(basename "$WALLPAPER")
 notify-send "New wallpaper" "$BASENAME"
-matugen -t scheme-fidelity --contrast 0.2 --show-colors image -v "$WALLPAPER" > /tmp/matugen.log
+matugen -t scheme-fidelity --contrast 0.2 --show-colors --source-color-index 0 image -v "$WALLPAPER" > /tmp/matugen.log
 
 
 cat << END > ~/.config/hypr/hyprlock.d/80-background-personal.conf
