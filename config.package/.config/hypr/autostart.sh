@@ -5,11 +5,10 @@ dbus-update-activation-enviroment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
 # Hyprland support apps
-waybar &
+hyprpanel &
 hypridle &
 swww-daemon &
 ~/.local/bin/wallpaper-changer.sh &
-swaync &
 nm-applet --indicator &
 
 # Clipboard control
