@@ -1,0 +1,26 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.name": "SF Font",
+  "theme.font.label": "SF Font",
+  "theme.bar.menus.enableShadow": false,
+  "theme.notification.enableShadow": false,
+  "menus.clock.time.hideSeconds": false,
+  "theme.bar.menus.monochrome": false,
+  "scalingPriority": "hyprland",
+  "theme.matugen": false,
+  "theme.bar.scaling": 100,
+  "theme.bar.menus.menu.dashboard.scaling": 75,
+  "theme.bar.menus.menu.clock.scaling": 75,
+  "theme.bar.menus.menu.notifications.scaling": 85,
+  "theme.bar.buttons.enableBorders": false,
+  "theme.matugen_settings.mode": "dark",
+  "theme.bar.background": "#11111b",
+  "theme.bar.opacity": 50,
+  "theme.bar.menus.menu.systray.dropdownmenu.background": "#11111b",
+  "theme.bar.menus.menu.systray.dropdownmenu.divider": "#1e1e2e",
+  "theme.bar.buttons.systray.background": "#c64600",
+  "theme.bar.buttons.systray.border": "#b4befe",
+  "theme.bar.buttons.systray.customIcon": "#cdd6f4"
+}
