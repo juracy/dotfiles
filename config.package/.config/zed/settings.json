@@ -83,9 +83,35 @@
     "mode": "subtle"
   },
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "fetch": {
+          "always_allow": [
+            {
+              "pattern": "^https?://raw\\.githubusercontent\\.com"
+            }
+          ]
+        },
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^npx\\b"
+            },
+            {
+              "pattern": "^grep\\b"
+            },
+            {
+              "pattern": "^sed\\b"
+            }
+          ]
+        }
+      }
+    },
     "default_model": {
-      "provider": "ollama",
-      "model": "llama3.2:latest"
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "zed.dev",
+      "model": "claude-opus-4-6"
     }
   },
   "lsp": {
