@@ -22,5 +22,8 @@
   "theme.bar.menus.menu.systray.dropdownmenu.divider": "#1e1e2e",
   "theme.bar.buttons.systray.background": "#c64600",
   "theme.bar.buttons.systray.border": "#b4befe",
-  "theme.bar.buttons.systray.customIcon": "#cdd6f4"
+  "theme.bar.buttons.systray.customIcon": "#cdd6f4",
+  "theme.font.size": "1.1rem",
+  "bar.workspaces.show_numbered": true,
+  "theme.bar.buttons.modules.ram.enableBorder": false
 }
