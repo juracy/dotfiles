@@ -12,3 +12,5 @@ config.package/.config/hypr/hyprlock.d/*personal.conf
 config.package/.config/rofi/colors.rasi
 config.package/.config/yazi/theme.toml*
 local.package/.local/bin/scripts-menu.zsh
+config.package/.config/DankMaterialShell/firefox.css
+config.package/.config/hypr/dms/colors.conf

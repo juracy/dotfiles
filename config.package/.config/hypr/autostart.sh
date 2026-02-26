@@ -6,9 +6,9 @@ systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 
 # Hyprland support apps
 dms run &
-hypridle &
+# hypridle &
 swww-daemon &
-~/.local/bin/wallpaper-changer.sh &
+# ~/.local/bin/wallpaper-changer.sh &
 nm-applet --indicator &
 
 # Clipboard control
