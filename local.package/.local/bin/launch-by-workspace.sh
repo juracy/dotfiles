@@ -24,7 +24,7 @@ case $WORKSPACE in
         hyprctl dispatch exec "$WORK_CHROME"
         ;;
     7)
-        hyprctl dispatch exec "gtk-launch logseq"
+        hyprctl dispatch exec "gtk-launch Logseq"
         ;;
     *)
         notify-send "Unknown workspace"
