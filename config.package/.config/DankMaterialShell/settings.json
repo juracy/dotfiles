@@ -608,6 +608,9 @@
   "launcherPluginVisibility": {
     "dms_settings_search": {
       "allowWithoutTrigger": true
+    },
+    "dankHyprlandWindows": {
+      "allowWithoutTrigger": true
     }
   },
   "launcherPluginOrder": [],
