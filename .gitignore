@@ -14,3 +14,5 @@ config.package/.config/yazi/theme.toml*
 local.package/.local/bin/scripts-menu.zsh
 config.package/.config/DankMaterialShell/firefox.css
 config.package/.config/hypr/dms/colors.conf
+/config.package/.config/hypr/hyprland.conf.backup1772029945
+/config.package/.config/zed/settings_backup.json

@@ -171,7 +171,9 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
-  "spotlightSectionViewModes": {},
+  "spotlightSectionViewModes": {
+    "apps": "tile"
+  },
   "appDrawerSectionViewModes": {
     "apps": "list"
   },
@@ -224,9 +226,9 @@
   "soundNewNotification": true,
   "soundVolumeChanged": true,
   "soundPluggedIn": true,
-  "acMonitorTimeout": 0,
+  "acMonitorTimeout": 1800,
   "acLockTimeout": 180,
-  "acSuspendTimeout": 0,
+  "acSuspendTimeout": 5400,
   "acSuspendBehavior": 0,
   "acProfileName": "",
   "batteryMonitorTimeout": 0,
@@ -522,7 +524,84 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
-  "desktopWidgetInstances": [],
+  "desktopWidgetInstances": [
+    {
+      "id": "dw_1772117074171_v09jhhj3s",
+      "widgetType": "desktopClock",
+      "name": "Relógio de Área de Trabalho",
+      "enabled": true,
+      "config": {
+        "style": "analog",
+        "transparency": 0.8,
+        "colorMode": "primary",
+        "customColor": "#ffffff",
+        "showDate": true,
+        "showAnalogNumbers": false,
+        "showAnalogSeconds": true,
+        "displayPreferences": [
+          "all"
+        ]
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 200,
+          "height": 200,
+          "x": 1695.0390625,
+          "y": 79.9296875
+        },
+        "HDMI-A-1": {
+          "width": 200,
+          "height": 200,
+          "x": 1705.19140625,
+          "y": 73.140625
+        }
+      }
+    },
+    {
+      "id": "dw_1772117207589_nt4fngwm2",
+      "widgetType": "systemMonitor",
+      "name": "Monitor do Sistema",
+      "enabled": true,
+      "config": {
+        "showHeader": true,
+        "transparency": 0.8,
+        "colorMode": "primary",
+        "customColor": "#ffffff",
+        "showCpu": true,
+        "showCpuGraph": true,
+        "showCpuTemp": true,
+        "showGpuTemp": false,
+        "gpuPciId": "",
+        "showMemory": true,
+        "showMemoryGraph": true,
+        "showNetwork": true,
+        "showNetworkGraph": true,
+        "showDisk": true,
+        "showTopProcesses": false,
+        "topProcessCount": 3,
+        "topProcessSortBy": "cpu",
+        "layoutMode": "auto",
+        "graphInterval": 60,
+        "displayPreferences": [
+          "all"
+        ]
+      },
+      "positions": {
+        "eDP-1": {
+          "width": 856.375,
+          "height": 423.58984375,
+          "x": 21.45703125,
+          "y": 576.1328125
+        },
+        "HDMI-A-1": {
+          "width": 631.58203125,
+          "height": 320.40625,
+          "x": 39.71875,
+          "y": 103.90625
+        }
+      }
+    }
+  ],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {},
   "clipboardEnterToPaste": false,
