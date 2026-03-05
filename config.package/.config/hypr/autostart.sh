@@ -16,7 +16,7 @@ wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
 
 # Auth agents
-systemctl --user start hyprpolkitagent
+# systemctl --user start hyprpolkitagent
 # /usr/lib/polkit-gnome/polkit-kde-authentication-agent-1 &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 

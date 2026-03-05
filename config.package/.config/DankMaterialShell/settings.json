@@ -75,12 +75,17 @@
   "privacyShowScreenShareIcon": false,
   "controlCenterWidgets": [
     {
-      "id": "volumeSlider",
+      "id": "brightnessSlider",
+      "enabled": true,
+      "width": 100
+    },
+    {
+      "id": "inputVolumeSlider",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "brightnessSlider",
+      "id": "volumeSlider",
       "enabled": true,
       "width": 50
     },
@@ -95,12 +100,17 @@
       "width": 50
     },
     {
+      "id": "audioInput",
+      "enabled": true,
+      "width": 50
+    },
+    {
       "id": "audioOutput",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "audioInput",
+      "id": "darkMode",
       "enabled": true,
       "width": 50
     },
@@ -110,7 +120,12 @@
       "width": 50
     },
     {
-      "id": "darkMode",
+      "id": "doNotDisturb",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "idleInhibitor",
       "enabled": true,
       "width": 50
     }
@@ -172,7 +187,7 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "spotlightSectionViewModes": {
-    "apps": "tile"
+    "apps": "grid"
   },
   "appDrawerSectionViewModes": {
     "apps": "list"
@@ -248,7 +263,10 @@
   "wifiNetworkPins": {
     "preferredWifi": [
       "Dataprev-Internet",
-      "JF edge"
+      "JF edge",
+      "jfNerdMultiplay",
+      "VIVOFIBRA-WIFI6-1441",
+      "Dataprev-Internet"
     ]
   },
   "bluetoothDevicePins": {},
@@ -377,8 +395,31 @@
   "showOnLastDisplay": {},
   "niriOutputSettings": {},
   "hyprlandOutputSettings": {},
-  "displayProfiles": {},
-  "activeDisplayProfile": {},
+  "displayProfiles": {
+    "hyprland": {
+      "profile_1772482572608_3yplaz": {
+        "id": "profile_1772482572608_3yplaz",
+        "name": "standalone",
+        "outputSet": [
+          "eDP-2"
+        ],
+        "createdAt": 1772482572608,
+        "updatedAt": 1772482572608
+      },
+      "profile_1772482914568_weuat3": {
+        "id": "profile_1772482914568_weuat3",
+        "name": "Standalone zoom",
+        "outputSet": [
+          "eDP-2"
+        ],
+        "createdAt": 1772482914568,
+        "updatedAt": 1772482914568
+      }
+    }
+  },
+  "activeDisplayProfile": {
+    "hyprland": "profile_1772482572608_3yplaz"
+  },
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
@@ -552,8 +593,14 @@
         "HDMI-A-1": {
           "width": 200,
           "height": 200,
-          "x": 1705.19140625,
-          "y": 73.140625
+          "x": 2321.60546875,
+          "y": 82.3359375
+        },
+        "eDP-2": {
+          "width": 200,
+          "height": 200,
+          "x": 1690.2109375,
+          "y": 63.27734375
         }
       }
     },
@@ -598,18 +645,31 @@
           "height": 320.40625,
           "x": 39.71875,
           "y": 103.90625
+        },
+        "eDP-2": {
+          "width": 957.29296875,
+          "height": 475.05859375,
+          "x": 0,
+          "y": 85.97265625
         }
       }
     }
   ],
   "desktopWidgetGroups": [],
-  "builtInPluginSettings": {},
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {
     "dms_settings_search": {
       "allowWithoutTrigger": true
     },
     "dankHyprlandWindows": {
+      "allowWithoutTrigger": true
+    },
+    "dankLauncherKeys": {
       "allowWithoutTrigger": true
     }
   },

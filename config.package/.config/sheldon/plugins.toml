@@ -66,6 +66,7 @@ apply = ["defer"]
 
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
+tag = 'v1.2.0'
 
 [plugins.hist]
 github = 'marlonrichert/zsh-hist'

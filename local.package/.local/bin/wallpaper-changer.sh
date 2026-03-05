@@ -14,14 +14,14 @@ else
 fi
 
 if [ ! -f "$WALLPAPER" ]; then
-    notify-send "Wallpaper Error" "File not found: $WALLPAPER"
+    dms notify "Wallpaper Error" "File not found: $WALLPAPER"
     exit 1
 fi
 
 # Apply the selected wallpaper
 # hyprctl hyprpaper reload ,"$WALLPAPER"
 BASENAME=$(basename "$WALLPAPER")
-notify-send "New wallpaper" "$BASENAME"
+dms notify "New wallpaper" "$BASENAME" --file "$WALLPAPER"
 # matugen -t scheme-fidelity --contrast 0.2 --show-colors --source-color-index 0 image -v "$WALLPAPER" > /tmp/matugen.log
 dms ipc call wallpaper set "$WALLPAPER"
 
