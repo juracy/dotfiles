@@ -16,3 +16,6 @@ config.package/.config/DankMaterialShell/firefox.css
 config.package/.config/hypr/dms/colors.conf
 /config.package/.config/hypr/hyprland.conf.backup1772029945
 /config.package/.config/zed/settings_backup.json
+/config.package/.config/DankMaterialShell/plugins/.repos
+/config.package/.config/hypr/dms/profiles
+/config.package/.config/hypr/dms/outputs.conf
