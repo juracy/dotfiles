@@ -80,12 +80,19 @@
   },
   "edit_predictions": {
     "provider": "zed",
-    "mode": "subtle"
+    "mode": "eager"
   },
   "agent": {
     "tool_permissions": {
       "tools": {
+        "copy_path": {
+          "default": "allow"
+        },
+        "web_search": {
+          "default": "allow"
+        },
         "fetch": {
+          "default": "allow",
           "always_allow": [
             {
               "pattern": "^https?://raw\\.githubusercontent\\.com"
@@ -102,6 +109,33 @@
             },
             {
               "pattern": "^sed\\b"
+            },
+            {
+              "pattern": "^cd\\b"
+            },
+            {
+              "pattern": "^echo\\b"
+            },
+            {
+              "pattern": "^npx\\s+jest(\\s|$)"
+            },
+            {
+              "pattern": "^uv\\s+run(\\s|$)"
+            },
+            {
+              "pattern": "^find\\s+apps(\\s|$)"
+            },
+            {
+              "pattern": "^find\\b"
+            },
+            {
+              "pattern": "^cat\\b"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^npm\\s+view(\\s|$)"
             }
           ]
         }
@@ -111,7 +145,7 @@
       "effort": "high",
       "enable_thinking": true,
       "provider": "zed.dev",
-      "model": "claude-opus-4-6"
+      "model": "claude-sonnet-4-6"
     }
   },
   "lsp": {
