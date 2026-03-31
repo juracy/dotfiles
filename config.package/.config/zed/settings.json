@@ -29,7 +29,7 @@
   ],
   "theme": {
     "mode": "dark",
-    "dark": "Blankeos Zen Dark",
+    "dark": "DankShell Dark",
     "light": "Ayu Light"
   },
   "experimental.theme_overrides": {
@@ -136,6 +136,15 @@
             },
             {
               "pattern": "^npm\\s+view(\\s|$)"
+            },
+            {
+              "pattern": "^wc\\b"
+            },
+            {
+              "pattern": "^yarn\\s+add(\\s|$)"
+            },
+            {
+              "pattern": "^yarn\\s+test(\\s|$)"
             }
           ]
         }
