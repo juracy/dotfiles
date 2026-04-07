@@ -30,6 +30,7 @@ export PATH="$ASDF_DATA_DIR/shims:$PATH"
 zstyle ':completion:*' menu select
 
 fpath+=~/.zfunc
+fpath=(~/.local/share/zsh/completions $fpath)
 
 # last config fort zsh
 autoload -Uz compinit
