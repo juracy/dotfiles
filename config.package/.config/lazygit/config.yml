@@ -1,0 +1,8 @@
+git:
+  autoFetch: false
+
+gui:
+  theme:
+    selectedLineBgColor:
+      - reverse
+  nerdFontsVersion: "3"
