@@ -11,6 +11,9 @@ dms run &
 ~/.local/bin/wallpaper-changer.sh &
 nm-applet --indicator &
 
+# Cosmic settings daemon (portal)
+cosmic-settings-daemon &
+
 # Clipboard control
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &

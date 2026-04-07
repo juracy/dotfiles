@@ -20,4 +20,4 @@ output_path = '/tmp/matugen-palette.html'
 [templates.cosmic]
 input_path = '~/.config/matugen/templates/cosmic_theme.ron'
 output_path = '~/.config/cosmic/matugen_cosmic.theme.ron'
-post_hook = "~/.config/matugen/templates/cosmic_postprocess.py ~/.config/cosmic/matugen_cosmic.theme.ron"
+post_hook = "sh -c '~/.config/matugen/templates/cosmic_postprocess.py ~/.config/cosmic/matugen_cosmic.theme.ron' && cosmic-settings appearance import ~/.config/cosmic/matugen_cosmic.theme.ron"
