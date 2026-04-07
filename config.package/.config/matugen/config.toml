@@ -1,26 +1,9 @@
+[config]
+
 [config.wallpaper]
-command = "swww"
-arguments = ["img", "--transition-type", "random"]
-set = true
-
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland-colors.conf'
-output_path = '~/.config/hypr/colors.conf'
-post_hook = 'hyprctl reload'
-
-[templates.waybar]
-input_path = '~/.config/matugen/templates/colors.css'
-output_path = '~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
-
-[templates.gtk3]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/colors.css'
-post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
-
-[templates.gtk4]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/colors.css'
+# Whether to set the wallpaper or not
+set = false
+command = "awww img --transition-type center {{ image }}"
 
 [templates.yazi]
 input_path = '~/.config/matugen/templates/yazi-theme.toml'
@@ -30,11 +13,11 @@ output_path = '~/.config/yazi/theme.toml'
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 
-[templates.kitty]
-input_path = '~/.config/matugen/templates/kitty-colors.conf'
-output_path = '~/.config/kitty/matugen-theme.conf'
-post_hook = 'pkill -SIGUSR1 kitty'
-
 [templates.html]
 input_path = '~/.config/matugen/templates/template.html'
 output_path = '/tmp/matugen-palette.html'
+
+[templates.cosmic]
+input_path = '~/.config/matugen/templates/cosmic_theme.ron'
+output_path = '~/.config/cosmic/matugen_cosmic.theme.ron'
+post_hook = "~/.config/matugen/templates/cosmic_postprocess.py ~/.config/cosmic/matugen_cosmic.theme.ron"
