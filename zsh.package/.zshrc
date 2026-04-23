@@ -24,8 +24,7 @@ function zsh_log() {
   [ ! -z $DOTFILES_VERBOSE ] && printf "%-30s %s\n" "$(basename $1):" "$2..."
 }
 
-export ASDF_DATA_DIR="$HOME/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+eval "$(mise activate zsh)"
 
 zstyle ':completion:*' menu select
 
