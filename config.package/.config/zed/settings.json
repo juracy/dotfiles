@@ -7,7 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "diff_view_style": "split",
   "agent_servers": {
+    "gemini": {
+      "type": "registry"
+    },
     "claude-acp": {
       "type": "registry"
     }
@@ -88,6 +104,7 @@
     "mode": "eager"
   },
   "agent": {
+    "dock": "right",
     "tool_permissions": {
       "tools": {
         "copy_path": {

@@ -15,7 +15,7 @@ case $WORKSPACE in
         hyprctl dispatch exec "gtk-launch dev.zed.Zed"
         ;;
     4)
-        hyprctl dispatch exec "flatpak run com.rtosta.zapzap"
+        hyprctl dispatch exec 'google-chrome-stable --profile-directory="Default" --app-id=hnpfjngllnobngcgfapefoaidbinmjnm'
         ;;
     5)
         hyprctl dispatch exec "$WORK_CHROME --app-id=cifhbcnohmdccbgoicgdjpfamggdegmo"
@@ -24,7 +24,7 @@ case $WORKSPACE in
         hyprctl dispatch exec "$WORK_CHROME"
         ;;
     7)
-        hyprctl dispatch exec "gtk-launch Logseq"
+        hyprctl dispatch exec "gtk-launch logseq"
         ;;
     *)
         notify-send "Unknown workspace"
