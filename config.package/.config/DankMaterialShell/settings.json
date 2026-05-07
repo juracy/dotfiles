@@ -59,8 +59,8 @@
   "enabledGpuPciIds": [],
   "showSystemTray": true,
   "systemTrayIconTintMode": "none",
-  "systemTrayIconTintSaturation": 44,
-  "systemTrayIconTintStrength": 137,
+  "systemTrayIconTintSaturation": 50,
+  "systemTrayIconTintStrength": 135,
   "showClock": true,
   "showNotificationButton": true,
   "showBattery": true,
@@ -678,14 +678,14 @@
         "eDP-1": {
           "width": 856.375,
           "height": 423.58984375,
-          "x": 21.45703125,
-          "y": 576.1328125
+          "x": 0,
+          "y": 595.84375
         },
         "HDMI-A-1": {
           "width": 631.58203125,
           "height": 320.40625,
-          "x": 39.71875,
-          "y": 103.90625
+          "x": 21.8828125,
+          "y": 54.37890625
         },
         "eDP-2": {
           "width": 957.29296875,
