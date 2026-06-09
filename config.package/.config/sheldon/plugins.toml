@@ -60,9 +60,13 @@ use = [
   "plugins/yarn/*.zsh",
 ]
 
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"
 apply = ["defer"]
+
+# [plugins.zsh-syntax-highlighting]
+# github = "zsh-users/zsh-syntax-highlighting"
+# apply = ["defer"]
 
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
