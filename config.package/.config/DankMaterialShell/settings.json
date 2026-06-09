@@ -382,7 +382,7 @@
   "osdPosition": 5,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
-  "osdMediaPlaybackEnabled": true,
+  "osdMediaPlaybackEnabled": false,
   "osdBrightnessEnabled": true,
   "osdIdleInhibitorEnabled": true,
   "osdMicMuteEnabled": true,
@@ -412,10 +412,23 @@
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
-  "screenPreferences": {},
-  "showOnLastDisplay": {},
+  "screenPreferences": {
+    "osd": [
+      "all"
+    ]
+  },
+  "showOnLastDisplay": {
+    "osd": true
+  },
   "niriOutputSettings": {},
-  "hyprlandOutputSettings": {},
+  "hyprlandOutputSettings": {
+    "eDP-2": {
+      "disabled": false
+    },
+    "eDP-1": {
+      "disabled": false
+    }
+  },
   "displayProfiles": {
     "hyprland": {
       "profile_1772482572608_3yplaz": {
@@ -665,9 +678,9 @@
         "showNetwork": true,
         "showNetworkGraph": true,
         "showDisk": true,
-        "showTopProcesses": false,
-        "topProcessCount": 3,
-        "topProcessSortBy": "cpu",
+        "showTopProcesses": true,
+        "topProcessCount": 5,
+        "topProcessSortBy": "memory",
         "layoutMode": "auto",
         "graphInterval": 60,
         "displayPreferences": [

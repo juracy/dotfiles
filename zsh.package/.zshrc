@@ -42,3 +42,7 @@ command -v ng >/dev/null && source <(ng completion script)
 
 # last zsh thing
 compinit
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/juracy/.local/bin:$PATH"
