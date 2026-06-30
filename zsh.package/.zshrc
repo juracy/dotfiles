@@ -12,7 +12,6 @@ stty icrnl
 bindkey -e
 zstyle :compinstall filename "$HOME/.zshrc"
 
-# eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 if type brew &>/dev/null; then
   fpath+=$(brew --prefix)/share/zsh/site-functions
 fi

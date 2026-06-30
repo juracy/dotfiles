@@ -6,11 +6,3 @@ alias ls='eza --hyperlink'
 alias please='sudo $(fc -ln -1)'
 alias fd='/usr/bin/fd --color=always'
 alias less='moor'
-
-# remove linuxbrew from path before run
-function deactive_brew() {
-    echo $PATH | tr ":" "\n" | grep -v "brew" | tr "\n" ":"
-}
-
-#alias imgp='PATH=`deactive_brew` imgp'
-#alias yaourt='PATH=`deactive_brew` yaourt'

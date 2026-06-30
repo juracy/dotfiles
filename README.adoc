@@ -8,7 +8,6 @@ Juracy Filho's Dot Files
 * GNU stow
 * git
 * zsh
-* https://github.com/Homebrew/brew[Homebrew]
 * https://github.com/rossmacarthur/sheldon[sheldon]
 * https://starship.rs[Starship]
 
