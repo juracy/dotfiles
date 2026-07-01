@@ -1,4 +1,4 @@
-VISUAL=lvim
+VISUAL=nvim
 EDITOR=$VISUAL
 APPDATA=$HOME/.config
 XDG_CONFIG_HOME=$HOME/.config
