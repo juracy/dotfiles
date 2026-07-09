@@ -19,3 +19,5 @@ config.package/.config/hypr/dms/colors.conf
 /config.package/.config/DankMaterialShell/plugins/.repos
 /config.package/.config/hypr/dms/profiles
 /config.package/.config/hypr/dms/outputs.conf
+config.package/.config/DankMaterialShell/monitors.json
+config.package/.config/hypr/dms/colors.lua

@@ -426,9 +426,9 @@
   "muxSessionFilter": "",
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
-  "matugenTemplateNiri": true,
+  "matugenTemplateNiri": false,
   "matugenTemplateHyprland": true,
-  "matugenTemplateMangowc": true,
+  "matugenTemplateMangowc": false,
   "matugenTemplateQt5ct": true,
   "matugenTemplateQt6ct": true,
   "matugenTemplateFirefox": false,
@@ -507,7 +507,6 @@
   "maxFprintTries": 15,
   "enableU2f": false,
   "u2fMode": "or",
-  "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
   "lockScreenVideoEnabled": false,
@@ -589,48 +588,7 @@
       "disabled": false
     }
   },
-  "displayProfiles": {
-    "hyprland": {
-      "profile_1772482572608_3yplaz": {
-        "id": "profile_1772482572608_3yplaz",
-        "name": "standalone",
-        "outputSet": [
-          "eDP-2"
-        ],
-        "createdAt": 1772482572608,
-        "updatedAt": 1772482572608
-      },
-      "profile_1772482914568_weuat3": {
-        "id": "profile_1772482914568_weuat3",
-        "name": "Standalone zoom",
-        "outputSet": [
-          "eDP-2"
-        ],
-        "createdAt": 1772482914568,
-        "updatedAt": 1772482914568
-      },
-      "profile_1772739710353_i4s3j8": {
-        "id": "profile_1772739710353_i4s3j8",
-        "name": "work - basic",
-        "outputSet": [
-          "HDMI-A-1",
-          "eDP-1"
-        ],
-        "createdAt": 1772739710353,
-        "updatedAt": 1772739710353
-      },
-      "profile_1772739729466_eowgvd": {
-        "id": "profile_1772739729466_eowgvd",
-        "name": "work - zoom",
-        "outputSet": [
-          "HDMI-A-1",
-          "eDP-1"
-        ],
-        "createdAt": 1772739729466,
-        "updatedAt": 1772739729466
-      }
-    }
-  },
+  "displayProfiles": {},
   "activeDisplayProfile": {
     "hyprland": "profile_1772739729466_eowgvd"
   },
