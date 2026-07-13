@@ -1,0 +1,30 @@
+-- gen by confToLua.py
+-- Source: 00-apps.conf
+-- Some values might need MANUAL check. PLEASE DO BACKUP BEFORE TESTING, PLEASEEEE.
+
+-- Variables
+terminal = "kitty"
+fileManager = "cosmic-files"
+menu = "dms ipc spotlight open"
+hyprland_reload = "hyprctl reload && notify-send 'Hyprland Reloaded'"
+preferred_app = "~/.local/bin/launch-by-workspace.sh"
+wallpaper_control = "~/.local/bin/wallpaper-changer.sh"
+play_pause = "playerctl play-pause && notify-send -u low -i ~/.assets/play-pause.svg 'Play/pause' -t 1000"
+mixer = "pavucontrol"
+calc = "gnome-calculator"
+screenshot = "dms screenshot --stdout | satty -f - --early-exit --save-after-copy --copy-command=wl-copy --action-on-enter save-to-clipboard -o \"$HOME/Pictures/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S').png\""
+screenshot_without_edit = "grim -g \"$(slurp -d)\" \"$HOME/Pictures/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S').png\" && wl-copy < \"$HOME/Pictures/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S').png\""
+screenshot_window = "hyprshot -m window --raw | satty -f - --early-exit --save-after-copy --copy-command=wl-copy --action-on-enter save-to-clipboard -o \"$HOME/Pictures/Screenshots/$(date +'screenshot_%Y-%m-%d_%H-%M-%S').png\""
+powerctrl = "nwg-bar"
+locker = "notify-send 'lock'"
+suspend = "sync && sleep 3 && systemctl suspend"
+show_notifications = "dms ipc notifications toggle"
+clipboard_history = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+copy_color_picker = "hyprpicker -l -a"
+zeal = "zeal"
+audio_volume_up = "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+audio_volume_down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+audio_mute = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+audio_mic_mute = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+brightness_up = "brightnessctl -e4 -n2 set 5%+"
+brightness_down = "brightnessctl -e4 -n2 set 5%-"

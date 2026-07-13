@@ -1,0 +1,17 @@
+--  Personal vars
+--  TODO: Evaluate usage of shell variables
+
+--  For get_location.sh
+-- hl.env("SSID_HOME", "HOME-WIFI")
+-- hl.env("SSID_WORK", "WORK-WIFI")
+
+--  For launch-by-workspace.sh
+-- hl.env("WORK_CHROME_PROFILE", "Profile 1")
+
+--  Kitty theme
+-- hl.env("KITTY_THEME", "ENCOM")
+
+--  Hyprcursor theme
+-- hl.env("HYPRCURSOR_THEME", "Bibata-Original-Classic")
+-- hl.env("HYPRCURSOR_SIZE", "36")
+--  pacman -S bibata-cursor-theme-bin

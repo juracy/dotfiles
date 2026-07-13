@@ -7,7 +7,7 @@ config.package/.config/swaync/colors.css
 config.package/.config/waybar/colors.css
 config.package/.config/hypr/monitors.conf
 config.package/.config/hypr/workspaces.conf
-config.package/.config/hypr/hypr.d/*personal.conf
+config.package/.config/hypr/hypr.d/*personal.lua
 config.package/.config/hypr/hyprlock.d/*personal.conf
 config.package/.config/rofi/colors.rasi
 config.package/.config/yazi/theme.toml*
@@ -21,3 +21,5 @@ config.package/.config/hypr/dms/colors.conf
 /config.package/.config/hypr/dms/outputs.conf
 config.package/.config/DankMaterialShell/monitors.json
 config.package/.config/hypr/dms/colors.lua
+config.package/.config/hypr/dms/outputs.lua
+.dms-backups
