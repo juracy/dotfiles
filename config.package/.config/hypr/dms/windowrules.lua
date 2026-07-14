@@ -8,4 +8,7 @@ hl.window_rule({ match = { class = "^com.system76.CosmicFilesDialog$" }, float =
 hl.window_rule({ match = { class = "^com.danklinux.dms$" }, float = true })
 
 -- DMS-RULE: id=wr_1783715900353522127, name=About Zed
-hl.window_rule({ match = { class = "^dev.zed.Zed$", title = "^About Zed$" }, float = true, center = true })
+hl.window_rule({ match = { class = "^dev.zed.Zed$", title = "^About Zed$" }, float = true })
+
+-- DMS-RULE: id=wr_1784033077102644388, name=com.github.AppManager
+hl.window_rule({ match = { class = "^com.github.AppManager$" }, float = true })

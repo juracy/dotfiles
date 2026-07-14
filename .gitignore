@@ -21,3 +21,4 @@ config.package/.config/DankMaterialShell/monitors.json
 config.package/.config/hypr/dms/colors.lua
 config.package/.config/hypr/dms/outputs.lua
 .dms-backups
+config.package/.config/htop/htop_history
