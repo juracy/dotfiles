@@ -13,7 +13,7 @@ their config (Hyprland, zsh, kitty, etc).
 Each top-level `*.package` directory is a Stow package: its internal structure mirrors `$HOME` exactly, so
 `config.package/.config/hypr/...` stows to `~/.config/hypr/...`.
 
-- `config.package/` — `~/.config/*` for most apps (Hyprland, DankMaterialShell, kitty, zed, rofi, waybar, yazi, tmux, etc.)
+- `config.package/` — `~/.config/*` for most apps (Hyprland, DankMaterialShell, kitty, zed, rofi, yazi, tmux, etc.)
 - `home.package/` — dotfiles that live directly in `$HOME` (`.gitconfig`, `.gnupg`, etc.)
 - `zsh.package/` — `.zshrc`, `.zshenv`, and `.local/bin/zsh/*.zsh` / `.local/share/zsh` helper scripts sourced from `.zshrc`
 - `local.package/` — `~/.local/*` (non-zsh)
