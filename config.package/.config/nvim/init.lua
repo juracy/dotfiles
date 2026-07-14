@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 require('config.options')
 
 -- 1. lazy.nvim - auto install
@@ -30,6 +33,31 @@ require("lazy").setup({
 
     -- No futuro, você adicionará novos plugins aqui, por exemplo:
     -- { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+      "nvim-telescope/telescope.nvim",
+      branch = "0.1.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        {
+          "nvim-telescope/telescope-fzf-native.nvim",
+          build = "make",
+        },
+      },
+      config = function()
+        local telescope = require("telescope")
+        telescope.setup({
+          -- Default configurations can go here
+        })
+        telescope.load_extension("fzf")
+
+        -- Keymaps
+        local builtin = require("telescope.builtin")
+        vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope Find Files" })
+        vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope Live Grep" })
+        vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope Buffers" })
+        vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope Help Tags" })
+      end,
+    },
   },
   -- Configurações adicionais do lazy (opcional)
   install = { colorscheme = { "habamax" } }, -- Tema padrão de fallback caso o base46 falhe
