@@ -21,16 +21,8 @@ github = "romkatv/zsh-defer"
 github = 'zsh-users/zsh-autosuggestions'
 use = ["{{ name }}.zsh"]
 
-# [plugins.enhancd]
-# github = 'b4b4r07/enhancd'
-# use = ["init.sh"]
-
 [plugins.emoji-cli]
 github = 'b4b4r07/emoji-cli'
-
-[plugins.colored-man-pages_mod]
-github = 'zuxfoucault/colored-man-pages_mod'
-use = ["colored-man-pages_mod.plugin.zsh"]
 
 [plugins.zsh-history-substring-search]
 github = 'zsh-users/zsh-history-substring-search'
@@ -38,19 +30,18 @@ github = 'zsh-users/zsh-history-substring-search'
 [plugins.zsh-completions]
 github = 'zsh-users/zsh-completions'
 
-[plugins.zsh-autoenv]
-github = "Tarrasch/zsh-autoenv"
-
 [plugins.docker-cli]
 github = "docker/cli"
 use = ["contrib/completion/zsh"]
 
-[plugins.kube]
-github = "Dbz/kube-aliases"
+[plugins.kubectl-aliases]
+github = "ahmetb/kubectl-aliases"
+use = [".kubectl_aliases"]
 
 [plugins.ohmyzsh]
 github = "ohmyzsh/ohmyzsh"
 use = [
+  "plugins/colored-man-pages/*.zsh",
   "plugins/common-aliases/*.zsh",
   "plugins/docker-compose/*.zsh",
   "plugins/git-extras/*.zsh",
@@ -72,8 +63,8 @@ apply = ["defer"]
 github = 'Aloxaf/fzf-tab'
 tag = 'v1.3.0'
 
-[plugins.hist]
-github = 'marlonrichert/zsh-hist'
+[plugins.forgit]
+github = "wfxr/forgit"
 
 [plugins.zsh-cargo-completion]
 github = 'MenkeTechnologies/zsh-cargo-completion'
