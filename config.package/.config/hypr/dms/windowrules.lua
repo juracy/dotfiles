@@ -12,3 +12,6 @@ hl.window_rule({ match = { class = "^dev.zed.Zed$", title = "^About Zed$" }, flo
 
 -- DMS-RULE: id=wr_1784033077102644388, name=com.github.AppManager
 hl.window_rule({ match = { class = "^com.github.AppManager$" }, float = true })
+
+-- DMS-RULE: id=wr_1784039738790307042, name=Bitwarden
+hl.window_rule({ match = { class = "^chrome-nngceckbapebfimnlniiiahkandclblb.*$" }, float = true })
