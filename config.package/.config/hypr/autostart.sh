@@ -1,5 +1,7 @@
 #!/bin/bash
 
+dms run &
+
 # Base desktop support
 dbus-update-activation-enviroment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
