@@ -63,7 +63,12 @@ hl.window_rule({
 	name  = "satty",
 	match = { class = "^(com.gabm.satty)$" },
 	float = true,
-	workspace = "special:print",
+    workspace = "special:print",
+	no_initial_focus = true,
+	center = true,
+	pin = true,
+    stay_focused = true,
+	border_color = "rgb(FF0000)",
 })
 hl.window_rule({
 	name  = "rule-015",
