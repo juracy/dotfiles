@@ -75,3 +75,5 @@ require("lazy").setup({
   install = { colorscheme = { "habamax" } }, -- Tema padrão de fallback caso o base46 falhe
   checker = { enabled = true }, -- Verifica atualizações de plugins automaticamente em background
 })
+
+vim.cmd("colorscheme dms")
