@@ -34,9 +34,8 @@ github = 'zsh-users/zsh-completions'
 github = "docker/cli"
 use = ["contrib/completion/zsh"]
 
-[plugins.kubectl-aliases]
-github = "ahmetb/kubectl-aliases"
-use = [".kubectl_aliases"]
+[plugins.kube]
+github = "Dbz/kube-aliases"
 
 [plugins.ohmyzsh]
 github = "ohmyzsh/ohmyzsh"
