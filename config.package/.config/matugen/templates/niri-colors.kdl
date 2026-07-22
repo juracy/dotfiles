@@ -1,4 +1,6 @@
 layout {
+	background-color "{{colors.background.default.hex}}"
+
     focus-ring {
         active-color "{{colors.primary.default.hex}}"
         inactive-color "{{colors.outline.default.hex}}"
@@ -26,3 +28,13 @@ layout {
     }
 }
 
+overview {
+	backdrop-color "{{colors.background.default.hex}}"
+}
+
+recent-windows {
+    highlight {
+        active-color "{{colors.primary.default.hex}}"
+        urgent-color "{{colors.error.default.hex}}"
+    }
+}
