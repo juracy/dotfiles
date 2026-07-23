@@ -45,3 +45,4 @@ vim.opt.mouse = "a"
 -- Completion
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.pumheight = 10
+
