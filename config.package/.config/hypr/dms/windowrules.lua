@@ -15,3 +15,6 @@ hl.window_rule({ match = { class = "^com.github.AppManager$" }, float = true })
 
 -- DMS-RULE: id=wr_1784039738790307042, name=Bitwarden
 hl.window_rule({ match = { class = "^chrome-nngceckbapebfimnlniiiahkandclblb.*$" }, float = true })
+
+-- DMS-RULE: id=wr_1784832183199801362, name=com.system76.CosmicPlayer
+hl.window_rule({ match = { class = "^com.system76.CosmicPlayer$" }, float = true })
