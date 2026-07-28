@@ -12,10 +12,10 @@ hl.config({
 })
 
 -- Keybindings
-hl.bind("SUPER + mouse_down", function()
+hl.bind("SUPER + mouse_up", function()
   zoom.zoom_in()
 end)
-hl.bind("SUPER + mouse_up", function()
+hl.bind("SUPER + mouse_down", function()
   zoom.zoom_out()
 end)
 hl.bind("SUPER + mouse:274",  function()
