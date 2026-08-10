@@ -5,9 +5,11 @@ if which yarn > /dev/null; then
     PATH=$YARNBIN:$PATH
 fi
 
-MINICONDAPATH=$HOME/miniconda3/bin
-if [ -d $MINICONDAPATH ]; then
-    PATH=$MINICONDAPATH:$PATH
-fi
+PAGER="moor --no-clear-on-exit"
+MANPAGER=$PAGER
+GIT_PAGER=$PAGER
+MOOR_OPTIONS="--no-clear-on-exit"
+
+MANROFFOPT="-c"
 
 PATH=$PATH:$HOME/.cargo/bin
