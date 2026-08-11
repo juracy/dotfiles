@@ -1,5 +1,15 @@
 local M = {}
 
+-- Primeiro monitor da lista cujo nome não é focused_name.
+local function find_other_monitor(mons, focused_name)
+  for _, m in ipairs(mons) do
+    if m.name ~= focused_name then
+      return m
+    end
+  end
+  return nil
+end
+
 -- Troca os workspaces visíveis entre os dois primeiros monitores.
 -- Retorna os monitores e os dois primeiros, para reuso em swap_focus.
 local function do_swap()
@@ -28,7 +38,34 @@ function M.swap_focus()
       focused = m
     end
   end
-  local target = (focused and focused.name == m1.name) and m2 or m1
+  local target = find_other_monitor(mons, focused and focused.name)
+  hl.dispatch(hl.dsp.focus({ monitor = target.name }))
+end
+
+-- Move todos os workspaces normais (não especiais) do monitor focado para o
+-- outro monitor, e segue o foco para o destino.
+function M.move_all_to_other()
+  local focused = hl.get_active_monitor()
+  if not focused then
+    return
+  end
+
+  -- Resolve o monitor de destino uma única vez, pelo nome: mover o workspace
+  -- ativo pode fazer o Hyprland trocar o foco de monitor no meio do laço, e
+  -- aí o seletor relativo "-1" passaria a apontar para outro monitor a cada
+  -- dispatch, movendo os workspaces seguintes para o lugar errado.
+  local target = find_other_monitor(hl.get_monitors(), focused.name)
+  if not target then
+    return
+  end
+
+  local workspaces = hl.get_workspaces()
+  for _, ws in ipairs(workspaces) do
+    if not ws.special and ws.monitor and ws.monitor.name == focused.name then
+      hl.dispatch(hl.dsp.workspace.move({ workspace = ws.id, monitor = target.name }))
+    end
+  end
+
   hl.dispatch(hl.dsp.focus({ monitor = target.name }))
 end
 
