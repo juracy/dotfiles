@@ -5,6 +5,10 @@ if which yarn > /dev/null; then
     PATH=$YARNBIN:$PATH
 fi
 
+if which pnpm > /dev/null; then
+    PATH=$HOME/.local/share/pnpm/bin:$PATH
+fi
+
 PAGER="moor --no-clear-on-exit"
 MANPAGER=$PAGER
 GIT_PAGER=$PAGER
