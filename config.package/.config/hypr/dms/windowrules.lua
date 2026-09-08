@@ -18,3 +18,6 @@ hl.window_rule({ match = { class = "^chrome-nngceckbapebfimnlniiiahkandclblb.*$"
 
 -- DMS-RULE: id=wr_1784832183199801362, name=com.system76.CosmicPlayer
 hl.window_rule({ match = { class = "^com.system76.CosmicPlayer$" }, float = true })
+
+-- DMS-RULE: id=dms-floating-windows, name=DMS Floating Windows
+hl.window_rule({ match = { class = "^com.danklinux.dms$" }, float = true })
