@@ -21,3 +21,8 @@ output_path = '/tmp/matugen-palette.html'
 input_path = '~/.config/matugen/templates/cosmic_theme.ron'
 output_path = '~/.config/cosmic/matugen_cosmic.theme.ron'
 post_hook = "sh -c '~/.config/matugen/templates/cosmic_postprocess.py ~/.config/cosmic/matugen_cosmic.theme.ron' && cosmic-settings appearance import ~/.config/cosmic/matugen_cosmic.theme.ron"
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux-colors.conf'
+output_path = '~/.config/tmux/generated.conf'
+post_hook = 'tmux source-file ~/.config/tmux/generated.conf'
