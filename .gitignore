@@ -24,3 +24,5 @@ config.package/.config/hypr/dms/outputs.lua
 config.package/.config/htop/htop_history
 config.package/.config/nvim/colors/dms.lua
 /config.package/.config/nvim/lazy-lock.json
+config.package/.config/tmux/generated.conf
+config.package/.config/DankMaterialShell/plugins/claudeCodeUsage/
