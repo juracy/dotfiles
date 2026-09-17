@@ -4,7 +4,7 @@ if [ "$1" != "" ]; then
     WALLPAPER="$1"
 else
     #WALLPAPER_DIR="/usr/share/backgrounds/\n$HOME/.assets/wallpapers/"
-    CURRENT_WALL=$(swww query | cut -d: -f 5 | head -1 | sed -e 's/^ //')
+    CURRENT_WALL=$(dms ipc call wallpaper getFor 0 | cut -d: -f 5 | head -1 | sed -e 's/^ //')
     CURRENT_WALL_NAME=$(basename "$CURRENT_WALL")
 
     # Get a random wallpaper that is not the current one
