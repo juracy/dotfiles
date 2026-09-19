@@ -16,4 +16,7 @@ MOOR_OPTIONS="--no-clear-on-exit"
 
 MANROFFOPT="-c"
 
+export OCP_USER=juracy.filho
+export OCP_GOPASS_KEY=dtp/ad
+
 PATH=$PATH:$HOME/.cargo/bin
