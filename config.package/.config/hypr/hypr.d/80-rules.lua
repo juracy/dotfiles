@@ -4,6 +4,14 @@
 
 
 -- Windowrules
+
+-- Indicador visual para janelas flutuantes
+hl.window_rule({
+	name = "floating-window-indicator",
+	match = { float = true },
+	border_color = "rgb(70d6ff) rgb(005577)",
+	border_size = 3,
+})
 hl.window_rule({
 	name  = "rule-001",
 	match = { class = "^(org.pulseaudio.pavucontrol)$" },
