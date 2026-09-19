@@ -26,4 +26,4 @@ config.package/.config/tmux/generated.conf
 config.package/.config/yazi/theme.toml*
 config.package/.config/zed/settings_backup.json
 local.package/.local/bin/scripts-menu.zsh
-local.package/.local/bin/zsh/personal-*.zsh
+zsh.package/.local/bin/zsh/personal-*.zsh
