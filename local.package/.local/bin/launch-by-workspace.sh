@@ -6,6 +6,7 @@ PERSONAL_CHROME="google-chrome-stable --profile-directory=Default"
 WORK_CHROME="google-chrome-stable --profile-directory=\"$WORK_CHROME_PROFILE\""
 TEAM_CHROME_APP_ID="cifhbcnohmdccbgoicgdjpfamggdegmo"
 WHATSAPP_CHROME_APP_ID="hnpfjngllnobngcgfapefoaidbinmjnm"
+BGA_APP_ID="pogkokppkghfaeboimdkfifmcmlhngnl"
 
 case $WORKSPACE in
     1)
@@ -28,6 +29,9 @@ case $WORKSPACE in
         ;;
     7)
         hyprctl dispatch 'hl.dsp.exec_cmd("gtk-launch logseq")'
+        ;;
+    8)
+        hyprctl dispatch "hl.dsp.exec_cmd('$PERSONAL_CHROME --app-id=$BGA_APP_ID')"
         ;;
     *)
         notify-send "Unknown workspace"
