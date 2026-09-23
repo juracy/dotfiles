@@ -191,9 +191,9 @@
     "enabled": true
   },
   "tabs": { "file_icons": true },
-  "ui_font_family": "SF Font",
+  "ui_font_family": "SFNS Font",
   "ui_font_weight": 100.0,
-  "ui_font_size": 20.0,
+  "ui_font_size": 16.0,
   "formatter": "prettier",
   "format_on_save": "off",
   // "disable_ai": true,
