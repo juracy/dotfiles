@@ -21,3 +21,6 @@ hl.window_rule({ match = { class = "^com.system76.CosmicPlayer$" }, float = true
 
 -- DMS-RULE: id=dms-floating-windows, name=DMS Floating Windows
 hl.window_rule({ match = { class = "^com.danklinux.dms$" }, float = true })
+
+-- DMS-RULE: id=wr_1790124525601667876, name=com.usebottles.bottles
+hl.window_rule({ match = { class = "^com.usebottles.bottles$" }, float = true })
