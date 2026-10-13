@@ -26,3 +26,7 @@ post_hook = "sh -c '~/.config/matugen/templates/cosmic_postprocess.py ~/.config/
 input_path = '~/.config/matugen/templates/tmux-colors.conf'
 output_path = '~/.config/tmux/generated.conf'
 post_hook = 'tmux source-file ~/.config/tmux/generated.conf'
+
+[templates.chrome-startpage]
+input_path = '~/.config/matugen/templates/chrome-startpage.css'
+output_path = '~/workspace/chrome-dynamic-startpage/theme.css'
