@@ -12,6 +12,7 @@ config.package/.config/hypr/colors.conf
 config.package/.config/hypr/dms/colors.conf
 config.package/.config/hypr/dms/colors.lua
 config.package/.config/hypr/dms/outputs.conf
+config.package/.config/chrome-flags.conf
 config.package/.config/hypr/dms/outputs.lua
 config.package/.config/hypr/dms/profiles
 config.package/.config/hypr/hypr.d/*personal.lua

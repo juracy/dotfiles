@@ -1,0 +1,16 @@
+# Exemplo — copie para ~/.config/chrome-flags.conf e ajuste por máquina (o real é git-ignored).
+# O launcher do Arch (/usr/bin/google-chrome-stable) ignora linhas iniciadas com "#".
+#
+# X11 (XWayland) proposital: em Wayland nativo a Netflix (Widevine/DRM) fica com tela preta
+# nesta máquina (Intel + NVIDIA RTX 3050). Testado em 2026-10-17 (Chrome 155, Hyprland 0.56):
+#   - só --ozone-platform=wayland, sem as demais flags: tela preta
+#   - --disable-features=WaylandOverlayDelegation: tela preta
+#   - forçando iGPU Intel (sem LIBVA_DRIVER_NAME/__GLX_VENDOR_LIBRARY_NAME): tela preta
+#   - aceleração por hardware desligada: funciona (inviável)
+# Efeito colateral conhecido do X11: tooltips com borda/estilo "bubble" do Chrome.
+--ozone-platform=x11
+--ignore-gpu-blocklist
+--enable-gpu-rasterization
+--use-angle=gl
+--enable-zero-copy
+--enable-features=VaapiVideoDecodeLinuxGL,CanvasOopif
