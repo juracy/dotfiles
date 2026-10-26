@@ -31,6 +31,11 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.laststatus = 3
+if vim.o.statusline ~= "" and vim.o.statusline:find("%%{%% &ruler") then
+  vim.opt.statusline = vim.o.statusline:gsub("(%%{%% &ruler)", "%%y %1")
+else
+  vim.opt.statusline = "%<%f %h%w%m%r%=%y %-14.(%l,%c%V%) %P"
+end
 
 -- Performance/UX de edição
 vim.opt.updatetime = 250

@@ -8,6 +8,7 @@ return {
         "bash",
         "c",
         "diff",
+        "helm",
         "html",
         "javascript",
         "jsdoc",
@@ -46,7 +47,17 @@ return {
       },
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      local ts = require("nvim-treesitter")
+      if ts.install then
+        ts.install(opts.ensure_installed)
+        vim.api.nvim_create_autocmd("FileType", {
+          callback = function(args)
+            pcall(vim.treesitter.start, args.buf)
+          end,
+        })
+      else
+        require("nvim-treesitter.configs").setup(opts)
+      end
     end,
   },
   {

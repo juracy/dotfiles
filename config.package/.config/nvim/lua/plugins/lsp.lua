@@ -4,6 +4,7 @@ return {
     "mason-org/mason.nvim",
     "mason-org/mason-lspconfig.nvim",
     { "folke/lazydev.nvim", ft = "lua", opts = {} },
+    { "qvalentin/helm-ls.nvim", ft = "helm", opts = {} },
   },
   config = function()
     require("mason").setup()
@@ -41,8 +42,19 @@ return {
       },
     })
 
+    -- Helm: helm-ls integrated with yaml-language-server
+    vim.lsp.config("helm_ls", {
+      settings = {
+        ["helm-ls"] = {
+          yamlls = {
+            path = "yaml-language-server",
+          },
+        },
+      },
+    })
+
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "basedpyright", "ruff", "ts_ls" },
+      ensure_installed = { "lua_ls", "basedpyright", "ruff", "ts_ls", "helm_ls", "yamlls" },
     })
 
     vim.diagnostic.config({
