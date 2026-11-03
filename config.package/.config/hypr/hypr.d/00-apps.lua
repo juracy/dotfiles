@@ -4,7 +4,7 @@
 
 -- Variables
 terminal = "kitty"
-fileManager = "cosmic-files"
+fileManager = "dfiles"
 hyprland_reload = "hyprctl reload && dms notify 'Hyprland Reloaded'"
 preferred_app = "~/.local/bin/launch-by-workspace.sh"
 wallpaper_control = "~/.local/bin/wallpaper-changer.sh"
