@@ -1,0 +1,8 @@
+#!/bin/sh
+# Chrome usado pelos MCPs do Claude Code (Playwright e chrome-devtools).
+# A classe própria faz o Hyprland mandar a janela para special:claude (hypr.d/92-claude-chrome.lua).
+#
+# X11 (XWayland) proposital: em Wayland nativo, com a janela escondida, requestAnimationFrame e o
+# primeiro screenshot travam (até 14s). As flags --disable-*-backgrounding não resolvem.
+# Testado em 2026-11-06 com Hyprland 0.56.2.
+exec /opt/google/chrome/chrome --class=claude-chrome --ozone-platform=x11 "$@"
