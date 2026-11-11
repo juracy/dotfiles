@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# Run after resume (hypridle after_sleep_cmd). If the NVIDIA driver lost a sync fence while suspending
+# (kernel: "nvidia-drm ... Failed to register auto-value-update ... sync FD semaphore surface"), GPU clients
+# that had a frame in flight may hang: EGL apps (kitty) spin at 100% CPU in userspace forever, Chrome
+# renders but ignores keyboard/mouse. Known driver bug, no fix yet (seen on 615.78.08).
+#
+# Never kills anything on its own: it notifies, lists the spinning suspects and offers actions.
+set -u
+
+GRACE=${NVIDIA_RESUME_CHECK_GRACE:-15}   # seconds to let things settle after resume
+SAMPLE=3                                 # seconds per CPU sample
+
+# Did the error happen during the most recent suspend? (kernel log since the last "suspend entry")
+lost_fence() {
+    journalctl -k -b --no-pager -o cat 2>/dev/null |
+        awk '/PM: suspend entry/ { hit = 0 } /semsurf_wait_fence_work_cb/ { hit = 1 } END { exit !hit }'
+}
+
+# PIDs holding /dev/nvidia* open, whose main thread burned >=80% CPU in userspace without a single
+# voluntary context switch (no syscalls) during the sample: the spin-on-semaphore signature.
+find_spinners() {
+    local hz pid comm
+    local -A u1 v1
+    hz=$(getconf CLK_TCK)
+    for fd in /proc/[0-9]*/fd/*; do
+        [[ $(readlink "$fd" 2>/dev/null) == /dev/nvidia* ]] || continue
+        pid=${fd#/proc/}; pid=${pid%%/*}
+        [[ -n ${u1[$pid]:-} || $pid == "$$" ]] && continue
+        u1[$pid]=$(awk '{print $14}' "/proc/$pid/stat" 2>/dev/null) || continue
+        v1[$pid]=$(awk '/^voluntary_ctxt_switches/ {print $2}' "/proc/$pid/status" 2>/dev/null)
+    done
+    sleep "$SAMPLE"
+    for pid in "${!u1[@]}"; do
+        local u2 v2
+        u2=$(awk '{print $14}' "/proc/$pid/stat" 2>/dev/null) || continue
+        v2=$(awk '/^voluntary_ctxt_switches/ {print $2}' "/proc/$pid/status" 2>/dev/null)
+        if (( u2 - u1[$pid] >= hz * SAMPLE * 8 / 10 )) && [[ $v2 == "${v1[$pid]}" ]]; then
+            comm=$(cat "/proc/$pid/comm" 2>/dev/null) && echo "$pid $comm"
+        fi
+    done
+}
+
+lost_fence || exit 0
+sleep "$GRACE"
+
+mapfile -t spinners < <(find_spinners)
+
+body="A NVIDIA perdeu um fence ao suspender. Apps na NVIDIA podem ter travado."
+actions=()
+if (( ${#spinners[@]} )); then
+    body+=$'\n\nTravados (100% CPU, sem resposta):'
+    for s in "${spinners[@]}"; do body+=$'\n'"  • ${s#* } (pid ${s%% *})"; done
+    actions+=(-A kill="Encerrar travados")
+fi
+pgrep -xo chrome >/dev/null && actions+=(-A chrome="Reiniciar Chrome")
+body+=$'\n\nChrome travado: desenha mas ignora teclado/mouse.'
+
+choice=$(notify-send -u critical -a "NVIDIA resume" -i dialog-warning "${actions[@]}" \
+    "Possível travamento após suspensão" "$body")
+
+case $choice in
+kill)
+    for s in "${spinners[@]}"; do kill -KILL "${s%% *}" 2>/dev/null; done
+    ;;
+chrome)
+    # Graceful: SIGTERM to the browser process saves the session; then reopen restoring tabs.
+    pid=$(pgrep -xo chrome) && kill -TERM "$pid"
+    for _ in $(seq 20); do pgrep -xo chrome >/dev/null || break; sleep 1; done
+    hyprctl dispatch 'hl.dsp.exec_cmd("google-chrome-stable --restore-last-session")' >/dev/null
+    ;;
+esac
